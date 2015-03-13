@@ -37,3 +37,6 @@ C:\Users\HP\Dropbox\Univer\Командная разработка\com_raz\Фо�
 C:\Users\HP\Dropbox\Univer\Командная разработка\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Workers.resources
 C:\Users\HP\Dropbox\Univer\Командная разработка\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Zayavka.resources
 C:\Users\HP\Dropbox\Univer\Командная разработка\com_raz\Формы Сучкова\obj\Debug\Формы Сучкова.csproj.GenerateResource.Cache
+D:\YandexDisk\8 ой семестр\Сучкова Ком Разр\Repositories\com_raz\Формы Сучкова\bin\Debug\Формы Сучкова.exe.config
+D:\YandexDisk\8 ой семестр\Сучкова Ком Разр\Repositories\com_raz\Формы Сучкова\obj\Debug\Формы Сучкова.exe
+D:\YandexDisk\8 ой семестр\Сучкова Ком Разр\Repositories\com_raz\Формы Сучкова\obj\Debug\Формы Сучкова.pdb
