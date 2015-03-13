@@ -68,6 +68,12 @@
     <Compile Include="Arhiv.Designer.cs">
       <DependentUpon>Arhiv.cs</DependentUpon>
     </Compile>
+    <Compile Include="bichi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bichi.Designer.cs">
+      <DependentUpon>bichi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Arhiv.resx">
       <DependentUpon>Arhiv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bichi.resx">
+      <DependentUpon>bichi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
