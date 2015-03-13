@@ -40,3 +40,27 @@ C:\Users\HP\Dropbox\Univer\Командная разработка\com_raz\Фо�
 D:\YandexDisk\8 ой семестр\Сучкова Ком Разр\Repositories\com_raz\Формы Сучкова\bin\Debug\Формы Сучкова.exe.config
 D:\YandexDisk\8 ой семестр\Сучкова Ком Разр\Repositories\com_raz\Формы Сучкова\obj\Debug\Формы Сучкова.exe
 D:\YandexDisk\8 ой семестр\Сучкова Ком Разр\Repositories\com_raz\Формы Сучкова\obj\Debug\Формы Сучкова.pdb
+D:\YandexDisk\8 ой семестр\Сучкова Ком Разр\Repositories\com_raz\Формы Сучкова\bin\Debug\Формы Сучкова.exe
+D:\YandexDisk\8 ой семестр\Сучкова Ком Разр\Repositories\com_raz\Формы Сучкова\bin\Debug\Формы Сучкова.pdb
+D:\YandexDisk\8 ой семестр\Сучкова Ком Разр\Repositories\com_raz\Формы Сучкова\obj\Debug\Формы Сучкова.csprojResolveAssemblyReference.cache
+D:\YandexDisk\8 ой семестр\Сучкова Ком Разр\Repositories\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Add_redact_worker.resources
+D:\YandexDisk\8 ой семестр\Сучкова Ком Разр\Repositories\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Akt_priem.resources
+D:\YandexDisk\8 ой семестр\Сучкова Ком Разр\Repositories\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Akt_spis.resources
+D:\YandexDisk\8 ой семестр\Сучкова Ком Разр\Repositories\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Arhiv.resources
+D:\YandexDisk\8 ой семестр\Сучкова Ком Разр\Repositories\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.bichi.resources
+D:\YandexDisk\8 ой семестр\Сучкова Ком Разр\Repositories\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Form1.resources
+D:\YandexDisk\8 ой семестр\Сучкова Ком Разр\Repositories\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Form2.resources
+D:\YandexDisk\8 ой семестр\Сучкова Ком Разр\Repositories\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Harakteristik.resources
+D:\YandexDisk\8 ой семестр\Сучкова Ком Разр\Repositories\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Kategory.resources
+D:\YandexDisk\8 ой семестр\Сучкова Ком Разр\Repositories\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Prodaja.resources
+D:\YandexDisk\8 ой семестр\Сучкова Ком Разр\Repositories\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Properties.Resources.resources
+D:\YandexDisk\8 ой семестр\Сучкова Ком Разр\Repositories\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.P_kategory.resources
+D:\YandexDisk\8 ой семестр\Сучкова Ком Разр\Repositories\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Redact_zayavka.resources
+D:\YandexDisk\8 ой семестр\Сучкова Ком Разр\Repositories\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.R_tovar.resources
+D:\YandexDisk\8 ой семестр\Сучкова Ком Разр\Repositories\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.R_tovar_arh.resources
+D:\YandexDisk\8 ой семестр\Сучкова Ком Разр\Repositories\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Setting.resources
+D:\YandexDisk\8 ой семестр\Сучкова Ком Разр\Repositories\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Statistic.resources
+D:\YandexDisk\8 ой семестр\Сучкова Ком Разр\Repositories\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Tovari.resources
+D:\YandexDisk\8 ой семестр\Сучкова Ком Разр\Repositories\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Workers.resources
+D:\YandexDisk\8 ой семестр\Сучкова Ком Разр\Repositories\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Zayavka.resources
+D:\YandexDisk\8 ой семестр\Сучкова Ком Разр\Repositories\com_raz\Формы Сучкова\obj\Debug\Формы Сучкова.csproj.GenerateResource.Cache
