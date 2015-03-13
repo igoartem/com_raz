@@ -1,0 +1,13 @@
+c:\users\lenovo\documents\visual studio 2012\Projects\Формы Сучкова\Формы Сучкова\bin\Debug\Формы Сучкова.exe.config
+C:\Users\Lenovo\documents\visual studio 2012\Projects\Формы Сучкова\Формы Сучкова\bin\Debug\Формы Сучкова.exe
+C:\Users\Lenovo\documents\visual studio 2012\Projects\Формы Сучкова\Формы Сучкова\bin\Debug\Формы Сучкова.pdb
+C:\Users\Lenovo\documents\visual studio 2012\Projects\Формы Сучкова\Формы Сучкова\obj\Debug\Формы Сучкова.csprojResolveAssemblyReference.cache
+C:\Users\Lenovo\documents\visual studio 2012\Projects\Формы Сучкова\Формы Сучкова\obj\Debug\Формы_Сучкова.Form1.resources
+C:\Users\Lenovo\documents\visual studio 2012\Projects\Формы Сучкова\Формы Сучкова\obj\Debug\Формы_Сучкова.Properties.Resources.resources
+C:\Users\Lenovo\documents\visual studio 2012\Projects\Формы Сучкова\Формы Сучкова\obj\Debug\Формы_Сучкова.Tovari.resources
+C:\Users\Lenovo\documents\visual studio 2012\Projects\Формы Сучкова\Формы Сучкова\obj\Debug\Формы Сучкова.csproj.GenerateResource.Cache
+C:\Users\Lenovo\documents\visual studio 2012\Projects\Формы Сучкова\Формы Сучкова\obj\Debug\Формы Сучкова.exe
+C:\Users\Lenovo\documents\visual studio 2012\Projects\Формы Сучкова\Формы Сучкова\obj\Debug\Формы Сучкова.pdb
+D:\YandexDisk\8 ой семестр\Сучкова Ком Разр\л3 формы\Формы Сучкова\Формы Сучкова\bin\Debug\Формы Сучкова.exe.config
+D:\YandexDisk\8 ой семестр\Сучкова Ком Разр\л3 формы\Формы Сучкова\Формы Сучкова\obj\Debug\Формы Сучкова.exe
+D:\YandexDisk\8 ой семестр\Сучкова Ком Разр\л3 формы\Формы Сучкова\Формы Сучкова\obj\Debug\Формы Сучкова.pdb

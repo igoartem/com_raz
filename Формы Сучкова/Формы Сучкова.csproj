@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3BE0D765-4BE4-4B58-9A0B-5490A5F9AEA5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Формы_Сучкова</RootNamespace>
+    <AssemblyName>Формы Сучкова</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Add_redact_worker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_redact_worker.Designer.cs">
+      <DependentUpon>Add_redact_worker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Akt_priem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akt_priem.Designer.cs">
+      <DependentUpon>Akt_priem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Akt_spis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Akt_spis.Designer.cs">
+      <DependentUpon>Akt_spis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Arhiv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Arhiv.Designer.cs">
+      <DependentUpon>Arhiv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Harakteristik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Harakteristik.Designer.cs">
+      <DependentUpon>Harakteristik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kategory.Designer.cs">
+      <DependentUpon>Kategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prodaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prodaja.Designer.cs">
+      <DependentUpon>Prodaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="P_kategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P_kategory.Designer.cs">
+      <DependentUpon>P_kategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Redact_zayavka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Redact_zayavka.Designer.cs">
+      <DependentUpon>Redact_zayavka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="R_tovar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="R_tovar.Designer.cs">
+      <DependentUpon>R_tovar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="R_tovar_arh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="R_tovar_arh.Designer.cs">
+      <DependentUpon>R_tovar_arh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Setting.Designer.cs">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistic.Designer.cs">
+      <DependentUpon>Statistic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tovari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tovari.Designer.cs">
+      <DependentUpon>Tovari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Workers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Workers.Designer.cs">
+      <DependentUpon>Workers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zayavka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zayavka.Designer.cs">
+      <DependentUpon>Zayavka.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Add_redact_worker.resx">
+      <DependentUpon>Add_redact_worker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akt_priem.resx">
+      <DependentUpon>Akt_priem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Akt_spis.resx">
+      <DependentUpon>Akt_spis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Arhiv.resx">
+      <DependentUpon>Arhiv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Harakteristik.resx">
+      <DependentUpon>Harakteristik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kategory.resx">
+      <DependentUpon>Kategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prodaja.resx">
+      <DependentUpon>Prodaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="P_kategory.resx">
+      <DependentUpon>P_kategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Redact_zayavka.resx">
+      <DependentUpon>Redact_zayavka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="R_tovar.resx">
+      <DependentUpon>R_tovar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="R_tovar_arh.resx">
+      <DependentUpon>R_tovar_arh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting.resx">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistic.resx">
+      <DependentUpon>Statistic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tovari.resx">
+      <DependentUpon>Tovari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Workers.resx">
+      <DependentUpon>Workers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zayavka.resx">
+      <DependentUpon>Zayavka.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
