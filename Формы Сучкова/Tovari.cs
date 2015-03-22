@@ -7,25 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-<<<<<<< HEAD
 using System.Data.OracleClient;
-=======
 using System.IO;
->>>>>>> origin/artem
 
 namespace Формы_Сучкова
 {
     public partial class Tovari : Form
     {
-<<<<<<< HEAD
         OracleCommand cmd1;
         OracleConnection con1;
         OracleDataReader dr1;
         bool load;
         int count = 0;
-=======
+
         public const int MAX_KOL_TOVAROV=100;
->>>>>>> origin/artem
 
         public Tovari()
         {
@@ -102,7 +97,6 @@ namespace Формы_Сучкова
 
         private void Tovari_Load(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             load = true; 
 
 
@@ -113,7 +107,6 @@ namespace Формы_Сучкова
             refresh();
 
             load = false;
-=======
             StreamReader sr;
             string s;
             try
@@ -126,7 +119,7 @@ namespace Формы_Сучкова
             {
                 MessageBox.Show("Error Base!");
             }
->>>>>>> origin/artem
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -143,8 +136,6 @@ namespace Формы_Сучкова
             Kategory kategory = new Kategory();
             kategory.Show();
         }
-
-<<<<<<< HEAD
         private void button2_Click(object sender, EventArgs e)
         {
             //Удаление
@@ -156,12 +147,13 @@ namespace Формы_Сучкова
                     refresh();
                 }
             }
-=======
+        }
+
         private void button6_Click(object sender, EventArgs e)
         {
             Akt_priem add_tovar = new Akt_priem();
             add_tovar.Show();
->>>>>>> origin/artem
+
         }
     }
 }

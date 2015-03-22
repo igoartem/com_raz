@@ -73,7 +73,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-<<<<<<< HEAD
+
             this.Select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Naimenovanie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -85,8 +85,7 @@
             this.Date_end = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Garant = new System.Windows.Forms.DataGridViewTextBoxColumn();
-=======
->>>>>>> origin/artem
+
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -483,7 +482,6 @@
             this.button8.Text = "Списать товар";
             this.button8.UseVisualStyleBackColor = true;
             // 
-<<<<<<< HEAD
             // Select
             // 
             this.Select.FalseValue = "false";
@@ -550,8 +548,7 @@
             this.Garant.Name = "Garant";
             this.Garant.Width = 60;
             // 
-=======
->>>>>>> origin/artem
+
             // Tovari
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
