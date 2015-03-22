@@ -30,7 +30,7 @@ namespace Формы_Сучкова
         private void Form1_Load(object sender, EventArgs e)
         {
             StreamReader sr;
-            string ip_base="127.0.0.1";
+            string ip_base="localhost";
             try
             {
                 if ((sr = new StreamReader(@"ip_base.txt")) != null)
