@@ -13,6 +13,8 @@ namespace Формы_Сучкова
 {
     public partial class Tovari : Form
     {
+        public const int MAX_KOL_TOVAROV=100;
+
         public Tovari()
         {
             InitializeComponent();
@@ -58,7 +60,7 @@ namespace Формы_Сучкова
                     s = sr.ReadLine();
             }
             
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Error Base!");
             }
@@ -66,7 +68,10 @@ namespace Формы_Сучкова
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Prodaja form_prodaja = new Prodaja();
+            //передавать массив с пк продаваемых товаров
+            int[] mass_pk= new Int32[MAX_KOL_TOVAROV];
+
+            Prodaja form_prodaja = new Prodaja(mass_pk);
             form_prodaja.Show();
         }
 

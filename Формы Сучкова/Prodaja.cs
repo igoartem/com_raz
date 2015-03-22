@@ -12,9 +12,16 @@ namespace Формы_Сучкова
 {
     public partial class Prodaja : Form
     {
-        public Prodaja()
+        public int[] mass_pk;
+        public Prodaja(int[] pk)
         {
+            mass_pk = pk;
             InitializeComponent();
+        }
+
+        private void Prodaja_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
