@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OracleClient;
+using System.IO;
 
 namespace Формы_Сучкова
 {
@@ -28,6 +29,25 @@ namespace Формы_Сучкова
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            StreamReader sr;
+            string ip_base="localhost";
+            try
+            {
+                if ((sr = new StreamReader(@"ip_base.txt")) != null)
+                    ip_base = sr.ReadLine();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Base!");
+
+            }
+                
+
+
+            con1 = new OracleConnection("Data Source=(DESCRIPTION =(ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = "+ip_base+")(PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = xe))); User Id=" + "admin" + ";Password=" + "123" + ";");
+            cmd1 = new OracleCommand("", con1);
+            con1.Open();
 
         }
 

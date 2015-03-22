@@ -7,17 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+<<<<<<< HEAD
 using System.Data.OracleClient;
+=======
+using System.IO;
+>>>>>>> origin/artem
 
 namespace Формы_Сучкова
 {
     public partial class Tovari : Form
     {
+<<<<<<< HEAD
         OracleCommand cmd1;
         OracleConnection con1;
         OracleDataReader dr1;
         bool load;
         int count = 0;
+=======
+        public const int MAX_KOL_TOVAROV=100;
+>>>>>>> origin/artem
 
         public Tovari()
         {
@@ -94,6 +102,7 @@ namespace Формы_Сучкова
 
         private void Tovari_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             load = true; 
 
 
@@ -104,11 +113,28 @@ namespace Формы_Сучкова
             refresh();
 
             load = false;
+=======
+            StreamReader sr;
+            string s;
+            try
+            {
+                if ((sr = new StreamReader(@"ip_base.txt")) != null)
+                    s = sr.ReadLine();
+            }
+            
+            catch (Exception)
+            {
+                MessageBox.Show("Error Base!");
+            }
+>>>>>>> origin/artem
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Prodaja form_prodaja = new Prodaja();
+            //передавать массив с пк продаваемых товаров
+            int[] mass_pk= new Int32[MAX_KOL_TOVAROV];
+
+            Prodaja form_prodaja = new Prodaja(mass_pk);
             form_prodaja.Show();
         }
 
@@ -118,6 +144,7 @@ namespace Формы_Сучкова
             kategory.Show();
         }
 
+<<<<<<< HEAD
         private void button2_Click(object sender, EventArgs e)
         {
             //Удаление
@@ -129,6 +156,12 @@ namespace Формы_Сучкова
                     refresh();
                 }
             }
+=======
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Akt_priem add_tovar = new Akt_priem();
+            add_tovar.Show();
+>>>>>>> origin/artem
         }
     }
 }

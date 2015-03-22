@@ -51,14 +51,14 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.naim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Znach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.naim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Znach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -255,6 +255,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(143, 21);
             this.comboBox1.TabIndex = 2;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -278,6 +279,23 @@
             this.dataGridView1.Size = new System.Drawing.Size(362, 384);
             this.dataGridView1.TabIndex = 0;
             // 
+            // naim
+            // 
+            this.naim.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.naim.HeaderText = "Наименование";
+            this.naim.Name = "naim";
+            // 
+            // Znach
+            // 
+            this.Znach.HeaderText = "Значение";
+            this.Znach.Name = "Znach";
+            // 
+            // PK
+            // 
+            this.PK.HeaderText = "PK";
+            this.PK.Name = "PK";
+            this.PK.Visible = false;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(534, 427);
@@ -286,6 +304,7 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "Сохранить";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -323,23 +342,6 @@
             this.button5.Text = "Принять сломанный";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // naim
-            // 
-            this.naim.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.naim.HeaderText = "Наименование";
-            this.naim.Name = "naim";
-            // 
-            // Znach
-            // 
-            this.Znach.HeaderText = "Значение";
-            this.Znach.Name = "Znach";
-            // 
-            // PK
-            // 
-            this.PK.HeaderText = "PK";
-            this.PK.Name = "PK";
-            this.PK.Visible = false;
-            // 
             // R_tovar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -353,7 +355,8 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Name = "R_tovar";
-            this.Text = "R_tovar";
+            this.Text = "Товар";
+            this.Load += new System.EventHandler(this.R_tovar_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
