@@ -67,6 +67,12 @@ D:\YandexDisk\8 ой семестр\Сучкова Ком Разр\Repositories\
 C:\com_raz\Формы Сучкова\bin\Debug\Формы Сучкова.exe.config
 C:\com_raz\Формы Сучкова\obj\Debug\Формы Сучкова.exe
 C:\com_raz\Формы Сучкова\obj\Debug\Формы Сучкова.pdb
+<<<<<<< HEAD
 C:\Users\HP\Desktop\nigga\Формы Сучкова\bin\Debug\Формы Сучкова.exe.config
 C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы Сучкова.exe
 C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы Сучкова.pdb
+=======
+D:\Repo\Формы Сучкова\bin\Debug\Формы Сучкова.exe.config
+D:\Repo\Формы Сучкова\obj\Debug\Формы Сучкова.exe
+D:\Repo\Формы Сучкова\obj\Debug\Формы Сучкова.pdb
+>>>>>>> origin/master
