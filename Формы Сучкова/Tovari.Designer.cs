@@ -339,6 +339,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Продать";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -383,6 +384,7 @@
             this.редактированиеКатегорийToolStripMenuItem.Name = "редактированиеКатегорийToolStripMenuItem";
             this.редактированиеКатегорийToolStripMenuItem.Size = new System.Drawing.Size(167, 20);
             this.редактированиеКатегорийToolStripMenuItem.Text = "Редактирование категорий";
+            this.редактированиеКатегорийToolStripMenuItem.Click += new System.EventHandler(this.редактированиеКатегорийToolStripMenuItem_Click);
             // 
             // просмотрЗаявокToolStripMenuItem
             // 
