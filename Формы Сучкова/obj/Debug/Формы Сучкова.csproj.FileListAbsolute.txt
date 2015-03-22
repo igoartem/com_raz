@@ -76,3 +76,25 @@ D:\Repo\Формы Сучкова\bin\Debug\Формы Сучкова.exe.config
 D:\Repo\Формы Сучкова\obj\Debug\Формы Сучкова.exe
 D:\Repo\Формы Сучкова\obj\Debug\Формы Сучкова.pdb
 >>>>>>> origin/master
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы Сучкова.csprojResolveAssemblyReference.cache
+C:\Users\HP\Desktop\nigga\Формы Сучкова\bin\Debug\Формы Сучкова.exe
+C:\Users\HP\Desktop\nigga\Формы Сучкова\bin\Debug\Формы Сучкова.pdb
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы_Сучкова.Add_redact_worker.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы_Сучкова.Akt_priem.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы_Сучкова.Akt_spis.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы_Сучкова.Arhiv.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы_Сучкова.Form1.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы_Сучкова.Harakteristik.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы_Сучкова.Kategory.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы_Сучкова.Prodaja.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы_Сучкова.Properties.Resources.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы_Сучкова.P_kategory.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы_Сучкова.Redact_zayavka.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы_Сучкова.R_tovar.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы_Сучкова.R_tovar_arh.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы_Сучкова.Setting.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы_Сучкова.Statistic.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы_Сучкова.Tovari.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы_Сучкова.Workers.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы_Сучкова.Zayavka.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы Сучкова.csproj.GenerateResource.Cache

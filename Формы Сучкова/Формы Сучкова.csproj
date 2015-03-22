@@ -209,9 +209,6 @@
     <EmbeddedResource Include="R_tovar_arh.resx">
       <DependentUpon>R_tovar_arh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="serega.resx">
-      <DependentUpon>serega.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Setting.resx">
       <DependentUpon>Setting.cs</DependentUpon>
     </EmbeddedResource>
