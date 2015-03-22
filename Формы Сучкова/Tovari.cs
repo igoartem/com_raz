@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Формы_Сучкова
 {
     public partial class Tovari : Form
     {
+        public const int MAX_KOL_TOVAROV=100;
+
         public Tovari()
         {
             InitializeComponent();
@@ -49,12 +52,26 @@ namespace Формы_Сучкова
 
         private void Tovari_Load(object sender, EventArgs e)
         {
-
+            StreamReader sr;
+            string s;
+            try
+            {
+                if ((sr = new StreamReader(@"ip_base.txt")) != null)
+                    s = sr.ReadLine();
+            }
+            
+            catch (Exception)
+            {
+                MessageBox.Show("Error Base!");
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Prodaja form_prodaja = new Prodaja();
+            //передавать массив с пк продаваемых товаров
+            int[] mass_pk= new Int32[MAX_KOL_TOVAROV];
+
+            Prodaja form_prodaja = new Prodaja(mass_pk);
             form_prodaja.Show();
         }
 
@@ -62,6 +79,12 @@ namespace Формы_Сучкова
         {
             Kategory kategory = new Kategory();
             kategory.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Akt_priem add_tovar = new Akt_priem();
+            add_tovar.Show();
         }
     }
 }

@@ -30,12 +30,12 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.harakt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.harakt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +60,18 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(305, 363);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // harakt
+            // 
+            this.harakt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.harakt.HeaderText = "Характеристики";
+            this.harakt.Name = "harakt";
+            // 
+            // PK
+            // 
+            this.PK.HeaderText = "PK";
+            this.PK.Name = "PK";
+            this.PK.Visible = false;
             // 
             // button2
             // 
@@ -95,18 +107,6 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Подкатегория:";
             // 
-            // harakt
-            // 
-            this.harakt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.harakt.HeaderText = "Характеристики";
-            this.harakt.Name = "harakt";
-            // 
-            // PK
-            // 
-            this.PK.HeaderText = "PK";
-            this.PK.Name = "PK";
-            this.PK.Visible = false;
-            // 
             // Harakteristik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -118,7 +118,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Harakteristik";
-            this.Text = "Harakteristik";
+            this.Text = "Характеристики";
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

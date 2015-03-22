@@ -30,7 +30,6 @@
         {
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -50,6 +49,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.bought = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Naim = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Plata_prst = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cost_buy = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,7 +73,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.textBox4);
             this.groupBox1.Controls.Add(this.label4);
@@ -93,16 +92,6 @@
             this.groupBox1.Size = new System.Drawing.Size(492, 220);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(209, 203);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(76, 17);
-            this.checkBox1.TabIndex = 25;
-            this.checkBox1.Text = "Выкуплен";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -157,9 +146,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(6, 100);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(60, 13);
+            this.label8.Size = new System.Drawing.Size(65, 13);
             this.label8.TabIndex = 7;
-            this.label8.Text = "Продавец:";
+            this.label8.Text = "Приемщик:";
             // 
             // textBox6
             // 
@@ -224,6 +213,7 @@
             this.button2.TabIndex = 20;
             this.button2.Text = "Сохранить";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox3
             // 
@@ -239,6 +229,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.bought,
             this.Naim,
             this.Plata_prst,
             this.Cost_buy,
@@ -247,7 +238,7 @@
             this.PK});
             this.dataGridView1.Location = new System.Drawing.Point(6, 19);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(477, 200);
+            this.dataGridView1.Size = new System.Drawing.Size(474, 200);
             this.dataGridView1.TabIndex = 0;
             // 
             // button1
@@ -267,6 +258,15 @@
             this.button3.TabIndex = 23;
             this.button3.Text = "Добавить товар";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // bought
+            // 
+            this.bought.HeaderText = "Выкуплен";
+            this.bought.Name = "bought";
+            this.bought.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.bought.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.bought.Width = 60;
             // 
             // Naim
             // 
@@ -308,7 +308,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(516, 535);
+            this.ClientSize = new System.Drawing.Size(510, 535);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox3);
@@ -343,13 +343,13 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn bought;
         private System.Windows.Forms.DataGridViewTextBoxColumn Naim;
         private System.Windows.Forms.DataGridViewTextBoxColumn Plata_prst;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cost_buy;
