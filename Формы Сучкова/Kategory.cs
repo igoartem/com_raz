@@ -16,5 +16,11 @@ namespace Формы_Сучкова
         {
             InitializeComponent();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            P_kategory p_kat = new P_kategory();
+            p_kat.Show();
+        }
     }
 }

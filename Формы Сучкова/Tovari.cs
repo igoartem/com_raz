@@ -51,5 +51,17 @@ namespace Формы_Сучкова
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Prodaja form_prodaja = new Prodaja();
+            form_prodaja.Show();
+        }
+
+        private void редактированиеКатегорийToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Kategory kategory = new Kategory();
+            kategory.Show();
+        }
     }
 }
