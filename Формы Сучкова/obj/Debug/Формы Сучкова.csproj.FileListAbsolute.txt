@@ -75,7 +75,6 @@ C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы Суч�
 D:\Repo\Формы Сучкова\bin\Debug\Формы Сучкова.exe.config
 D:\Repo\Формы Сучкова\obj\Debug\Формы Сучкова.exe
 D:\Repo\Формы Сучкова\obj\Debug\Формы Сучкова.pdb
-<<<<<<< HEAD
 >>>>>>> origin/master
 C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы Сучкова.csprojResolveAssemblyReference.cache
 C:\Users\HP\Desktop\nigga\Формы Сучкова\bin\Debug\Формы Сучкова.exe
@@ -99,7 +98,6 @@ C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы_Суч�
 C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы_Сучкова.Workers.resources
 C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы_Сучкова.Zayavka.resources
 C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы Сучкова.csproj.GenerateResource.Cache
-=======
 D:\Repo\Формы Сучкова\bin\Debug\Формы Сучкова.exe
 D:\Repo\Формы Сучкова\bin\Debug\Формы Сучкова.pdb
 D:\Repo\Формы Сучкова\obj\Debug\Формы Сучкова.csprojResolveAssemblyReference.cache
