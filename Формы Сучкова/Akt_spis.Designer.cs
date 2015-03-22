@@ -43,6 +43,7 @@
             this.Date_give = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -148,7 +149,8 @@
             this.Naim,
             this.Date_give,
             this.status,
-            this.Cost});
+            this.Cost,
+            this.PK});
             this.dataGridView1.Location = new System.Drawing.Point(9, 19);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(415, 200);
@@ -178,6 +180,12 @@
             this.Cost.HeaderText = "Цена приемки";
             this.Cost.Name = "Cost";
             // 
+            // PK
+            // 
+            this.PK.HeaderText = "PK";
+            this.PK.Name = "PK";
+            this.PK.Visible = false;
+            // 
             // Akt_spis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,7 +196,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label5);
             this.Name = "Akt_spis";
-            this.Text = "Akt_spis";
+            this.Text = "Акт списания";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -215,5 +223,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Date_give;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PK;
     }
 }
