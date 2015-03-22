@@ -34,13 +34,11 @@
             this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Kategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.P_Kategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-<<<<<<< HEAD
+
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-=======
             this.PK = new System.Windows.Forms.DataGridViewTextBoxColumn();
->>>>>>> origin/Serega
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -116,8 +114,6 @@
             this.button1.Text = "Добавить";
             this.button1.UseVisualStyleBackColor = true;
             // 
-<<<<<<< HEAD
-=======
             // Naim
             // 
             this.Naim.HeaderText = "Наименование";
@@ -144,7 +140,6 @@
             this.PK.Name = "PK";
             this.PK.Visible = false;
             // 
->>>>>>> origin/Serega
             // Zayavka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
