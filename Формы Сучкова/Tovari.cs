@@ -94,7 +94,8 @@ namespace Формы_Сучкова
 
         private void Tovari_Load(object sender, EventArgs e)
         {
-            load = true;
+            load = true; 
+
 
             con1 = new OracleConnection("Data Source=(DESCRIPTION =(ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 127.0.0.1)(PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = xe))); User Id=" + "admin" + ";Password=" + "123" + ";");
             cmd1 = new OracleCommand("", con1);
