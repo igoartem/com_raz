@@ -44,6 +44,7 @@
             this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cost_itog = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -134,7 +135,8 @@
             this.Garant,
             this.Cost,
             this.Discount,
-            this.Cost_itog});
+            this.Cost_itog,
+            this.PK});
             this.dataGridView1.Location = new System.Drawing.Point(9, 19);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(678, 218);
@@ -170,6 +172,12 @@
             // 
             this.Cost_itog.HeaderText = "Итог. цена";
             this.Cost_itog.Name = "Cost_itog";
+            // 
+            // PK
+            // 
+            this.PK.HeaderText = "PK";
+            this.PK.Name = "PK";
+            this.PK.Visible = false;
             // 
             // Prodaja
             // 
@@ -212,5 +220,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cost;
         private System.Windows.Forms.DataGridViewTextBoxColumn Discount;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cost_itog;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PK;
     }
 }

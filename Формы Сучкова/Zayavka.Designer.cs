@@ -34,9 +34,13 @@
             this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Kategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.P_Kategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+<<<<<<< HEAD
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+=======
+            this.PK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+>>>>>>> origin/Serega
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +62,8 @@
             this.Naim,
             this.Cost,
             this.Kategory,
-            this.P_Kategory});
+            this.P_Kategory,
+            this.PK});
             this.dataGridView1.Location = new System.Drawing.Point(6, 19);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(449, 410);
@@ -111,6 +116,35 @@
             this.button1.Text = "Добавить";
             this.button1.UseVisualStyleBackColor = true;
             // 
+<<<<<<< HEAD
+=======
+            // Naim
+            // 
+            this.Naim.HeaderText = "Наименование";
+            this.Naim.Name = "Naim";
+            // 
+            // Cost
+            // 
+            this.Cost.HeaderText = "Цена";
+            this.Cost.Name = "Cost";
+            // 
+            // Kategory
+            // 
+            this.Kategory.HeaderText = "Категория";
+            this.Kategory.Name = "Kategory";
+            // 
+            // P_Kategory
+            // 
+            this.P_Kategory.HeaderText = "Подкатегория";
+            this.P_Kategory.Name = "P_Kategory";
+            // 
+            // PK
+            // 
+            this.PK.HeaderText = "PK";
+            this.PK.Name = "PK";
+            this.PK.Visible = false;
+            // 
+>>>>>>> origin/Serega
             // Zayavka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -139,5 +173,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cost;
         private System.Windows.Forms.DataGridViewTextBoxColumn Kategory;
         private System.Windows.Forms.DataGridViewTextBoxColumn P_Kategory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PK;
     }
 }

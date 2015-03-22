@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -49,15 +51,14 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.naim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Znach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.naim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Znach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -91,6 +92,22 @@
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Товар:";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(91, 228);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(143, 20);
+            this.textBox8.TabIndex = 19;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 231);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(85, 13);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "Итоговая цена:";
             // 
             // textBox7
             // 
@@ -254,22 +271,12 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.naim,
-            this.Znach});
+            this.Znach,
+            this.PK});
             this.dataGridView1.Location = new System.Drawing.Point(6, 19);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(362, 384);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // naim
-            // 
-            this.naim.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.naim.HeaderText = "Наименование";
-            this.naim.Name = "naim";
-            // 
-            // Znach
-            // 
-            this.Znach.HeaderText = "Значение";
-            this.Znach.Name = "Znach";
             // 
             // button1
             // 
@@ -316,21 +323,22 @@
             this.button5.Text = "Принять сломанный";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // textBox8
+            // naim
             // 
-            this.textBox8.Location = new System.Drawing.Point(91, 228);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(143, 20);
-            this.textBox8.TabIndex = 19;
+            this.naim.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.naim.HeaderText = "Наименование";
+            this.naim.Name = "naim";
             // 
-            // label10
+            // Znach
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 231);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(85, 13);
-            this.label10.TabIndex = 18;
-            this.label10.Text = "Итоговая цена:";
+            this.Znach.HeaderText = "Значение";
+            this.Znach.Name = "Znach";
+            // 
+            // PK
+            // 
+            this.PK.HeaderText = "PK";
+            this.PK.Name = "PK";
+            this.PK.Visible = false;
             // 
             // R_tovar
             // 
@@ -367,8 +375,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn naim;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Znach;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
@@ -386,5 +392,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn naim;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Znach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PK;
     }
 }

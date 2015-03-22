@@ -33,13 +33,6 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Naimenovanie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.P_category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date_ot = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cost_prod = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cost_itog = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -53,6 +46,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.Naimenovanie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.P_category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date_ot = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cost_prod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cost_itog = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -104,47 +105,12 @@
             this.Date_ot,
             this.Cost,
             this.Cost_prod,
-            this.Cost_itog});
+            this.Cost_itog,
+            this.PK});
             this.dataGridView1.Location = new System.Drawing.Point(6, 19);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(847, 437);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // Naimenovanie
-            // 
-            this.Naimenovanie.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Naimenovanie.HeaderText = "Наименование";
-            this.Naimenovanie.Name = "Naimenovanie";
-            // 
-            // Category
-            // 
-            this.Category.HeaderText = "Категория";
-            this.Category.Name = "Category";
-            // 
-            // P_category
-            // 
-            this.P_category.HeaderText = "Подкатегория";
-            this.P_category.Name = "P_category";
-            // 
-            // Date_ot
-            // 
-            this.Date_ot.HeaderText = "Дата приема";
-            this.Date_ot.Name = "Date_ot";
-            // 
-            // Cost
-            // 
-            this.Cost.HeaderText = "Базовая цена";
-            this.Cost.Name = "Cost";
-            // 
-            // Cost_prod
-            // 
-            this.Cost_prod.HeaderText = "Ожидаемая цена";
-            this.Cost_prod.Name = "Cost_prod";
-            // 
-            // Cost_itog
-            // 
-            this.Cost_itog.HeaderText = "Итоговая цена";
-            this.Cost_itog.Name = "Cost_itog";
             // 
             // groupBox2
             // 
@@ -268,6 +234,48 @@
             this.button1.Text = "Вернуть в продажу";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // Naimenovanie
+            // 
+            this.Naimenovanie.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Naimenovanie.HeaderText = "Наименование";
+            this.Naimenovanie.Name = "Naimenovanie";
+            // 
+            // Category
+            // 
+            this.Category.HeaderText = "Категория";
+            this.Category.Name = "Category";
+            // 
+            // P_category
+            // 
+            this.P_category.HeaderText = "Подкатегория";
+            this.P_category.Name = "P_category";
+            // 
+            // Date_ot
+            // 
+            this.Date_ot.HeaderText = "Дата приема";
+            this.Date_ot.Name = "Date_ot";
+            // 
+            // Cost
+            // 
+            this.Cost.HeaderText = "Базовая цена";
+            this.Cost.Name = "Cost";
+            // 
+            // Cost_prod
+            // 
+            this.Cost_prod.HeaderText = "Ожидаемая цена";
+            this.Cost_prod.Name = "Cost_prod";
+            // 
+            // Cost_itog
+            // 
+            this.Cost_itog.HeaderText = "Итоговая цена";
+            this.Cost_itog.Name = "Cost_itog";
+            // 
+            // PK
+            // 
+            this.PK.HeaderText = "PK";
+            this.PK.Name = "PK";
+            this.PK.Visible = false;
+            // 
             // Arhiv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -315,5 +323,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cost;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cost_prod;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cost_itog;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PK;
     }
 }
