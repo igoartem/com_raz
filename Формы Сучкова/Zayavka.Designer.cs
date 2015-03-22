@@ -30,13 +30,13 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.Naim = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Kategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.P_Kategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -63,6 +63,26 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(449, 410);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // Naim
+            // 
+            this.Naim.HeaderText = "Наименование";
+            this.Naim.Name = "Naim";
+            // 
+            // Cost
+            // 
+            this.Cost.HeaderText = "Цена";
+            this.Cost.Name = "Cost";
+            // 
+            // Kategory
+            // 
+            this.Kategory.HeaderText = "Категория";
+            this.Kategory.Name = "Kategory";
+            // 
+            // P_Kategory
+            // 
+            this.P_Kategory.HeaderText = "Подкатегория";
+            this.P_Kategory.Name = "P_Kategory";
             // 
             // button3
             // 
@@ -91,26 +111,6 @@
             this.button1.Text = "Добавить";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // Naim
-            // 
-            this.Naim.HeaderText = "Наименование";
-            this.Naim.Name = "Naim";
-            // 
-            // Cost
-            // 
-            this.Cost.HeaderText = "Цена";
-            this.Cost.Name = "Cost";
-            // 
-            // Kategory
-            // 
-            this.Kategory.HeaderText = "Категория";
-            this.Kategory.Name = "Kategory";
-            // 
-            // P_Kategory
-            // 
-            this.P_Kategory.HeaderText = "Подкатегория";
-            this.P_Kategory.Name = "P_Kategory";
-            // 
             // Zayavka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -121,7 +121,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Name = "Zayavka";
-            this.Text = "Zayavka";
+            this.Text = "Заявка";
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
