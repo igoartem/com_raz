@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Формы_Сучкова
 {
@@ -49,7 +50,18 @@ namespace Формы_Сучкова
 
         private void Tovari_Load(object sender, EventArgs e)
         {
-
+            StreamReader sr;
+            string s;
+            try
+            {
+                if ((sr = new StreamReader(@"ip_base.txt")) != null)
+                    s = sr.ReadLine();
+            }
+            
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Base!");
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -62,6 +74,12 @@ namespace Формы_Сучкова
         {
             Kategory kategory = new Kategory();
             kategory.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Akt_priem add_tovar = new Akt_priem();
+            add_tovar.Show();
         }
     }
 }
