@@ -20,7 +20,7 @@ namespace Формы_Сучкова
         public Form1()
         {
             InitializeComponent();
-            con1 = new OracleConnection("Data Source=(DESCRIPTION =(ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.1.3)(PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = xe))); User Id=" + "ADMIN" + ";Password=" + "td-w8901g" + ";");
+            con1 = new OracleConnection("Data Source=(DESCRIPTION =(ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.1.3)(PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = xe))); User Id=" + "admin" + ";Password=" + "123" + ";");
             cmd1 = new OracleCommand("", con1);
             con1.Open();
             con1.Close();
