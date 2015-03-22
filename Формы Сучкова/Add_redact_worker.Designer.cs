@@ -46,6 +46,7 @@
             this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "ФИО:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -117,7 +118,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Add_redact_worker";
-            this.Text = "Add_redact_worker";
+            this.Text = "Работник";
             this.ResumeLayout(false);
             this.PerformLayout();
 
