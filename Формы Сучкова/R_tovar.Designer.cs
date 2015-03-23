@@ -60,6 +60,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -67,6 +68,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.checkBox1);
             this.groupBox2.Controls.Add(this.textBox8);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.textBox7);
@@ -242,7 +244,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 267);
+            this.label4.Location = new System.Drawing.Point(6, 272);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 13);
             this.label4.TabIndex = 1;
@@ -250,10 +252,10 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(6, 283);
+            this.textBox4.Location = new System.Drawing.Point(9, 288);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(231, 114);
+            this.textBox4.Size = new System.Drawing.Size(231, 109);
             this.textBox4.TabIndex = 0;
             // 
             // comboBox1
@@ -361,6 +363,16 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(9, 252);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(76, 17);
+            this.checkBox1.TabIndex = 21;
+            this.checkBox1.Text = "Выкуплен";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // R_tovar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -419,5 +431,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Znach;
         private System.Windows.Forms.DataGridViewTextBoxColumn PK;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

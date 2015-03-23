@@ -176,8 +176,8 @@ namespace Формы_Сучкова
 
         private void button6_Click(object sender, EventArgs e)
         {
-            string name, serial_number, about_product;
-            int komnis, base_price, expected_price,pk_subkat,pay_stay;
+            string name="", serial_number="", about_product="";
+            int commis=0, min_inp_price=0, expected_price=0,pk_subcat=0,pay_stay=0,flag_owner=0;
 
             if (textBox1.Text == "")
             {
@@ -201,7 +201,7 @@ namespace Формы_Сучкова
                 return;
             }
             else
-                komnis = Convert.ToInt32(textBox2.Text);
+                commis = Convert.ToInt32(textBox2.Text);
 
             if (textBox3.Text == "")
             {
@@ -217,7 +217,7 @@ namespace Формы_Сучкова
                 return;
             }
             else
-                base_price = Convert.ToInt32(textBox6.Text);
+                min_inp_price = Convert.ToInt32(textBox6.Text);
 
             if (textBox7.Text == "")
             {
@@ -235,6 +235,13 @@ namespace Формы_Сучкова
             else
                 about_product = textBox6.Text;
 
+            if (checkBox1.Checked == true)
+                flag_owner = 1;
+
+
+            Product new_prod = new Product(pk_subcat, name, serial_number, min_inp_price, commis, pay_stay, expected_price,flag_owner);
+            static_class.product = new_prod;
+            this.Close();
 
         }
 
