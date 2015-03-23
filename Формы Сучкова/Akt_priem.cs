@@ -69,7 +69,7 @@ namespace Формы_Сучкова
 
         private void button3_Click(object sender, EventArgs e)
         {
-            R_tovar form_priem = new R_tovar();
+            R_tovar form_priem = new R_tovar(this);
             form_priem.Show();
         }
     }
