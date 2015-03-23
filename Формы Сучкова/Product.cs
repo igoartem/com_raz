@@ -41,7 +41,7 @@ namespace Формы_Сучкова
             this.garant = garant;
         }
 
-        public Product(int pk_act, int pk_subcat, string name, string sn, int min_inp_price, int comission, int pay_stay, int expect_price, int flag_owner, int garant)
+        public Product(int pk_act, int pk_subcat, string name, string sn, int min_inp_price, int comission, int pay_stay, int expect_price, int flag_owner)
         {
             
             this.pk_act = pk_act;
@@ -54,7 +54,20 @@ namespace Формы_Сучкова
             this.pk_stat = 21;                              //В продаже, при необходимости изменить
             this.expect_price = expect_price;
             this.flag_owner = flag_owner;
-            this.garant = garant;
+            //this.garant = garant;
+        }
+
+        public Product(int pk_subcat, string name, string sn, int min_inp_price, int comission, int pay_stay, int expect_price, int flag_owner)
+        {
+            this.pk_subcat = pk_subcat;
+            this.name = name;
+            this.sn = sn;
+            this.min_inp_price = min_inp_price;
+            this.comission = comission;
+            this.pay_stay = pay_stay;
+            this.pk_stat = 21;                              //В продаже, при необходимости изменить
+            this.expect_price = expect_price;
+            this.flag_owner = flag_owner;           
         }
 
     }
