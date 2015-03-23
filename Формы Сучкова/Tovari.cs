@@ -37,6 +37,7 @@ namespace Формы_Сучкова
             int i = 0;
 
             dataGridView1.Enabled = false;
+            dataGridView1.Rows.Clear();
             while (dr1.Read())
             {
                 dataGridView1.Rows.Add();
@@ -112,7 +113,7 @@ namespace Формы_Сучкова
                 MessageBox.Show("Error Base!");
             }
 
-            con1 = new OracleConnection("Data Source=(DESCRIPTION =(ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = "+ s +")(PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = xe))); User Id=" + "admin" + ";Password=" + "123" + ";");
+            con1 = new OracleConnection("Data Source=(DESCRIPTION =(ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = "+ s +")(PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = XE))); User Id=" + "admin" + ";Password=" + "123" + ";");
             cmd1 = new OracleCommand("", con1);
             con1.Open();
 
@@ -138,14 +139,17 @@ namespace Формы_Сучкова
         private void button2_Click(object sender, EventArgs e)
         {
             //Удаление
-            for (int i = 0; i < dataGridView1.RowCount - 1; i++)
-            {
-                if (dataGridView1.Rows[i].Cells[0].Value.ToString() == "true")
-                {
-                    cmd1.CommandText = "delete from product where product.pk_prod = " + dataGridView1.Rows[i].Cells[0].Value.ToString();
-                    refresh();
-                }
-            }
+            //for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+            //{
+            //    if (dataGridView1.Rows[i].Cells[0].Value == null)
+            //    {
+            //        textBox4.Text = " ДА";
+            //        //cmd1.CommandText = "delete from product where product.pk_prod = " + dataGridView1.Rows[i].Cells[0].Value.ToString();
+            //    }
+            //}
+
+            //textBox4.Text = dataGridView1.
+            refresh();
         }
 
         private void button6_Click(object sender, EventArgs e)
