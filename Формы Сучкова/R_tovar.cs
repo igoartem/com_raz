@@ -235,7 +235,7 @@ namespace Формы_Сучкова
             else
                 about_product = textBox6.Text;
 
-            
+
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
