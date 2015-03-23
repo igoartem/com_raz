@@ -17,5 +17,11 @@ namespace Формы_Сучкова
         
         
         }
+        public Category(string name,int pk_cat)
+        {
+            this.name = name;
+            this.pk_cat = pk_cat; 
+
+        }
     }
 }

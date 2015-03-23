@@ -15,11 +15,12 @@ namespace Формы_Сучкова
 {
     public partial class R_tovar : Form
     {
-        OracleCommand cmd_r_tovar,cmd_kat;
+        OracleCommand cmd_r_tovar;
         OracleConnection con_r_tovar;
-        OracleDataReader dr_r_tovar, dr_kat,dr_subkat;
-        
+        OracleDataReader dr_r_tovar;
 
+        List<Category> list_category;
+        List<Subcategory> list_subcategory;
         public R_tovar()
         {
             InitializeComponent();
@@ -51,6 +52,8 @@ namespace Формы_Сучкова
 
         private void R_tovar_Load(object sender, EventArgs e)
         {
+            list_category = new List<Category>();
+            list_subcategory = new List<Subcategory>();
             StreamReader sr;
             string s = "localhost";
             try
@@ -64,16 +67,25 @@ namespace Формы_Сучкова
                 MessageBox.Show("Error Base!");
             }
             con_r_tovar = new OracleConnection("Data Source=(DESCRIPTION =(ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = " + s + ")(PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = xe))); User Id=" + "admin" + ";Password=" + "123" + ";");
-            cmd_kat = new OracleCommand("", con_r_tovar);
+            cmd_r_tovar = new OracleCommand("", con_r_tovar);
             con_r_tovar.Open();
-            cmd_kat.CommandText = "SELECT * from CATEGORY";
-            dr_kat = cmd_kat.ExecuteReader();
-            while (dr_kat.Read())
+            cmd_r_tovar.CommandText = "SELECT * from CATEGORY";
+            dr_r_tovar = cmd_r_tovar.ExecuteReader();
+            
+            while (dr_r_tovar.Read())
             {
-                comboBox1.Items.Add(dr_kat[1].ToString());
+                comboBox1.Items.Add(dr_r_tovar[1].ToString());
+                list_category.Add(new Category(dr_r_tovar[1].ToString(), Convert.ToInt32(dr_r_tovar[0])));
             }
 
-            
+            cmd_r_tovar.CommandText = "select * from SUBCATEGORY";
+
+            dr_r_tovar = cmd_r_tovar.ExecuteReader();
+            while (dr_r_tovar.Read())
+            {
+                list_subcategory.Add(new Subcategory(Convert.ToInt32(dr_r_tovar[0]),dr_r_tovar[2].ToString(), Convert.ToInt32(dr_r_tovar[1]), Convert.ToInt32(dr_r_tovar[3]), Convert.ToInt32(dr_r_tovar[4]) ));
+                
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -83,23 +95,23 @@ namespace Формы_Сучкова
             
             string name = comboBox1.Items[comboBox1.SelectedIndex].ToString();
             int pk=0;
-          //  cmd_r_tovar.CommandText = "SELECT * from CATEGORY";
-            dr_kat = cmd_kat.ExecuteReader();
-            
-            while (dr_kat.Read())
+         
+            int kol_vo=list_category.Count;
+            for (int i = 0; i < kol_vo; i++)
             {
-                if (dr_kat[1].ToString() == name)
-                    pk = Convert.ToInt32(dr_kat[0]);
+                if (list_category[i].name == name)
+                    pk = list_category[i].pk_cat;
+
             }
 
-            cmd_r_tovar.CommandText = "select * from SUBCATEGORY";
-
-            dr_r_tovar = cmd_r_tovar.ExecuteReader();
-            while (dr_r_tovar.Read())
+            kol_vo=list_subcategory.Count;
+            for (int i = 0; i < kol_vo; i++)
             {
-                if (Convert.ToInt32(dr_r_tovar[1]) == pk)
-                    comboBox2.Items.Add(dr_r_tovar[2].ToString());
+                if(list_subcategory[i].pk_cat==pk)
+                    comboBox2.Items.Add(list_subcategory[i].name);
             }
+
+                
 
         }
 
@@ -238,12 +250,35 @@ namespace Формы_Сучкова
             if (checkBox1.Checked == true)
                 flag_owner = 1;
 
-            pk_subcat = 29;
-            //pk_act;
+            if (comboBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show("Не заполнено поле категория!");
+                return;
+
+            }
+            if (comboBox2.SelectedIndex == -1)
+            {
+                MessageBox.Show("Не заполнено поле подкатегория!");
+                return;
+
+            }
+            else
+            {
+                int kol_vo=list_subcategory.Count;
+                int index = comboBox1.SelectedIndex;
+                if (index > 0)
+                    index--;
+                for (int i = 0; i < kol_vo; i++)
+                {
+                    if (comboBox2.Items[index].ToString() == list_subcategory[i].name)
+                        pk_subcat = list_subcategory[i].pk_subcat;
+
+                }
+
+
+            }
+
             Product new_prod = new Product(pk_subcat, name, serial_number, min_inp_price, commis, pay_stay, expected_price,flag_owner);
-            new_prod.pk_act = 32;
-            new_prod.makeSQLinsert();
-            new_prod.makeSQLupdate();
             static_class.product = new_prod;
             this.Close();
 
@@ -251,24 +286,7 @@ namespace Формы_Сучкова
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //string name = comboBox1.Items[comboBox1.SelectedIndex].ToString();
-            //int pk = 0;
-            //cmd_r_tovar.CommandText = "SELECT * from CATEGORY";
-            //dr_r_tovar = cmd_r_tovar.ExecuteReader();
-            //while (dr_r_tovar.Read())
-            //{
-            //    if (dr_r_tovar[1].ToString() == name)
-            //        pk = Convert.ToInt32(dr_r_tovar[0]);
-            //}
-
-            //cmd_r_tovar.CommandText = "select * from SUBCATEGORY";
-
-            //dr_r_tovar = cmd_r_tovar.ExecuteReader();
-            //while (dr_r_tovar.Read())
-            //{
-            //    if (Convert.ToInt32(dr_r_tovar[1]) == pk)
-            //        comboBox2.Items.Add(dr_r_tovar[2].ToString());
-            //}
+            
         }
     }
 }

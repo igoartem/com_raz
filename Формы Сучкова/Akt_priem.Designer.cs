@@ -55,7 +55,6 @@
             this.Cost_buy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cost_sell = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.komiss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -227,6 +226,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.bought,
@@ -234,8 +235,7 @@
             this.Plata_prst,
             this.Cost_buy,
             this.Cost_sell,
-            this.komiss,
-            this.PK});
+            this.komiss});
             this.dataGridView1.Location = new System.Drawing.Point(6, 19);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(474, 200);
@@ -298,12 +298,6 @@
             this.komiss.HeaderText = "Комиссия (%)";
             this.komiss.Name = "komiss";
             // 
-            // PK
-            // 
-            this.PK.HeaderText = "PK";
-            this.PK.Name = "PK";
-            this.PK.Visible = false;
-            // 
             // Akt_priem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -355,6 +349,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cost_buy;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cost_sell;
         private System.Windows.Forms.DataGridViewTextBoxColumn komiss;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PK;
     }
 }

@@ -72,8 +72,24 @@ namespace Формы_Сучкова
         private void button3_Click(object sender, EventArgs e)
         {
             R_tovar form_priem = new R_tovar(this);
-            form_priem.Show();
-            list_product.Add(static_class.product);
+            form_priem.ShowDialog();
+            Product prod = static_class.product;
+            list_product.Add(prod);
+
+            dataGridView1.Rows.Add();
+            int kol_vo_row=dataGridView1.RowCount-1;
+
+            if (list_product[list_product.Count - 1].flag_owner==1)
+                dataGridView1.Rows[kol_vo_row].Cells[0].Value = true;
+            dataGridView1.Rows[kol_vo_row].Cells[1].Value=list_product[list_product.Count-1].name.ToString();
+            
+            dataGridView1.Rows[kol_vo_row ].Cells[2].Value = list_product[list_product.Count - 1].pay_stay;
+            dataGridView1.Rows[kol_vo_row ].Cells[3].Value = list_product[list_product.Count - 1].min_inp_price;
+            dataGridView1.Rows[kol_vo_row ].Cells[4].Value = list_product[list_product.Count - 1].expect_price;
+            dataGridView1.Rows[kol_vo_row ].Cells[5].Value = list_product[list_product.Count - 1].comission;
+           // dataGridView1.Rows[kol_vo_row - 1].Cells[6].Value = list_product[list_product.Count - 1].name.ToString();
+            
+            
         }
     }
 }

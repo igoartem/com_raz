@@ -24,5 +24,15 @@ namespace Формы_Сучкова
         
         
         }
+        public Subcategory(int pk_subcat,string name, int pk_cat, int comission, int pay_stay)
+        {
+            this.pk_subcat = pk_subcat;
+            this.name = name;
+            this.pk_cat = pk_cat;
+            this.comission = comission;
+            this.pay_stay = pay_stay;
+
+
+        }
     }
 }
