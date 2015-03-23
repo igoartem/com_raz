@@ -84,6 +84,7 @@
     <Compile Include="Arhiv.Designer.cs">
       <DependentUpon>Arhiv.cs</DependentUpon>
     </Compile>
+    <Compile Include="Category.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +148,7 @@
     <Compile Include="Statistic.Designer.cs">
       <DependentUpon>Statistic.cs</DependentUpon>
     </Compile>
+    <Compile Include="Subcategory.cs" />
     <Compile Include="Tovari.cs">
       <SubType>Form</SubType>
     </Compile>
