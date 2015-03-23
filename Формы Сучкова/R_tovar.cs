@@ -243,6 +243,7 @@ namespace Формы_Сучкова
             Product new_prod = new Product(pk_subcat, name, serial_number, min_inp_price, commis, pay_stay, expected_price,flag_owner);
             new_prod.pk_act = 32;
             new_prod.makeSQLinsert();
+            new_prod.makeSQLupdate();
             static_class.product = new_prod;
             this.Close();
 
