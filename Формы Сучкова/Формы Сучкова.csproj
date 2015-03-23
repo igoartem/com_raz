@@ -217,6 +217,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tovari.resx">
       <DependentUpon>Tovari.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Workers.resx">
       <DependentUpon>Workers.cs</DependentUpon>

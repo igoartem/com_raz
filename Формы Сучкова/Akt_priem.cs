@@ -61,7 +61,10 @@ namespace Формы_Сучкова
 
 
             
-                                    //  INSERT INTO "ADMIN"."PRODUCT" (PK_ACT, PK_SUBCAT, NAME, SN, MIN_INP_PRICE, COMISSION, PAY_STAY, PK_STAT, EXPECT_PRICE) VALUES ('7', '3', '23343', '324234324', '3434', '2', '8', '112', '323434')
+            
+            
+            //  INSERT INTO "ADMIN"."PRODUCT" (PK_ACT, PK_SUBCAT, NAME, SN, MIN_INP_PRICE, COMISSION, PAY_STAY, PK_STAT, EXPECT_PRICE) VALUES ('7', '3', '23343', '324234324', '3434', '2', '8', '112', '323434')
+
         }
 
         private void button3_Click(object sender, EventArgs e)

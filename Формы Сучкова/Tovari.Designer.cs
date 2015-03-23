@@ -73,6 +73,19 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+
+            this.Select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Naimenovanie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.P_category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prodan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Owner = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date_ot = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date_end = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Garant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -95,16 +108,16 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Select,
-            this.PK,
             this.Naimenovanie,
             this.Category,
             this.P_category,
             this.Cost,
             this.Prodan,
+            this.Owner,
             this.Date_ot,
             this.Date_end,
-            this.Garant,
-            this.Owner});
+            this.PK,
+            this.Garant});
             this.dataGridView1.Location = new System.Drawing.Point(6, 19);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(847, 422);
@@ -355,8 +368,9 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(125, 30);
             this.button2.TabIndex = 3;
-            this.button2.Text = "Отправить в архив";
+            this.button2.Text = "Удалить\r\nОтправить в архив";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -468,6 +482,73 @@
             this.button8.Text = "Списать товар";
             this.button8.UseVisualStyleBackColor = true;
             // 
+            // Select
+            // 
+            this.Select.FalseValue = "false";
+            this.Select.HeaderText = "Выделить";
+            this.Select.Name = "Select";
+            this.Select.TrueValue = "true";
+            this.Select.Width = 60;
+            // 
+            // Naimenovanie
+            // 
+            this.Naimenovanie.HeaderText = "Наименование";
+            this.Naimenovanie.Name = "Naimenovanie";
+            // 
+            // Category
+            // 
+            this.Category.HeaderText = "Категория";
+            this.Category.Name = "Category";
+            // 
+            // P_category
+            // 
+            this.P_category.HeaderText = "Подкатегория";
+            this.P_category.Name = "P_category";
+            // 
+            // Cost
+            // 
+            this.Cost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Cost.HeaderText = "Ожидаемая цена";
+            this.Cost.Name = "Cost";
+            // 
+            // Prodan
+            // 
+            this.Prodan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Prodan.HeaderText = "Статус";
+            this.Prodan.Name = "Prodan";
+            // 
+            // Owner
+            // 
+            this.Owner.HeaderText = "Выкуплен";
+            this.Owner.Name = "Owner";
+            this.Owner.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Owner.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Owner.Width = 60;
+            // 
+            // Date_ot
+            // 
+            this.Date_ot.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Date_ot.HeaderText = "Дата приема";
+            this.Date_ot.Name = "Date_ot";
+            // 
+            // Date_end
+            // 
+            this.Date_end.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Date_end.HeaderText = "Дата окончания";
+            this.Date_end.Name = "Date_end";
+            // 
+            // PK
+            // 
+            this.PK.HeaderText = "PK";
+            this.PK.Name = "PK";
+            // 
+            // Garant
+            // 
+            this.Garant.HeaderText = "Осталось гарантии";
+            this.Garant.Name = "Garant";
+            this.Garant.Width = 60;
+            // 
+
             // Tovari
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -537,15 +618,15 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Select;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PK;
         private System.Windows.Forms.DataGridViewTextBoxColumn Naimenovanie;
         private System.Windows.Forms.DataGridViewTextBoxColumn Category;
         private System.Windows.Forms.DataGridViewTextBoxColumn P_category;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cost;
         private System.Windows.Forms.DataGridViewTextBoxColumn Prodan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Owner;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date_ot;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date_end;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PK;
         private System.Windows.Forms.DataGridViewTextBoxColumn Garant;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Owner;
     }
 }
