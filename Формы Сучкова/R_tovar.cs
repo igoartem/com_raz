@@ -238,8 +238,11 @@ namespace Формы_Сучкова
             if (checkBox1.Checked == true)
                 flag_owner = 1;
 
-
+            pk_subcat = 29;
+            //pk_act;
             Product new_prod = new Product(pk_subcat, name, serial_number, min_inp_price, commis, pay_stay, expected_price,flag_owner);
+            new_prod.pk_act = 32;
+            new_prod.makeSQLinsert();
             static_class.product = new_prod;
             this.Close();
 

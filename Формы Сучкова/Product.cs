@@ -77,67 +77,67 @@ namespace Формы_Сучкова
             string s2 = ") VALUES (";
             if(pk_act != 0)
             {
-                s1 += "pk_act";
+                s1 += "pk_act,";
                 s2 += pk_act + " ,";
             }
             if(pk_subcat != 0)
             {
-                s1 += "pk_subcat";
+                s1 += " pk_subcat,";
                 s2 += pk_subcat + " ,";
             }
             if(name != "")
             {
-                s1 += "name";
-                s2 += name + " ,";
+                s1 += " name,";
+                s2 += "'" + name + "' ,";
             }
             if(sn != "")
             {
-                s1 += "sn";
-                s2 += sn + " ,";
+                s1 += " sn,";
+                s2 += "'" + sn + "' ,";
             }
             if(pk_cheque != 0)
             {
-                s1 += "pk_cheque";
+                s1 += " pk_cheque,";
                 s2 += pk_cheque + " ,";
             }
             if(min_inp_price != 0)
             {
-                s1 += "min_inp_price";
+                s1 += " min_inp_price,";
                 s2 += min_inp_price + " ,";
             }
             if(comission != 0)
             {
-                s1 += "comission";
+                s1 += " comission,";
                 s2 += comission + " ,";
             }
             if(pay_stay != 0)
             {
-                s1 += "pay_stay";
+                s1 += " pay_stay,";
                 s2 += pay_stay + " ,";
             }
             if(pk_stat != 0)
             {
-                s1 += "pk_stat";
+                s1 += " pk_stat,";
                 s2 += pk_stat + " ,";
             }
             if(expect_price != 0)
             {
-                s1 += "expect_price";
+                s1 += " expect_price,";
                 s2 += expect_price + " ,";
             }
             if(finish_price != 0)
             {
-                s1 += "finish_price";
+                s1 += " finish_price," + " ,";
                 s2 += finish_price + " ,";
             }
             if(flag_owner != 0)
             {
-                s1 += "flag_owner";
+                s1 += " flag_owner,";
                 s2 += flag_owner + " ,";
             }
             if(garant != 0)
             {
-                s1 += "garant";
+                s1 += " garant,";
                 s2 += garant + " ,";
             }
 
@@ -145,10 +145,11 @@ namespace Формы_Сучкова
            //   flag_owner,garant) VALUES (";subcat,  name,  sn, pk_cheque,  min_inp_price, comission,  pay_stay,  pk_stat,  expect_price, finish_price, flag_owner,garant)";
             
             s2 = s2.Substring(0, s2.Length - 1);       //затёр ,
+            s1 = s1.Substring(0, s1.Length - 1);
             s2+=")";
 
 
-            string s3 = s2 + s1;
+            string s3 = s1 + s2;
             return s3;
         }
     }
