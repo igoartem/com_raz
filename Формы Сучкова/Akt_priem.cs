@@ -13,9 +13,11 @@ namespace Формы_Сучкова
 {
     public partial class Akt_priem : Form
     {
+        List<Product> list_product;
         public Akt_priem()
         {
             InitializeComponent();
+            list_product = new List<Product>();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -71,6 +73,7 @@ namespace Формы_Сучкова
         {
             R_tovar form_priem = new R_tovar(this);
             form_priem.Show();
+            list_product.Add(static_class.product);
         }
     }
 }
