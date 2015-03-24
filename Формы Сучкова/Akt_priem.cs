@@ -13,9 +13,11 @@ namespace Формы_Сучкова
 {
     public partial class Akt_priem : Form
     {
+        List<Product> list_product;
         public Akt_priem()
         {
             InitializeComponent();
+            list_product = new List<Product>();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -69,8 +71,60 @@ namespace Формы_Сучкова
 
         private void button3_Click(object sender, EventArgs e)
         {
-            R_tovar form_priem = new R_tovar();
-            form_priem.Show();
+            R_tovar form_priem = new R_tovar(this);
+            form_priem.ShowDialog();
+            Product prod = static_class.product;
+            list_product.Add(prod);
+
+            add_datagrid(list_product[list_product.Count-1]);
+           
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentCell == null)
+            {
+                MessageBox.Show("Не выбран товар для удаления!");
+                return;
+
+            }
+            else
+            {
+                list_product.RemoveAt(dataGridView1.CurrentCell.RowIndex);
+                update_datagrid();
+            }
+        }
+
+        private void add_datagrid(Product prod)
+        {
+            dataGridView1.Rows.Add();
+            int kol_vo_row = dataGridView1.RowCount - 1;
+
+            if (list_product[list_product.Count - 1].flag_owner == 1)
+                dataGridView1.Rows[kol_vo_row].Cells[0].Value = true;
+            dataGridView1.Rows[kol_vo_row].Cells[1].Value = prod.name.ToString();
+            dataGridView1.Rows[kol_vo_row].Cells[2].Value = prod.pay_stay;
+            dataGridView1.Rows[kol_vo_row].Cells[3].Value = prod.min_inp_price;
+            dataGridView1.Rows[kol_vo_row].Cells[4].Value = prod.expect_price;
+            dataGridView1.Rows[kol_vo_row].Cells[5].Value = prod.comission;
+
+
+        }
+
+        private void update_datagrid(){
+
+            dataGridView1.Rows.Clear();
+            int kol_vo=list_product.Count;
+            for (int i = 0; i < kol_vo;i++ )
+            {
+                add_datagrid(list_product[i]);
+            }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
