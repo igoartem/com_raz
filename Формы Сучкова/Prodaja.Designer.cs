@@ -38,7 +38,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.PK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pk_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Naim = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Owner = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Garant = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -137,7 +137,7 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.PK,
+            this.pk_,
             this.Naim,
             this.Owner,
             this.Garant,
@@ -151,12 +151,12 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             // 
-            // PK
+            // pk_
             // 
-            this.PK.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.PK.HeaderText = "PK";
-            this.PK.Name = "PK";
-            this.PK.ReadOnly = true;
+            this.pk_.HeaderText = "pk";
+            this.pk_.Name = "pk_";
+            this.pk_.ReadOnly = true;
+            this.pk_.Width = 20;
             // 
             // Naim
             // 
@@ -175,23 +175,27 @@
             // 
             this.Garant.HeaderText = "Гарантия(дни)";
             this.Garant.Name = "Garant";
+            this.Garant.Width = 80;
             // 
             // Cost
             // 
             this.Cost.HeaderText = "Ожидаемая цена";
             this.Cost.Name = "Cost";
             this.Cost.ReadOnly = true;
+            this.Cost.Width = 80;
             // 
             // Discount
             // 
             this.Discount.HeaderText = "Скидка (руб.)";
             this.Discount.Name = "Discount";
             this.Discount.ReadOnly = true;
+            this.Discount.Width = 80;
             // 
             // Cost_itog
             // 
             this.Cost_itog.HeaderText = "Итог. цена";
             this.Cost_itog.Name = "Cost_itog";
+            this.Cost_itog.Width = 80;
             // 
             // min_cost
             // 
@@ -236,7 +240,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pk_;
         private System.Windows.Forms.DataGridViewTextBoxColumn Naim;
         private System.Windows.Forms.DataGridViewTextBoxColumn Owner;
         private System.Windows.Forms.DataGridViewTextBoxColumn Garant;

@@ -41,8 +41,10 @@ namespace Формы_Сучкова
             comboBox1.Items.Clear();
             comboBox2.Items.Clear();
             comboBox4.Items.Clear();
+
             list_subcategory.Clear();
             list_category.Clear();
+
 
             comboBox3.SelectedIndex = 0;
             
@@ -78,9 +80,13 @@ namespace Формы_Сучкова
             if (comboBox2.Items.Count != 0)
                 comboBox2.SelectedIndex = 0;
         }
-
-
         public void refresh()
+        {
+            refresh_telo();
+            dataGridView1.Enabled = true;
+        }
+
+        public void refresh_telo()
         {
             cmd1.CommandText = "SELECT product.name, category.name, subcategory.name, product.EXPECT_PRICE, status.NAME, product.FLAG_OWNER, input_act.DATE_INP, input_act.DATE_END, product.PK_PROD FROM input_act, product, status, category, subcategory where product.PK_SUBCAT = subcategory.PK_SUBCAT and subcategory.PK_CAT = category.PK_CAT and product.PK_STAT = status.PK_STAT and product.PK_ACT = input_act.PK_ACT";
             dr1 = cmd1.ExecuteReader();
@@ -122,7 +128,7 @@ namespace Формы_Сучкова
                 i++;
             }
             count = dataGridView1.Rows.Count;
-            dataGridView1.Enabled = true;       // посчитали все элементы и включили грид
+            //dataGridView1.Enabled = true;       // посчитали все элементы и включили грид
         } 
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -282,7 +288,7 @@ namespace Формы_Сучкова
         private void button4_Click(object sender, EventArgs e)
         {
             if(dataGridView1.RowCount < count)
-                refresh();
+                refresh_telo();
             for (int i = 0; i < dataGridView1.RowCount; i++)
             {
                 if (textBox3.Text != "")
@@ -340,7 +346,7 @@ namespace Формы_Сучкова
                     };//статус
                 }
             }
-            //dataGridView1.Enabled = true;
+            dataGridView1.Enabled = true;
         }
 
         private void button7_Click(object sender, EventArgs e)

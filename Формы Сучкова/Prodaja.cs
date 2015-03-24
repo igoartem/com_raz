@@ -22,6 +22,8 @@ namespace Формы_Сучкова
         bool loading = true;
         int summ = 0;
         int stock_garant = 0;
+        int rejim = -1; // 0 - пришли продать 1 - пришли посмотреть чек
+        int pk = 0;
 
         string str0;// PK
         string str1; // NAIMENOV
@@ -31,7 +33,36 @@ namespace Формы_Сучкова
         string str5; // Fin_cost
         string temp;
 
-        public void load()
+        public void load_view()
+        {
+            cmd_prod.CommandText = "select date_ch, worker.fio from cheque, worker where PK_CHEQUE = " + pk.ToString() + " and cheque.PK_WORKER = worker.PK_WORKER";
+            dr_prod = cmd_prod.ExecuteReader();
+            dr_prod.Read();
+            textBox5.Text = dr_prod[0].ToString();
+            textBox4.Text = dr_prod[1].ToString();
+
+            cmd_prod.CommandText = "select product.pk_prod, product.name, seller.FIO, product.garant, product.expect_price,product.finish_price,product.min_inp_price from product, input_act, seller where product.PK_cheque = " + pk.ToString() + " and product.PK_ACT = input_act.PK_ACT and input_act.PK_SELL = seller.PK_SELL";
+            dr_prod = cmd_prod.ExecuteReader();
+
+            while (dr_prod.Read())
+            {
+                dataGridView1.Rows.Add();
+                dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[0].Value = dr_prod[0].ToString(); // PK
+                dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[1].Value = dr_prod[1].ToString(); // naimenov
+                dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[2].Value = dr_prod[2].ToString(); //FIO
+                dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[3].Value = dr_prod[3].ToString(); //garant
+                dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[4].Value = dr_prod[4].ToString(); //exp_cost
+                dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[6].Value = dr_prod[5].ToString(); // Fin_price
+                dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[7].Value = dr_prod[6].ToString(); // min price
+
+            dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[5].Value = (Convert.ToInt32(dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[4].Value) - Convert.ToInt32(dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[6].Value));
+
+            summ += Convert.ToInt32(dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[6].Value);
+            }
+            textBox7.Text = summ.ToString();
+        }
+
+        public void load_prod()
         {
             textBox5.Text = DateTime.Now.ToString();
 
@@ -57,7 +88,7 @@ namespace Формы_Сучкова
             {
                 foreach (int element in list_prod)
                 {
-                    if (Convert.ToInt32(dr_prod[0].ToString()) == element && Convert.ToInt32(dr_prod[5].ToString()) != 22) // 22 - ПК О СТАТУСЕ ПРОДАЖИ
+                    if (Convert.ToInt32(dr_prod[0].ToString()) == element && Convert.ToInt32(dr_prod[5].ToString()) != static_class.tov_status) // 22 - ПК О СТАТУСЕ ПРОДАЖИ
                     {
                         dataGridView1.Rows.Add();
                         dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[0].Value = dr_prod[0].ToString(); // PK
@@ -82,18 +113,22 @@ namespace Формы_Сучкова
 
         public Prodaja(List<int> list)
         {
+            rejim = 0;
             loading = true;
             list_prod = list;
             InitializeComponent();
         }
 
-        public Prodaja(R_tovar my,int pk)
+        public Prodaja(R_tovar my,int pk_inp)
         {
-            
+            rejim = 1;
+            pk = pk_inp;
             InitializeComponent();
+            label5.Text = "Чек продажи";
+            button1.Visible = false;
         }
 
-        private void Prodaja_Load(object sender, EventArgs e)
+        public void connect()
         {
             StreamReader sr;
             string s = null;
@@ -111,13 +146,22 @@ namespace Формы_Сучкова
             con_prod = new OracleConnection("Data Source=(DESCRIPTION =(ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = " + s + ")(PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = XE))); User Id=" + "admin" + ";Password=" + "123" + ";");
             cmd_prod = new OracleCommand("", con_prod);
             con_prod.Open();
+        }
 
-            load();
+        private void Prodaja_Load(object sender, EventArgs e)
+        {
+            connect();
+            switch (rejim)
+            {
+                case 0: load_prod(); break;
+                case 1: load_view(); break;
+            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            str0 = "20";
+            str0 = static_class.worker.ToString(); // РАБОТНИК ПО УМОЛЧАНИЮ
             str1 = DateTime.Now.ToString();
             string ss = "INSERT INTO cheque (pk_worker, date_ch) VALUES ('" + str0 + "', to_date( '" + str1 + "','DD.MM.YYYY HH24:MI:SS' ))";
             cmd_prod.CommandText = ss;
