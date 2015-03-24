@@ -350,15 +350,15 @@ namespace Формы_Сучкова
                 {
                     if (dataGridView1.Rows[i].Cells[0].Value.ToString() == "true")
                     {
-                        count++;
+                        cnt++;
                         pk = Convert.ToInt32(dataGridView1.Rows[i].Cells[9].Value);
                     }
                 }
             }
             if (cnt == 1)
             {
-                R_tovar r_tovar = new R_tovar();
-                //r_tovar.ShowDialog(this,pk);
+                R_tovar r_tovar = new R_tovar(this, pk); //вызов описания фии
+                r_tovar.ShowDialog();
                 refresh();
             }
             else
