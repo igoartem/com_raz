@@ -241,7 +241,8 @@ namespace Формы_Сучкова
         private void button6_Click(object sender, EventArgs e)
         {
             Akt_priem add_tovar = new Akt_priem();
-            add_tovar.Show();
+            add_tovar.ShowDialog();
+            refresh();
 
         }
 
@@ -336,6 +337,30 @@ namespace Формы_Сучкова
                 }
             }
             //dataGridView1.Enabled = true;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            int cnt = 0, pk = 0;
+            for (int i = 0; i < dataGridView1.RowCount; i++)    //обходим грид и смотрим есть ли чекнутые товары
+            {
+                if (dataGridView1.Rows[i].Cells[0].Value != null)
+                {
+                    if (dataGridView1.Rows[i].Cells[0].Value.ToString() == "true")
+                    {
+                        count++;
+                        pk = Convert.ToInt32(dataGridView1.Rows[i].Cells[9].Value);
+                    }
+                }
+            }
+            if (cnt == 1)
+            {
+                R_tovar r_tovar = new R_tovar();
+                r_tovar.ShowDialog(this,pk);
+                refresh();
+            }
+            else
+                MessageBox.Show("Выберите 1 товар", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
     }
 }
