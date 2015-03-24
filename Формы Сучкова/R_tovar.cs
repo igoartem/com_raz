@@ -294,5 +294,11 @@ namespace Формы_Сучкова
         {
 
         }
+
+        private void R_tovar_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //if(static_class.product)
+            //static_class.product = null;
+        }
     }
 }

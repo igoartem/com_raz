@@ -43,9 +43,9 @@ namespace Формы_Сучкова
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string fio, number_phone,passport, seller;
+            string fio, number_phone, passport, seller;
             int kol_days;
-            DateTime date_fin,date_start;
+            DateTime date_fin, date_start;
 
             if (textBox1.Text == "")
             {
@@ -54,7 +54,7 @@ namespace Формы_Сучкова
             }
             else
                 fio = textBox1.Text;
-            if (textBox2.Text=="")
+            if (textBox2.Text == "")
             {
                 MessageBox.Show("Не заполнено поле номер телефона!");
                 return;
@@ -84,23 +84,23 @@ namespace Формы_Сучкова
                 return;
             }
 
-            
+
 
             string ss = "INSERT INTO SELLER (FIO, PASSPORT, PHONE) VALUES ('" + fio + "', '" + passport + "','" + number_phone + "')";
             cmd_akt_priem.CommandText = ss;
             cmd_akt_priem.ExecuteNonQuery();
 
-            ss = "select pk_sell from seller where fio='"+ fio +"' and passport ='"+passport+"' and phone='"+number_phone+"'";
+            ss = "select pk_sell from seller where fio='" + fio + "' and passport ='" + passport + "' and phone='" + number_phone + "'";
             cmd_akt_priem.CommandText = ss;
             dr_akt_priem = cmd_akt_priem.ExecuteReader();
             dr_akt_priem.Read();
-            int pk_sell = Convert.ToInt32( dr_akt_priem[0]);
+            int pk_sell = Convert.ToInt32(dr_akt_priem[0]);
 
-            Inpit_act inp_act = new Inpit_act(static_class.worker,pk_sell); //здесь надо будет менять работника
+            Inpit_act inp_act = new Inpit_act(static_class.worker, pk_sell); //здесь надо будет менять работника
 
             inp_act.date_inp = date_start;
             inp_act.date_end = date_fin;
-            ss = "INSERT INTO INPUT_ACT (DATE_INP, DATE_END, PK_SELL, PK_WORKER) VALUES (TO_DATE('"+inp_act.date_inp.ToString()+"','DD.MM.YYYY HH24:MI:SS'), TO_DATE('"+inp_act.date_end.ToString()+"','DD.MM.YYYY HH24:MI:SS'),'" + inp_act.pk_sell + "', '" + inp_act.pk_worker + "')";
+            ss = "INSERT INTO INPUT_ACT (DATE_INP, DATE_END, PK_SELL, PK_WORKER) VALUES (TO_DATE('" + inp_act.date_inp.ToString() + "','DD.MM.YYYY HH24:MI:SS'), TO_DATE('" + inp_act.date_end.ToString() + "','DD.MM.YYYY HH24:MI:SS'),'" + inp_act.pk_sell + "', '" + inp_act.pk_worker + "')";
 
             cmd_akt_priem.CommandText = ss;
             cmd_akt_priem.ExecuteNonQuery();
@@ -113,12 +113,12 @@ namespace Формы_Сучкова
             int pk_inp_act = Convert.ToInt32(dr_akt_priem[0]);
 
 
-           // dr1 = cmd1.ExecuteReader();
+            // dr1 = cmd1.ExecuteReader();
             int kol_vo_tov = list_product.Count;
             for (int i = 0; i < kol_vo_tov; i++)
             {
                 list_product[i].pk_act = pk_inp_act;
-                ss=list_product[i].makeSQLinsert();
+                ss = list_product[i].makeSQLinsert();
                 cmd_akt_priem.CommandText = ss;
                 cmd_akt_priem.ExecuteNonQuery();
 
@@ -132,12 +132,13 @@ namespace Формы_Сучкова
         {
             R_tovar form_priem = new R_tovar(this);
             form_priem.ShowDialog();
-            
+
             Product prod = static_class.product;
             if (prod != null)
             {
                 list_product.Add(prod);
                 add_datagrid(list_product[list_product.Count - 1]);
+                static_class.product = null;
             }
         }
 
@@ -172,11 +173,12 @@ namespace Формы_Сучкова
 
         }
 
-        private void update_datagrid(){
+        private void update_datagrid()
+        {
 
             dataGridView1.Rows.Clear();
-            int kol_vo=list_product.Count;
-            for (int i = 0; i < kol_vo;i++ )
+            int kol_vo = list_product.Count;
+            for (int i = 0; i < kol_vo; i++)
             {
                 add_datagrid(list_product[i]);
             }
@@ -189,10 +191,22 @@ namespace Формы_Сучкова
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-            int kol_days = Convert.ToInt32(textBox4.Text);
+
+
+            int kol_days = 0;
+            //if (textBox4.Text != "" && textBox4.Text.Length < 6)
+            try 
+            { 
+                kol_days = Convert.ToInt32(textBox4.Text);
+                if (kol_days < 0 || kol_days > 1000)
+                    kol_days = 0;
+            
+            }
+            catch { }
             DateTime dt = dateTimePicker1.Value;
             dt = dt.AddDays(kol_days);
             dateTimePicker2.Value = dt;
+            
         }
     }
 }

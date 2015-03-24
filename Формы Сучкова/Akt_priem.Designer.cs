@@ -155,10 +155,12 @@
             // 
             // textBox6
             // 
+            this.textBox6.Enabled = false;
             this.textBox6.Location = new System.Drawing.Point(67, 97);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(413, 20);
             this.textBox6.TabIndex = 6;
+            this.textBox6.Text = "приемщик";
             // 
             // textBox3
             // 
