@@ -1,4 +1,3 @@
-D:\Repo\Формы Сучкова\obj\Debug\Формы Сучкова.csprojResolveAssemblyReference.cache
 C:\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Add_redact_worker.resources
 C:\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Akt_priem.resources
 C:\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Akt_spis.resources
