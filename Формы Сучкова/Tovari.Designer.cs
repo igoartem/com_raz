@@ -223,6 +223,7 @@
             this.button5.TabIndex = 14;
             this.button5.Text = "Сбросить";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -232,15 +233,16 @@
             this.button4.TabIndex = 5;
             this.button4.Text = "Найти";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(523, 53);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 13);
+            this.label7.Size = new System.Drawing.Size(44, 13);
             this.label7.TabIndex = 13;
-            this.label7.Text = "Продан:";
+            this.label7.Text = "Статус:";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // comboBox4
@@ -255,6 +257,10 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Неизвестно",
+            "Да",
+            "Нет"});
             this.comboBox3.Location = new System.Drawing.Point(320, 50);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(163, 21);
@@ -342,6 +348,8 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(163, 21);
             this.comboBox1.TabIndex = 1;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.RightToLeftChanged += new System.EventHandler(this.comboBox1_RightToLeftChanged);
             // 
             // label1
             // 
@@ -499,6 +507,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Tovari";
             this.Text = "Товары";
