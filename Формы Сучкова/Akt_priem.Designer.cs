@@ -47,14 +47,14 @@
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.bought = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Naim = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Plata_prst = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cost_buy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cost_sell = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.komiss = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -88,7 +88,7 @@
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Location = new System.Drawing.Point(12, 37);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(492, 220);
+            this.groupBox1.Size = new System.Drawing.Size(492, 204);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -149,7 +149,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(0, 100);
+            this.label8.Location = new System.Drawing.Point(6, 100);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(65, 13);
             this.label8.TabIndex = 7;
@@ -158,18 +158,18 @@
             // textBox6
             // 
             this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(67, 97);
+            this.textBox6.Location = new System.Drawing.Point(77, 97);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(413, 20);
+            this.textBox6.Size = new System.Drawing.Size(403, 20);
             this.textBox6.TabIndex = 6;
             this.textBox6.Text = "приемщик";
             this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(67, 71);
+            this.textBox3.Location = new System.Drawing.Point(77, 71);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(413, 20);
+            this.textBox3.Size = new System.Drawing.Size(403, 20);
             this.textBox3.TabIndex = 5;
             // 
             // label3
@@ -183,9 +183,9 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(67, 45);
+            this.textBox2.Location = new System.Drawing.Point(77, 45);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(413, 20);
+            this.textBox2.Size = new System.Drawing.Size(403, 20);
             this.textBox2.TabIndex = 3;
             // 
             // label2
@@ -208,9 +208,9 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(67, 19);
+            this.textBox1.Location = new System.Drawing.Point(77, 19);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(413, 20);
+            this.textBox1.Size = new System.Drawing.Size(403, 20);
             this.textBox1.TabIndex = 0;
             // 
             // button2
@@ -219,16 +219,16 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(82, 35);
             this.button2.TabIndex = 20;
-            this.button2.Text = "Сохранить";
+            this.button2.Text = "Сохранить\r\nакт";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dataGridView1);
-            this.groupBox3.Location = new System.Drawing.Point(12, 263);
+            this.groupBox3.Location = new System.Drawing.Point(12, 247);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(492, 225);
+            this.groupBox3.Size = new System.Drawing.Size(492, 241);
             this.groupBox3.TabIndex = 21;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Товары";
@@ -247,8 +247,28 @@
             this.komiss});
             this.dataGridView1.Location = new System.Drawing.Point(6, 19);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(474, 200);
+            this.dataGridView1.Size = new System.Drawing.Size(480, 216);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(334, 494);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(82, 35);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "Удалить товар";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(246, 494);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(82, 35);
+            this.button3.TabIndex = 23;
+            this.button3.Text = "Добавить товар";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // bought
             // 
@@ -287,26 +307,6 @@
             this.komiss.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.komiss.HeaderText = "Комиссия (%)";
             this.komiss.Name = "komiss";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(334, 494);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 35);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "Удалить товар";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(246, 494);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(82, 35);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "Добавить товар";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Akt_priem
             // 

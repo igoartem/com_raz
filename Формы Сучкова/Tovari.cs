@@ -240,7 +240,7 @@ namespace Формы_Сучкова
                     {
                         cmd1.CommandText = "delete from product where product.pk_prod = " + dataGridView1.Rows[i].Cells[9].Value.ToString();
                         cmd1.ExecuteNonQuery();
-                        textBox4.Text = dataGridView1.Rows[i].Cells[9].Value.ToString();
+                        //textBox4.Text = dataGridView1.Rows[i].Cells[9].Value.ToString();
                     }
                 }
             }

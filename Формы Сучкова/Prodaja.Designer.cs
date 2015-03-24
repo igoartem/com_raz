@@ -53,7 +53,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(490, 43);
+            this.label2.Location = new System.Drawing.Point(493, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 3;
@@ -89,7 +89,7 @@
             // textBox4
             // 
             this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(568, 40);
+            this.textBox4.Location = new System.Drawing.Point(568, 37);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(131, 20);
             this.textBox4.TabIndex = 11;
@@ -145,9 +145,9 @@
             this.Discount,
             this.Cost_itog,
             this.min_cost});
-            this.dataGridView1.Location = new System.Drawing.Point(9, 19);
+            this.dataGridView1.Location = new System.Drawing.Point(5, 19);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(678, 218);
+            this.dataGridView1.Size = new System.Drawing.Size(682, 218);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             // 
