@@ -54,6 +54,8 @@ namespace Формы_Сучкова
                 dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[4].Value = dr_prod[4].ToString(); //exp_cost
                 dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[6].Value = dr_prod[5].ToString(); // Fin_price
                 dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[7].Value = dr_prod[6].ToString(); // min price
+                dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[3].ReadOnly = true;
+                dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[6].ReadOnly = true;
 
             dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[5].Value = (Convert.ToInt32(dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[4].Value) - Convert.ToInt32(dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[6].Value));
 
