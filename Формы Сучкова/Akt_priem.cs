@@ -132,10 +132,13 @@ namespace Формы_Сучкова
         {
             R_tovar form_priem = new R_tovar(this);
             form_priem.ShowDialog();
+            
             Product prod = static_class.product;
-            list_product.Add(prod);
-            add_datagrid(list_product[list_product.Count-1]);
-
+            if (prod != null)
+            {
+                list_product.Add(prod);
+                add_datagrid(list_product[list_product.Count - 1]);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
