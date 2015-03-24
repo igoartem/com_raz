@@ -9,6 +9,6 @@ namespace Формы_Сучкова
     class static_class
     {
         public static Product product;
-
+        public static int worker = 20;
     }
 }

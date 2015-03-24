@@ -1,1 +1,26 @@
 D:\Repo\Формы Сучкова\obj\Debug\Формы Сучкова.csprojResolveAssemblyReference.cache
+C:\com_raz\Формы Сучкова\bin\Debug\Формы Сучкова.exe.config
+C:\com_raz\Формы Сучкова\bin\Debug\Формы Сучкова.exe
+C:\com_raz\Формы Сучкова\bin\Debug\Формы Сучкова.pdb
+C:\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Add_redact_worker.resources
+C:\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Akt_priem.resources
+C:\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Akt_spis.resources
+C:\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Arhiv.resources
+C:\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Form1.resources
+C:\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Harakteristik.resources
+C:\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Kategory.resources
+C:\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Prodaja.resources
+C:\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Properties.Resources.resources
+C:\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.P_kategory.resources
+C:\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Redact_zayavka.resources
+C:\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.R_tovar.resources
+C:\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.R_tovar_arh.resources
+C:\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Setting.resources
+C:\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Statistic.resources
+C:\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Tovari.resources
+C:\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Workers.resources
+C:\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Zayavka.resources
+C:\com_raz\Формы Сучкова\obj\Debug\Формы Сучкова.csproj.GenerateResource.Cache
+C:\com_raz\Формы Сучкова\obj\Debug\Формы Сучкова.exe
+C:\com_raz\Формы Сучкова\obj\Debug\Формы Сучкова.pdb
+C:\com_raz\Формы Сучкова\obj\Debug\Формы Сучкова.csprojResolveAssemblyReference.cache

@@ -249,6 +249,7 @@ namespace Формы_Сучкова
 
             if (checkBox1.Checked == true)
                 flag_owner = 1;
+           
 
             if (comboBox1.SelectedIndex == -1)
             {
@@ -287,6 +288,11 @@ namespace Формы_Сучкова
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
