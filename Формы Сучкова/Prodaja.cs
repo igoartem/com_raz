@@ -88,7 +88,7 @@ namespace Формы_Сучкова
             {
                 foreach (int element in list_prod)
                 {
-                    if (Convert.ToInt32(dr_prod[0].ToString()) == element && Convert.ToInt32(dr_prod[5].ToString()) != 22) // 22 - ПК О СТАТУСЕ ПРОДАЖИ
+                    if (Convert.ToInt32(dr_prod[0].ToString()) == element && Convert.ToInt32(dr_prod[5].ToString()) != static_class.tov_status) // 22 - ПК О СТАТУСЕ ПРОДАЖИ
                     {
                         dataGridView1.Rows.Add();
                         dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[0].Value = dr_prod[0].ToString(); // PK
@@ -161,7 +161,7 @@ namespace Формы_Сучкова
 
         private void button1_Click(object sender, EventArgs e)
         {
-            str0 = "20";
+            str0 = static_class.worker.ToString(); // РАБОТНИК ПО УМОЛЧАНИЮ
             str1 = DateTime.Now.ToString();
             string ss = "INSERT INTO cheque (pk_worker, date_ch) VALUES ('" + str0 + "', to_date( '" + str1 + "','DD.MM.YYYY HH24:MI:SS' ))";
             cmd_prod.CommandText = ss;

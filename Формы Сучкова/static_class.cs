@@ -10,5 +10,6 @@ namespace Формы_Сучкова
     {
         public static Product product;
         public static int worker = 20;
+        public static int tov_status = 22; // 22 - ПК О СТАТУСЕ ПРОДАЖИ
     }
 }
