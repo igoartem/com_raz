@@ -22,8 +22,6 @@ namespace Формы_Сучкова
             this.pk_sell = pk_sell;
             date_inp = DateTime.Now;
         
-        
-        
         }
 
 

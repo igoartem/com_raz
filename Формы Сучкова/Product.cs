@@ -130,11 +130,11 @@ namespace Формы_Сучкова
                 s1 += " finish_price," + " ,";
                 s2 += finish_price + " ,";
             }
-            if (flag_owner != 0)
-            {
+            
                 s1 += " flag_owner,";
                 s2 += flag_owner + " ,";
-            }
+            
+
             if (garant != 0)
             {
                 s1 += " garant,";

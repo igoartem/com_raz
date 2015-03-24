@@ -87,6 +87,12 @@ namespace Формы_Сучкова
             InitializeComponent();
         }
 
+        public Prodaja(R_tovar my,int pk)
+        {
+            
+            InitializeComponent();
+        }
+
         private void Prodaja_Load(object sender, EventArgs e)
         {
             StreamReader sr;

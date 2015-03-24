@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -60,7 +61,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -95,6 +95,17 @@
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Товар:";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(9, 252);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(76, 17);
+            this.checkBox1.TabIndex = 21;
+            this.checkBox1.Text = "Выкуплен";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // textBox8
             // 
@@ -160,9 +171,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(6, 144);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 26);
+            this.label6.Size = new System.Drawing.Size(80, 26);
             this.label6.TabIndex = 12;
-            this.label6.Text = "Плата за \r\nпростой:";
+            this.label6.Text = "Плата за \r\nпростой, р/дн:";
             // 
             // textBox2
             // 
@@ -170,6 +181,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(143, 20);
             this.textBox2.TabIndex = 11;
+            this.textBox2.Text = "10";
             this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
@@ -178,9 +190,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(6, 127);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.Size = new System.Drawing.Size(78, 13);
             this.label2.TabIndex = 10;
-            this.label2.Text = "Комиссия:";
+            this.label2.Text = "Комиссия (%):";
             // 
             // textBox1
             // 
@@ -325,6 +337,7 @@
             this.button2.TabIndex = 9;
             this.button2.Text = "Акт приемки";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -334,6 +347,7 @@
             this.button3.TabIndex = 10;
             this.button3.Text = "Чек";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -363,16 +377,6 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(9, 252);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(76, 17);
-            this.checkBox1.TabIndex = 21;
-            this.checkBox1.Text = "Выкуплен";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
             // R_tovar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -388,6 +392,7 @@
             this.Controls.Add(this.groupBox2);
             this.Name = "R_tovar";
             this.Text = "Товар";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.R_tovar_FormClosed);
             this.Load += new System.EventHandler(this.R_tovar_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

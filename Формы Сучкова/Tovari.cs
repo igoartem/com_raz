@@ -41,8 +41,13 @@ namespace Формы_Сучкова
             comboBox1.Items.Clear();
             comboBox2.Items.Clear();
             comboBox4.Items.Clear();
+<<<<<<< HEAD
             list_category.Clear();
             list_subcategory.Clear();
+=======
+            list_subcategory.Clear();
+            list_category.Clear();
+>>>>>>> origin/artem_2
 
             comboBox3.SelectedIndex = 0;
             
@@ -305,7 +310,7 @@ namespace Формы_Сучкова
                 }
                 if (textBox2.Text != "")
                 {
-                    if (Convert.ToInt32(dataGridView1.Rows[i].Cells[5].Value) > Convert.ToInt32(textBox2.Text))//мин цена 4
+                    if (Convert.ToInt32(dataGridView1.Rows[i].Cells[4].Value) > Convert.ToInt32(textBox2.Text))//мин цена 4
                     {
                         dataGridView1.Rows.RemoveAt(i);
                         i--;

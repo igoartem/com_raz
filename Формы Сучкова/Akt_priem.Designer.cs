@@ -108,6 +108,8 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(375, 20);
             this.textBox4.TabIndex = 22;
+            this.textBox4.Text = "0";
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label4
             // 
@@ -136,6 +138,7 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Location = new System.Drawing.Point(105, 123);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(375, 20);
@@ -152,10 +155,12 @@
             // 
             // textBox6
             // 
+            this.textBox6.Enabled = false;
             this.textBox6.Location = new System.Drawing.Point(67, 97);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(413, 20);
             this.textBox6.TabIndex = 6;
+            this.textBox6.Text = "приемщик";
             // 
             // textBox3
             // 
@@ -313,6 +318,7 @@
             this.Controls.Add(this.label5);
             this.Name = "Akt_priem";
             this.Text = "Акт приемки";
+            this.Load += new System.EventHandler(this.Akt_priem_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
