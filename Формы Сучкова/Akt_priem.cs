@@ -76,20 +76,55 @@ namespace Формы_Сучкова
             Product prod = static_class.product;
             list_product.Add(prod);
 
-            dataGridView1.Rows.Add();
-            int kol_vo_row=dataGridView1.RowCount-1;
+            add_datagrid(list_product[list_product.Count-1]);
+           
+            
+        }
 
-            if (list_product[list_product.Count - 1].flag_owner==1)
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentCell == null)
+            {
+                MessageBox.Show("Не выбран товар для удаления!");
+                return;
+
+            }
+            else
+            {
+                list_product.RemoveAt(dataGridView1.CurrentCell.RowIndex);
+                update_datagrid();
+            }
+        }
+
+        private void add_datagrid(Product prod)
+        {
+            dataGridView1.Rows.Add();
+            int kol_vo_row = dataGridView1.RowCount - 1;
+
+            if (list_product[list_product.Count - 1].flag_owner == 1)
                 dataGridView1.Rows[kol_vo_row].Cells[0].Value = true;
-            dataGridView1.Rows[kol_vo_row].Cells[1].Value=list_product[list_product.Count-1].name.ToString();
-            
-            dataGridView1.Rows[kol_vo_row ].Cells[2].Value = list_product[list_product.Count - 1].pay_stay;
-            dataGridView1.Rows[kol_vo_row ].Cells[3].Value = list_product[list_product.Count - 1].min_inp_price;
-            dataGridView1.Rows[kol_vo_row ].Cells[4].Value = list_product[list_product.Count - 1].expect_price;
-            dataGridView1.Rows[kol_vo_row ].Cells[5].Value = list_product[list_product.Count - 1].comission;
-           // dataGridView1.Rows[kol_vo_row - 1].Cells[6].Value = list_product[list_product.Count - 1].name.ToString();
-            
-            
+            dataGridView1.Rows[kol_vo_row].Cells[1].Value = prod.name.ToString();
+            dataGridView1.Rows[kol_vo_row].Cells[2].Value = prod.pay_stay;
+            dataGridView1.Rows[kol_vo_row].Cells[3].Value = prod.min_inp_price;
+            dataGridView1.Rows[kol_vo_row].Cells[4].Value = prod.expect_price;
+            dataGridView1.Rows[kol_vo_row].Cells[5].Value = prod.comission;
+
+
+        }
+
+        private void update_datagrid(){
+
+            dataGridView1.Rows.Clear();
+            int kol_vo=list_product.Count;
+            for (int i = 0; i < kol_vo;i++ )
+            {
+                add_datagrid(list_product[i]);
+            }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
