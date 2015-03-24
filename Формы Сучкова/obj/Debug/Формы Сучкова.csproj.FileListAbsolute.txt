@@ -22,3 +22,4 @@ C:\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.Zayavka
 C:\com_raz\Формы Сучкова\obj\Debug\Формы Сучкова.csproj.GenerateResource.Cache
 C:\com_raz\Формы Сучкова\obj\Debug\Формы Сучкова.exe
 C:\com_raz\Формы Сучкова\obj\Debug\Формы Сучкова.pdb
+D:\Repo\Формы Сучкова\obj\Debug\Формы Сучкова.csprojResolveAssemblyReference.cache

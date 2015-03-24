@@ -413,42 +413,48 @@
             // Select
             // 
             this.Select.FalseValue = "false";
-            this.Select.HeaderText = "Выделить";
+            this.Select.HeaderText = "";
             this.Select.Name = "Select";
             this.Select.TrueValue = "true";
-            this.Select.Width = 60;
+            this.Select.Width = 18;
             // 
             // Naimenovanie
             // 
             this.Naimenovanie.HeaderText = "Наименование";
             this.Naimenovanie.Name = "Naimenovanie";
+            this.Naimenovanie.ReadOnly = true;
             // 
             // Category
             // 
             this.Category.HeaderText = "Категория";
             this.Category.Name = "Category";
+            this.Category.ReadOnly = true;
             // 
             // P_category
             // 
             this.P_category.HeaderText = "Подкатегория";
             this.P_category.Name = "P_category";
+            this.P_category.ReadOnly = true;
             // 
             // Cost
             // 
             this.Cost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Cost.HeaderText = "Ожидаемая цена";
             this.Cost.Name = "Cost";
+            this.Cost.ReadOnly = true;
             // 
             // Prodan
             // 
             this.Prodan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Prodan.HeaderText = "Статус";
             this.Prodan.Name = "Prodan";
+            this.Prodan.ReadOnly = true;
             // 
             // Owner
             // 
             this.Owner.HeaderText = "Выкуплен";
             this.Owner.Name = "Owner";
+            this.Owner.ReadOnly = true;
             this.Owner.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Owner.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Owner.Width = 60;
@@ -458,22 +464,27 @@
             this.Date_ot.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Date_ot.HeaderText = "Дата приема";
             this.Date_ot.Name = "Date_ot";
+            this.Date_ot.ReadOnly = true;
             // 
             // Date_end
             // 
             this.Date_end.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Date_end.HeaderText = "Дата окончания";
             this.Date_end.Name = "Date_end";
+            this.Date_end.ReadOnly = true;
             // 
             // PK
             // 
             this.PK.HeaderText = "PK";
             this.PK.Name = "PK";
+            this.PK.ReadOnly = true;
+            this.PK.Width = 30;
             // 
             // Garant
             // 
             this.Garant.HeaderText = "Осталось гарантии";
             this.Garant.Name = "Garant";
+            this.Garant.ReadOnly = true;
             this.Garant.Width = 60;
             // 
             // Tovari

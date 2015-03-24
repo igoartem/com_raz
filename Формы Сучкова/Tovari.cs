@@ -14,13 +14,17 @@ namespace Формы_Сучкова
 {
     public partial class Tovari : Form
     {
-        OracleCommand cmd1;
-        OracleConnection con1;
-        OracleDataReader dr1;
-        bool load;
-        int count = 0;
+        OracleCommand cmd1;     //
+        OracleConnection con1;  // Подключение для вывода товаров в таблицу
+        OracleDataReader dr1;   //
 
-        public const int MAX_KOL_TOVAROV=100;
+        OracleCommand cmd2;     //
+        OracleConnection con2;  // Подключение для подсчета гарантии
+        OracleDataReader dr2;   //
+
+        bool load;              // флаг загрузилась ли форма
+        int count = 0;          // число товаров
+        TimeSpan end_days;      // оставшиеся дни гарантии
 
         public Tovari()
         {
@@ -30,13 +34,12 @@ namespace Формы_Сучкова
 
         public void refresh()
         {
-            cmd1.CommandText = "SELECT product.name, category.name, subcategory.name, product.EXPECT_PRICE, status.NAME, product.FLAG_OWNER, input_act.DATE_INP, input_act.DATE_END, product.PK_PROD FROM input_act, product, status, category, subcategory where product.PK_SUBCAT = subcategory.PK_SUBCAT and subcategory.PK_CAT = category.PK_CAT and product.PK_STAT = status.PK_STAT and product.PK_ACT = input_act.PK_ACT ";
-
+            cmd1.CommandText = "SELECT product.name, category.name, subcategory.name, product.EXPECT_PRICE, status.NAME, product.FLAG_OWNER, input_act.DATE_INP, input_act.DATE_END, product.PK_PROD FROM input_act, product, status, category, subcategory where product.PK_SUBCAT = subcategory.PK_SUBCAT and subcategory.PK_CAT = category.PK_CAT and product.PK_STAT = status.PK_STAT and product.PK_ACT = input_act.PK_ACT";
             dr1 = cmd1.ExecuteReader();
 
             int i = 0;
 
-            dataGridView1.Enabled = false;
+            dataGridView1.Enabled = false;      // начинаем загрузку и блокируем грид
             dataGridView1.Rows.Clear();
             while (dr1.Read())
             {
@@ -45,10 +48,18 @@ namespace Формы_Сучкова
                 {
                     if (j == 9)
                     {
-                        //тут считаем колво дней остаток
+                        //тут считаем колво оставшихся дней гарантии (через второе подключение)
+                        if(dataGridView1.Rows[i].Cells[5].Value.ToString() == "Продано")
+                        {
+                            cmd2.CommandText = "SELECT cheque.date_ch, product.garant FROM cheque, product where cheque.pk_cheque = product.pk_cheque and product.pk_prod = '" + dataGridView1.Rows[i].Cells[j].Value.ToString() + "'";
+                            dr2 = cmd2.ExecuteReader();
+                            dr2.Read();
+                            end_days = Convert.ToDateTime(dr2[0].ToString()).AddDays(Convert.ToInt32(dr2[1].ToString())) - DateTime.Now;
+                            dataGridView1.Rows[i].Cells[j + 1].Value = end_days.Days;
+                        }
                     }
                     else
-                        if (j == 5)
+                        if (j == 5) //тут нужно показать товар - наш или нет
                         {
                             if (Convert.ToInt32(dr1[j].ToString()) == 0)
                                 dataGridView1.Rows[i].Cells[j + 1].Value = "Нет"; // статус товара наш не наш
@@ -56,14 +67,14 @@ namespace Формы_Сучкова
                                 dataGridView1.Rows[i].Cells[j + 1].Value = "Да";
                         }
                         else
-                            dataGridView1.Rows[i].Cells[j + 1].Value = dr1[j].ToString();
+                            dataGridView1.Rows[i].Cells[j + 1].Value = dr1[j].ToString(); //иначе просто выводим остальные данные в грид
                 }
 
 
                 i++;
             }
             count = dataGridView1.Rows.Count;
-            dataGridView1.Enabled = true;
+            dataGridView1.Enabled = true;       // посчитали все элементы и включили грид
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -100,7 +111,7 @@ namespace Формы_Сучкова
         {
             load = true; 
 
-            StreamReader sr;
+            StreamReader sr;        // загрузка файла с адресом хоста с бд
             string s = null;
             try
             {
@@ -117,18 +128,39 @@ namespace Формы_Сучкова
             cmd1 = new OracleCommand("", con1);
             con1.Open();
 
-            refresh();
+            con2 = new OracleConnection("Data Source=(DESCRIPTION =(ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = " + s + ")(PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = XE))); User Id=" + "admin" + ";Password=" + "123" + ";");
+            cmd2 = new OracleCommand("", con2);
+            con2.Open();
 
-            load = false;
+            refresh(); // обновим грид
+
+            load = false; // и у же не загружаемся
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //открываем окно продажи
         {
             //передавать массив с пк продаваемых товаров
-            int[] mass_pk= new Int32[MAX_KOL_TOVAROV];
 
-            Prodaja form_prodaja = new Prodaja(mass_pk);
-            form_prodaja.Show();
+            List<int> list = new List<int>();
+
+            for (int i = 0; i < dataGridView1.RowCount; i++)    //обходим грид и смотрим есть ли чекнутые товары
+            {
+                if (dataGridView1.Rows[i].Cells[0].Value != null)
+                {
+                    if (dataGridView1.Rows[i].Cells[0].Value.ToString() == "true")
+                    {
+                        list.Add(Convert.ToInt32(dataGridView1.Rows[i].Cells[9].Value.ToString()));
+                    }
+                }
+            }
+            if (list.Count != 0)
+            {
+                Prodaja form_prodaja = new Prodaja(list); // вызвали форму и передали лист с пк товаров
+                form_prodaja.ShowDialog();
+                refresh();
+            }
+            else
+                MessageBox.Show("Не выбран ни один товар для продажи", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
 
         private void редактированиеКатегорийToolStripMenuItem_Click(object sender, EventArgs e)
@@ -139,16 +171,20 @@ namespace Формы_Сучкова
         private void button2_Click(object sender, EventArgs e)
         {
             //Удаление
-            //for (int i = 0; i < dataGridView1.RowCount - 1; i++)
-            //{
-            //    if (dataGridView1.Rows[i].Cells[0].Value == null)
-            //    {
-            //        textBox4.Text = " ДА";
-            //        //cmd1.CommandText = "delete from product where product.pk_prod = " + dataGridView1.Rows[i].Cells[0].Value.ToString();
-            //    }
-            //}
-
-            //textBox4.Text = dataGridView1.
+            
+            for (int i = 0; i < dataGridView1.RowCount; i++) //просто удалим чекнутые товары
+            {
+                if (dataGridView1.Rows[i].Cells[0].Value != null)
+                {
+                    if (dataGridView1.Rows[i].Cells[0].Value.ToString() == "true")
+                    {
+                        cmd1.CommandText = "delete from product where product.pk_prod = " + dataGridView1.Rows[i].Cells[9].Value.ToString();
+                        cmd1.ExecuteNonQuery();
+                        textBox4.Text = dataGridView1.Rows[i].Cells[9].Value.ToString();
+                    }
+                }
+            }
+            
             refresh();
         }
 

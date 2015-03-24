@@ -38,13 +38,14 @@
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.PK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Naim = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Owner = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Garant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cost_itog = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.min_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -101,6 +102,7 @@
             this.button1.TabIndex = 15;
             this.button1.Text = "Продать";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox7
             // 
@@ -135,28 +137,39 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.PK,
             this.Naim,
             this.Owner,
             this.Garant,
             this.Cost,
             this.Discount,
             this.Cost_itog,
-            this.PK});
+            this.min_cost});
             this.dataGridView1.Location = new System.Drawing.Point(9, 19);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(678, 218);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
+            // 
+            // PK
+            // 
+            this.PK.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PK.HeaderText = "PK";
+            this.PK.Name = "PK";
+            this.PK.ReadOnly = true;
             // 
             // Naim
             // 
             this.Naim.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Naim.HeaderText = "Наименование";
             this.Naim.Name = "Naim";
+            this.Naim.ReadOnly = true;
             // 
             // Owner
             // 
             this.Owner.HeaderText = "Владелец";
             this.Owner.Name = "Owner";
+            this.Owner.ReadOnly = true;
             // 
             // Garant
             // 
@@ -167,22 +180,25 @@
             // 
             this.Cost.HeaderText = "Ожидаемая цена";
             this.Cost.Name = "Cost";
+            this.Cost.ReadOnly = true;
             // 
             // Discount
             // 
             this.Discount.HeaderText = "Скидка (руб.)";
             this.Discount.Name = "Discount";
+            this.Discount.ReadOnly = true;
             // 
             // Cost_itog
             // 
             this.Cost_itog.HeaderText = "Итог. цена";
             this.Cost_itog.Name = "Cost_itog";
             // 
-            // PK
+            // min_cost
             // 
-            this.PK.HeaderText = "PK";
-            this.PK.Name = "PK";
-            this.PK.Visible = false;
+            this.min_cost.HeaderText = "Мин. цена";
+            this.min_cost.Name = "min_cost";
+            this.min_cost.ReadOnly = true;
+            this.min_cost.Width = 60;
             // 
             // Prodaja
             // 
@@ -220,12 +236,13 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PK;
         private System.Windows.Forms.DataGridViewTextBoxColumn Naim;
         private System.Windows.Forms.DataGridViewTextBoxColumn Owner;
         private System.Windows.Forms.DataGridViewTextBoxColumn Garant;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cost;
         private System.Windows.Forms.DataGridViewTextBoxColumn Discount;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cost_itog;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn min_cost;
     }
 }
