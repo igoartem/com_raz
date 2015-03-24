@@ -202,10 +202,9 @@ namespace Формы_Сучкова
             {
                 s1 += " finish_price = " + finish_price + ",";
             }
-            if (flag_owner != 0)
-            {
+            
                 s1 += " flag_owner = " + flag_owner + ",";
-            }
+            
             if (garant != 0)
             {
                 s1 += " garant = " + garant + ",";
