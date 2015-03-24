@@ -58,10 +58,15 @@ namespace Формы_Сучкова
 
         private void button1_Click(object sender, EventArgs e)
         {
+            get_all_old();
 
 
-            
-
+            //Product new_prod = new Product(pk_subcat, name, serial_number, min_inp_price, commis, pay_stay, expected_price, flag_owner);
+            string ss;
+            ss = old_product.makeSQLupdate();
+            cmd_r_tovar.CommandText = ss;
+            cmd_r_tovar.ExecuteNonQuery();
+            this.Close();
 
         }
 
@@ -113,14 +118,75 @@ namespace Формы_Сучкова
             dr_r_tovar = cmd_r_tovar.ExecuteReader();
             dr_r_tovar.Read();
             int pk_check = 0;
-
+            int fin_price=0;
+            int garant = 0;
             if (dr_r_tovar[5].ToString() != "")
+            {
                 pk_check = Convert.ToInt32(dr_r_tovar[5]);
-            old_product = new Product(Convert.ToInt32(dr_r_tovar[0]), Convert.ToInt32(dr_r_tovar[1]), Convert.ToInt32(dr_r_tovar[2]), dr_r_tovar[3].ToString(), dr_r_tovar[4].ToString(), pk_check, Convert.ToInt32(dr_r_tovar[6]), Convert.ToInt32(dr_r_tovar[7]), Convert.ToInt32(dr_r_tovar[8]), Convert.ToInt32(dr_r_tovar[9]), Convert.ToInt32(dr_r_tovar[10]), Convert.ToInt32(dr_r_tovar[11]), Convert.ToInt32(dr_r_tovar[12]), Convert.ToInt32(dr_r_tovar[13]));
+                fin_price = Convert.ToInt32(dr_r_tovar[11]);
+                garant=Convert.ToInt32(dr_r_tovar[13]);
+            }
+            old_product = new Product(Convert.ToInt32(dr_r_tovar[0]), Convert.ToInt32(dr_r_tovar[1]), Convert.ToInt32(dr_r_tovar[2]), dr_r_tovar[3].ToString(), dr_r_tovar[4].ToString(), pk_check, Convert.ToInt32(dr_r_tovar[6]), Convert.ToInt32(dr_r_tovar[7]), Convert.ToInt32(dr_r_tovar[8]), Convert.ToInt32(dr_r_tovar[9]), Convert.ToInt32(dr_r_tovar[10]),fin_price , Convert.ToInt32(dr_r_tovar[12]), garant,dr_r_tovar[14].ToString());
 
             if (old_product.pk_cheque == 0)
                 button3.Visible = false;
+            load_to_form();
+        }
 
+
+        public void load_to_form()
+        {
+            textBox1.Text = old_product.name;
+            string ss = "select PK_CAT from SUBCATEGORY where PK_SUBCAT=" + old_product.pk_subcat;
+            cmd_r_tovar.CommandText = ss;
+            dr_r_tovar = cmd_r_tovar.ExecuteReader();
+            dr_r_tovar.Read();
+
+            int pk_cat=Convert.ToInt32(dr_r_tovar[0]);
+            int kol_vo = list_category.Count;
+            string name_cat="",name_subcat="";
+            for (int i = 0; i < kol_vo; i++)
+            
+                if (list_category[i].pk_cat == pk_cat)
+                    name_cat = list_category[i].name;
+            
+
+            for (int i = 0; i < comboBox1.Items.Count; i++)
+                if (comboBox1.Items[i].ToString() == name_cat)
+                    comboBox1.SelectedIndex = i;
+            kol_vo = list_subcategory.Count;
+            for (int i = 0; i < kol_vo; i++)
+                if (list_subcategory[i].pk_subcat == old_product.pk_subcat)
+                    name_subcat = list_subcategory[i].name;
+
+            for (int i = 0; i < comboBox2.Items.Count; i++)
+                if (comboBox2.Items[i].ToString() == name_subcat)
+                    comboBox2.SelectedIndex = i;
+
+            textBox5.Text = old_product.sn;
+            textBox2.Text = old_product.comission.ToString();
+            textBox3.Text = old_product.pay_stay.ToString();
+            textBox6.Text = old_product.min_inp_price.ToString();
+            textBox7.Text = old_product.expect_price.ToString();
+            if (old_product.pk_cheque != 0)
+            {
+                textBox8.Text = old_product.finish_price.ToString();
+                label10.Visible = true;
+                groupBox1.Enabled = false;
+                groupBox2.Enabled = false;
+                button1.Enabled = false;
+            }
+            else
+            {
+                textBox8.Visible = false;
+                label10.Visible = false;
+                button4.Visible = false;
+            }
+            textBox4.Text = old_product.opisanie;
+            if (old_product.flag_owner == 1)
+            checkBox1.Checked = true;
+
+            
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -143,7 +209,9 @@ namespace Формы_Сучкова
             for (int i = 0; i < kol_vo; i++)
             {
                 if(list_subcategory[i].pk_cat==pk)
+                {
                     comboBox2.Items.Add(list_subcategory[i].name);
+                }
             }
 
                 
@@ -223,8 +291,19 @@ namespace Формы_Сучкова
 
         private void button6_Click(object sender, EventArgs e)
         {
-           
 
+
+            get_all();
+
+            
+            Product new_prod = new Product(pk_subcat, name, serial_number, min_inp_price, commis, pay_stay, expected_price,flag_owner,about_product);
+            static_class.product = new_prod;
+            this.Close();
+
+        }
+
+        public void get_all()
+        {
             if (textBox1.Text == "")
             {
                 MessageBox.Show("Не заполнено поле название!");
@@ -279,11 +358,11 @@ namespace Формы_Сучкова
                 return;
             }
             else
-                about_product = textBox6.Text;
+                about_product = textBox4.Text;
 
             if (checkBox1.Checked == true)
                 flag_owner = 1;
-           
+
 
             if (comboBox1.SelectedIndex == -1)
             {
@@ -299,13 +378,11 @@ namespace Формы_Сучкова
             }
             else
             {
-                int kol_vo=list_subcategory.Count;
-                int index = comboBox1.SelectedIndex;
-                if (index > 0)
-                    index--;
+                int kol_vo = list_subcategory.Count;
+               
                 for (int i = 0; i < kol_vo; i++)
                 {
-                    if (comboBox2.Items[index].ToString() == list_subcategory[i].name)
+                    if (comboBox2.Items[comboBox2.SelectedIndex].ToString() == list_subcategory[i].name)
                         pk_subcat = list_subcategory[i].pk_subcat;
 
                 }
@@ -313,22 +390,30 @@ namespace Формы_Сучкова
 
             }
 
-            Product new_prod = new Product(pk_subcat, name, serial_number, min_inp_price, commis, pay_stay, expected_price,flag_owner);
-            static_class.product = new_prod;
-            this.Close();
 
         }
 
-        public void get_all()
+        public void get_all_old()
         {
-
-
+            get_all();
+            old_product.name = name;
+            old_product.pk_subcat = pk_subcat;
+            old_product.sn = serial_number;
+            old_product.min_inp_price = min_inp_price;
+            old_product.comission = commis;
+            old_product.pay_stay = pay_stay;
+            old_product.expect_price = expected_price;
+            old_product.flag_owner = flag_owner;
+            old_product.opisanie = about_product;
 
         }
-
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            if(comboBox2.SelectedIndex!=-1)
+            for (int i = 0; i < list_subcategory.Count; i++)
+                if (list_subcategory[i].name == comboBox2.Items[comboBox2.SelectedIndex])
+                    textBox2.Text = list_subcategory[i].comission.ToString() ;
+           
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -338,14 +423,13 @@ namespace Формы_Сучкова
 
         private void R_tovar_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //if(static_class.product)
-            //static_class.product = null;
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int pk_act=0;
-            Akt_priem akt = new Akt_priem(this,pk_act);
+            
+            Akt_priem akt = new Akt_priem(this,old_product.pk_act);
             akt.ShowDialog();
         }
 
@@ -353,6 +437,11 @@ namespace Формы_Сучкова
         {
             Prodaja check = new Prodaja(this,old_product.pk_cheque);
             check.ShowDialog();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
