@@ -30,6 +30,17 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Naimenovanie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.P_category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prodan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Owner = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date_ot = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date_end = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Garant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -62,22 +73,6 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-
-            
-
-
-            this.Select = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Naimenovanie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.P_category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Prodan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Owner = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date_ot = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date_end = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PK = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Garant = new System.Windows.Forms.DataGridViewTextBoxColumn();
-
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -117,6 +112,83 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // Select
+            // 
+            this.Select.FalseValue = "false";
+            this.Select.HeaderText = "";
+            this.Select.Name = "Select";
+            this.Select.TrueValue = "true";
+            this.Select.Width = 18;
+            // 
+            // Naimenovanie
+            // 
+            this.Naimenovanie.HeaderText = "Наименование";
+            this.Naimenovanie.Name = "Naimenovanie";
+            this.Naimenovanie.ReadOnly = true;
+            // 
+            // Category
+            // 
+            this.Category.HeaderText = "Категория";
+            this.Category.Name = "Category";
+            this.Category.ReadOnly = true;
+            // 
+            // P_category
+            // 
+            this.P_category.HeaderText = "Подкатегория";
+            this.P_category.Name = "P_category";
+            this.P_category.ReadOnly = true;
+            // 
+            // Cost
+            // 
+            this.Cost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Cost.HeaderText = "Ожидаемая цена";
+            this.Cost.Name = "Cost";
+            this.Cost.ReadOnly = true;
+            // 
+            // Prodan
+            // 
+            this.Prodan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Prodan.HeaderText = "Статус";
+            this.Prodan.Name = "Prodan";
+            this.Prodan.ReadOnly = true;
+            // 
+            // Owner
+            // 
+            this.Owner.HeaderText = "Выкуплен";
+            this.Owner.Name = "Owner";
+            this.Owner.ReadOnly = true;
+            this.Owner.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Owner.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Owner.Width = 60;
+            // 
+            // Date_ot
+            // 
+            this.Date_ot.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Date_ot.HeaderText = "Дата приема";
+            this.Date_ot.Name = "Date_ot";
+            this.Date_ot.ReadOnly = true;
+            // 
+            // Date_end
+            // 
+            this.Date_end.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Date_end.HeaderText = "Дата окончания";
+            this.Date_end.Name = "Date_end";
+            this.Date_end.ReadOnly = true;
+            // 
+            // PK
+            // 
+            this.PK.HeaderText = "PK";
+            this.PK.Name = "PK";
+            this.PK.ReadOnly = true;
+            this.PK.Width = 30;
+            // 
+            // Garant
+            // 
+            this.Garant.HeaderText = "Осталось гарантии";
+            this.Garant.Name = "Garant";
+            this.Garant.ReadOnly = true;
+            this.Garant.Width = 60;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button5);
@@ -151,6 +223,7 @@
             this.button5.TabIndex = 14;
             this.button5.Text = "Сбросить";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -160,15 +233,16 @@
             this.button4.TabIndex = 5;
             this.button4.Text = "Найти";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(523, 53);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 13);
+            this.label7.Size = new System.Drawing.Size(44, 13);
             this.label7.TabIndex = 13;
-            this.label7.Text = "Продан:";
+            this.label7.Text = "Статус:";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // comboBox4
@@ -183,6 +257,10 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Неизвестно",
+            "Да",
+            "Нет"});
             this.comboBox3.Location = new System.Drawing.Point(320, 50);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(163, 21);
@@ -270,6 +348,8 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(163, 21);
             this.comboBox1.TabIndex = 1;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.RightToLeftChanged += new System.EventHandler(this.comboBox1_RightToLeftChanged);
             // 
             // label1
             // 
@@ -370,6 +450,7 @@
             this.textBox4.Location = new System.Drawing.Point(6, 32);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(141, 127);
             this.textBox4.TabIndex = 3;
             // 
@@ -400,92 +481,17 @@
             this.button7.TabIndex = 8;
             this.button7.Text = "Описание товара";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
+            this.button8.Enabled = false;
             this.button8.Location = new System.Drawing.Point(878, 216);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(125, 30);
             this.button8.TabIndex = 9;
             this.button8.Text = "Списать товар";
             this.button8.UseVisualStyleBackColor = true;
-            // 
-            // Select
-            // 
-            this.Select.FalseValue = "false";
-            this.Select.HeaderText = "";
-            this.Select.Name = "Select";
-            this.Select.TrueValue = "true";
-            this.Select.Width = 18;
-            // 
-            // Naimenovanie
-            // 
-            this.Naimenovanie.HeaderText = "Наименование";
-            this.Naimenovanie.Name = "Naimenovanie";
-            this.Naimenovanie.ReadOnly = true;
-            // 
-            // Category
-            // 
-            this.Category.HeaderText = "Категория";
-            this.Category.Name = "Category";
-            this.Category.ReadOnly = true;
-            // 
-            // P_category
-            // 
-            this.P_category.HeaderText = "Подкатегория";
-            this.P_category.Name = "P_category";
-            this.P_category.ReadOnly = true;
-            // 
-            // Cost
-            // 
-            this.Cost.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Cost.HeaderText = "Ожидаемая цена";
-            this.Cost.Name = "Cost";
-            this.Cost.ReadOnly = true;
-            // 
-            // Prodan
-            // 
-            this.Prodan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Prodan.HeaderText = "Статус";
-            this.Prodan.Name = "Prodan";
-            this.Prodan.ReadOnly = true;
-            // 
-            // Owner
-            // 
-            this.Owner.HeaderText = "Выкуплен";
-            this.Owner.Name = "Owner";
-            this.Owner.ReadOnly = true;
-            this.Owner.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Owner.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Owner.Width = 60;
-            // 
-            // Date_ot
-            // 
-            this.Date_ot.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Date_ot.HeaderText = "Дата приема";
-            this.Date_ot.Name = "Date_ot";
-            this.Date_ot.ReadOnly = true;
-            // 
-            // Date_end
-            // 
-            this.Date_end.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Date_end.HeaderText = "Дата окончания";
-            this.Date_end.Name = "Date_end";
-            this.Date_end.ReadOnly = true;
-            // 
-            // PK
-            // 
-            this.PK.HeaderText = "PK";
-            this.PK.Name = "PK";
-            this.PK.ReadOnly = true;
-            this.PK.Width = 30;
-            // 
-            // Garant
-            // 
-            this.Garant.HeaderText = "Осталось гарантии";
-            this.Garant.Name = "Garant";
-            this.Garant.ReadOnly = true;
-            this.Garant.Width = 60;
             // 
             // Tovari
             // 
@@ -502,6 +508,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Tovari";
             this.Text = "Товары";

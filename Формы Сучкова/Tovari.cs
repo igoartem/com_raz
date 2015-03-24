@@ -22,6 +22,9 @@ namespace Формы_Сучкова
         OracleConnection con2;  // Подключение для подсчета гарантии
         OracleDataReader dr2;   //
 
+        List<Category> list_category;
+        List<Subcategory> list_subcategory;
+
         bool load;              // флаг загрузилась ли форма
         int count = 0;          // число товаров
         TimeSpan end_days;      // оставшиеся дни гарантии
@@ -31,6 +34,47 @@ namespace Формы_Сучкова
             load = true;
             InitializeComponent();
         }
+
+        public void find_refresh()
+        {
+            //Поиск
+
+            comboBox3.SelectedIndex = 0;
+            
+
+            cmd1.CommandText = "SELECT * from CATEGORY";
+            dr1 = cmd1.ExecuteReader();
+
+            while (dr1.Read())
+            {
+                list_category.Add(new Category(dr1[1].ToString(), Convert.ToInt32(dr1[0])));
+                comboBox1.Items.Add(list_category[list_category.Count - 1].name.ToString());
+            }
+            if (comboBox1.Items.Count != 0)
+                comboBox1.SelectedIndex = 0;
+
+            cmd1.CommandText = "SELECT * from SUBCATEGORY";
+            dr1 = cmd1.ExecuteReader();
+
+            while (dr1.Read())
+            {
+                list_subcategory.Add(new Subcategory(Convert.ToInt32(dr1[0]), dr1[2].ToString(), Convert.ToInt32(dr1[1]), Convert.ToInt32(dr1[3]), Convert.ToInt32(dr1[4])));
+                if (list_subcategory[list_subcategory.Count - 1].pk_cat == list_category[0].pk_cat)
+                    comboBox2.Items.Add(list_subcategory[list_subcategory.Count - 1].name.ToString());
+            }
+            cmd1.CommandText = "SELECT name from status";
+            dr1 = cmd1.ExecuteReader();
+
+            comboBox4.Items.Add("Неизвестно");
+            while (dr1.Read())
+            {
+                comboBox4.Items.Add(dr1[0].ToString());
+            }
+            comboBox4.SelectedIndex = 0;
+            if (comboBox2.Items.Count != 0)
+                comboBox2.SelectedIndex = 0;
+        }
+
 
         public void refresh()
         {
@@ -75,7 +119,7 @@ namespace Формы_Сучкова
             }
             count = dataGridView1.Rows.Count;
             dataGridView1.Enabled = true;       // посчитали все элементы и включили грид
-        }
+        } 
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -109,7 +153,10 @@ namespace Формы_Сучкова
 
         private void Tovari_Load(object sender, EventArgs e)
         {
-            load = true; 
+            load = true;
+
+            list_category = new List<Category>();
+            list_subcategory = new List<Subcategory>();
 
             StreamReader sr;        // загрузка файла с адресом хоста с бд
             string s = null;
@@ -133,8 +180,11 @@ namespace Формы_Сучкова
             con2.Open();
 
             refresh(); // обновим грид
+            find_refresh();
 
             load = false; // и у же не загружаемся
+
+            
         }
 
         private void button1_Click(object sender, EventArgs e) //открываем окно продажи
@@ -191,8 +241,126 @@ namespace Формы_Сучкова
         private void button6_Click(object sender, EventArgs e)
         {
             Akt_priem add_tovar = new Akt_priem();
-            add_tovar.Show();
+            add_tovar.ShowDialog();
+            refresh();
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBox2.Items.Clear();
+
+            for (int i = 0; i < list_subcategory.Count; i++ )
+            {
+                if (list_subcategory[i].pk_cat == list_category[comboBox1.SelectedIndex].pk_cat)
+                    comboBox2.Items.Add(list_subcategory[i].name.ToString());
+            }
+            if (comboBox2.Items.Count != 0)
+                comboBox2.SelectedIndex = 0;
+            else
+            {
+                comboBox2.Text = "";
+                comboBox2.Items.Clear();
+            }
+        }
+
+        private void comboBox1_RightToLeftChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            find_refresh();
+            refresh();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if(dataGridView1.RowCount < count)
+                refresh();
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                if (textBox3.Text != "")
+                {
+                    if (dataGridView1.Rows[i].Cells[1].Value.ToString().IndexOf(textBox3.Text) < 0) //ищем по имени
+                    {
+                        dataGridView1.Rows.RemoveAt(i);
+                        i--;
+                        continue;
+                    }
+                }
+                if (textBox1.Text != "")
+                {
+                    if (Convert.ToInt32(dataGridView1.Rows[i].Cells[4].Value) < Convert.ToInt32(textBox1.Text))//мин цена 4
+                    {
+                        dataGridView1.Rows.RemoveAt(i);
+                        i--;
+                        continue;
+                    }
+                }
+                if (textBox2.Text != "")
+                {
+                    if (Convert.ToInt32(dataGridView1.Rows[i].Cells[5].Value) > Convert.ToInt32(textBox2.Text))//мин цена 4
+                    {
+                        dataGridView1.Rows.RemoveAt(i);
+                        i--;
+                        continue;
+                    }//макс цена
+                }
+                if (comboBox2.Text != "")
+                {
+                    if (dataGridView1.Rows[i].Cells[3].Value.ToString() != comboBox2.Text)//мин цена 4
+                    {
+                        dataGridView1.Rows.RemoveAt(i);
+                        i--;
+                        continue;
+                    };//подкат
+                }
+                if (comboBox3.Text != "Неизвестно")
+                {
+                    if (dataGridView1.Rows[i].Cells[6].Value.ToString() != comboBox3.Text)//мин цена 4
+                    {
+                        dataGridView1.Rows.RemoveAt(i);
+                        i--;
+                        continue;
+                    };//выкуплен
+                }
+                if (comboBox4.Text != "Неизвестно")
+                {
+                    if (dataGridView1.Rows[i].Cells[5].Value.ToString() != comboBox4.Text)//мин цена 4
+                    {
+                        dataGridView1.Rows.RemoveAt(i);
+                        i--;
+                        continue;
+                    };//статус
+                }
+            }
+            //dataGridView1.Enabled = true;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            int cnt = 0, pk = 0;
+            for (int i = 0; i < dataGridView1.RowCount; i++)    //обходим грид и смотрим есть ли чекнутые товары
+            {
+                if (dataGridView1.Rows[i].Cells[0].Value != null)
+                {
+                    if (dataGridView1.Rows[i].Cells[0].Value.ToString() == "true")
+                    {
+                        count++;
+                        pk = Convert.ToInt32(dataGridView1.Rows[i].Cells[9].Value);
+                    }
+                }
+            }
+            if (cnt == 1)
+            {
+                R_tovar r_tovar = new R_tovar();
+                r_tovar.ShowDialog(this,pk);
+                refresh();
+            }
+            else
+                MessageBox.Show("Выберите 1 товар", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
     }
 }
