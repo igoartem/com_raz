@@ -355,8 +355,8 @@ namespace Формы_Сучкова
             }
             if (cnt == 1)
             {
-                R_tovar r_tovar = new R_tovar();
-                r_tovar.ShowDialog(this,pk);
+                R_tovar r_tovar = new R_tovar(this, pk);
+                r_tovar.ShowDialog();
                 refresh();
             }
             else

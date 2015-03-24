@@ -36,7 +36,7 @@ namespace Формы_Сучкова
             button5.Visible=false;
             button1.Visible = false;
         }
-        public R_tovar(Tovari my)
+        public R_tovar(Tovari my,int pk)
         {
             InitializeComponent();
             
