@@ -41,6 +41,11 @@ namespace Формы_Сучкова
             con_akt_priem.Open();
         }
 
+        public Akt_priem(R_tovar my,int pk_act)
+        {
+            InitializeComponent();
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             string fio, number_phone, passport, seller;
@@ -207,6 +212,11 @@ namespace Формы_Сучкова
             dt = dt.AddDays(kol_days);
             dateTimePicker2.Value = dt;
             
+        }
+
+        private void Akt_priem_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

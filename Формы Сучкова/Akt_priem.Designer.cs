@@ -318,6 +318,7 @@
             this.Controls.Add(this.label5);
             this.Name = "Akt_priem";
             this.Text = "Акт приемки";
+            this.Load += new System.EventHandler(this.Akt_priem_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);

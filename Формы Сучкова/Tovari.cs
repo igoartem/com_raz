@@ -38,10 +38,14 @@ namespace Формы_Сучкова
         public void find_refresh()
         {
             //Поиск
+            comboBox1.Items.Clear();
+            comboBox2.Items.Clear();
+            comboBox4.Items.Clear();
+            list_subcategory.Clear();
+            list_category.Clear();
 
             comboBox3.SelectedIndex = 0;
             
-
             cmd1.CommandText = "SELECT * from CATEGORY";
             dr1 = cmd1.ExecuteReader();
 
@@ -301,7 +305,7 @@ namespace Формы_Сучкова
                 }
                 if (textBox2.Text != "")
                 {
-                    if (Convert.ToInt32(dataGridView1.Rows[i].Cells[5].Value) > Convert.ToInt32(textBox2.Text))//мин цена 4
+                    if (Convert.ToInt32(dataGridView1.Rows[i].Cells[4].Value) > Convert.ToInt32(textBox2.Text))//мин цена 4
                     {
                         dataGridView1.Rows.RemoveAt(i);
                         i--;
@@ -355,11 +359,7 @@ namespace Формы_Сучкова
             }
             if (cnt == 1)
             {
-<<<<<<< HEAD
-                R_tovar r_tovar = new R_tovar(this, pk);
-=======
                 R_tovar r_tovar = new R_tovar(this, pk); //вызов описания фии
->>>>>>> origin/Serega
                 r_tovar.ShowDialog();
                 refresh();
             }

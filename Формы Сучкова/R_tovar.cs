@@ -21,6 +21,11 @@ namespace Формы_Сучкова
 
         List<Category> list_category;
         List<Subcategory> list_subcategory;
+        public string name = "", serial_number = "", about_product = "";
+       public int commis = 0, min_inp_price = 0, expected_price = 0, pk_subcat = 0, pay_stay = 0, flag_owner = 0;
+       public bool flag_prod = false;
+        public int pk_prod=0;
+         Product old_product;
         public R_tovar()
         {
             InitializeComponent();
@@ -40,11 +45,21 @@ namespace Формы_Сучкова
         {
             InitializeComponent();
             
+           
+            button5.Visible = false;
+            button6.Visible = false;
+
+          //  select * From Product where PK_PROD=
+            //Product prod = new Product();
+            flag_prod = true;
+            pk_prod = pk;
         }
         
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+
             
 
 
@@ -86,6 +101,26 @@ namespace Формы_Сучкова
                 list_subcategory.Add(new Subcategory(Convert.ToInt32(dr_r_tovar[0]),dr_r_tovar[2].ToString(), Convert.ToInt32(dr_r_tovar[1]), Convert.ToInt32(dr_r_tovar[3]), Convert.ToInt32(dr_r_tovar[4]) ));
                 
             }
+            if (flag_prod)
+                load_product(pk_prod);
+
+        }
+
+        public void load_product(int pk_product)
+        {
+            string ss="select * From Product where PK_PROD="+pk_product;
+            cmd_r_tovar.CommandText = ss;
+            dr_r_tovar = cmd_r_tovar.ExecuteReader();
+            dr_r_tovar.Read();
+            int pk_check = 0;
+
+            if (dr_r_tovar[5].ToString() != "")
+                pk_check = Convert.ToInt32(dr_r_tovar[5]);
+            old_product = new Product(Convert.ToInt32(dr_r_tovar[0]), Convert.ToInt32(dr_r_tovar[1]), Convert.ToInt32(dr_r_tovar[2]), dr_r_tovar[3].ToString(), dr_r_tovar[4].ToString(), pk_check, Convert.ToInt32(dr_r_tovar[6]), Convert.ToInt32(dr_r_tovar[7]), Convert.ToInt32(dr_r_tovar[8]), Convert.ToInt32(dr_r_tovar[9]), Convert.ToInt32(dr_r_tovar[10]), Convert.ToInt32(dr_r_tovar[11]), Convert.ToInt32(dr_r_tovar[12]), Convert.ToInt32(dr_r_tovar[13]));
+
+            if (old_product.pk_cheque == 0)
+                button3.Visible = false;
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -188,8 +223,7 @@ namespace Формы_Сучкова
 
         private void button6_Click(object sender, EventArgs e)
         {
-            string name="", serial_number="", about_product="";
-            int commis=0, min_inp_price=0, expected_price=0,pk_subcat=0,pay_stay=0,flag_owner=0;
+           
 
             if (textBox1.Text == "")
             {
@@ -285,6 +319,13 @@ namespace Формы_Сучкова
 
         }
 
+        public void get_all()
+        {
+
+
+
+        }
+
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             
@@ -299,6 +340,19 @@ namespace Формы_Сучкова
         {
             //if(static_class.product)
             //static_class.product = null;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int pk_act=0;
+            Akt_priem akt = new Akt_priem(this,pk_act);
+            akt.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Prodaja check = new Prodaja(this,old_product.pk_cheque);
+            check.ShowDialog();
         }
     }
 }

@@ -171,9 +171,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(6, 144);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 26);
+            this.label6.Size = new System.Drawing.Size(80, 26);
             this.label6.TabIndex = 12;
-            this.label6.Text = "Плата за \r\nпростой:";
+            this.label6.Text = "Плата за \r\nпростой, р/дн:";
             // 
             // textBox2
             // 
@@ -181,6 +181,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(143, 20);
             this.textBox2.TabIndex = 11;
+            this.textBox2.Text = "10";
             this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
@@ -189,9 +190,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(6, 127);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.Size = new System.Drawing.Size(78, 13);
             this.label2.TabIndex = 10;
-            this.label2.Text = "Комиссия:";
+            this.label2.Text = "Комиссия (%):";
             // 
             // textBox1
             // 
@@ -336,6 +337,7 @@
             this.button2.TabIndex = 9;
             this.button2.Text = "Акт приемки";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -345,6 +347,7 @@
             this.button3.TabIndex = 10;
             this.button3.Text = "Чек";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
