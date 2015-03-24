@@ -15,22 +15,22 @@ namespace Формы_Сучкова
 {
     public partial class R_tovar : Form
     {
-        OracleCommand cmd_r_tovar;
+        OracleCommand cmd_r_tovar;  // нужно для подключения к базе данных 
         OracleConnection con_r_tovar;
         OracleDataReader dr_r_tovar;
 
-        List<Category> list_category;
-        List<Subcategory> list_subcategory;
+        List<Category> list_category; // лист категорий
+        List<Subcategory> list_subcategory; // лист подкатегорий
         public string name = "", serial_number = "", about_product = "";
-       public int commis = 0, min_inp_price = 0, expected_price = 0, pk_subcat = 0, pay_stay = 0, flag_owner = 0;
-       public bool flag_prod = false;
+        public int commis = 0, min_inp_price = 0, expected_price = 0, pk_subcat = 0, pay_stay = 0, flag_owner = 0;
+        public bool flag_prod = false;
         public int pk_prod=0;
-         Product old_product;
-        public R_tovar()
+        Product old_product; // объект типа Product, нуженя для редактирования товара
+        public R_tovar() // конструктор по умолчанию
         {
             InitializeComponent();
         }
-        public R_tovar(Akt_priem my)
+        public R_tovar(Akt_priem my) // конструктор для добавления товаров из акта приемки 
         {
             InitializeComponent();
             label10.Visible = false;
@@ -41,29 +41,21 @@ namespace Формы_Сучкова
             button5.Visible=false;
             button1.Visible = false;
         }
-        public R_tovar(Tovari my,int pk)
+        public R_tovar(Tovari my,int pk) //конструктор для редактирования товаров
         {
             InitializeComponent();
-            
-           
             button5.Visible = false;
             button6.Visible = false;
-
-          //  select * From Product where PK_PROD=
-            //Product prod = new Product();
             flag_prod = true;
             pk_prod = pk;
         }
         
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) // кнопка сохранения товара
         {
-            get_all_old();
-
-
-            //Product new_prod = new Product(pk_subcat, name, serial_number, min_inp_price, commis, pay_stay, expected_price, flag_owner);
+            get_all_old(); // подготавливаем все значения для обновления записи
             string ss;
-            ss = old_product.makeSQLupdate();
+            ss = old_product.makeSQLupdate(); // запускаем метод генерации скрипта для обновления
             cmd_r_tovar.CommandText = ss;
             cmd_r_tovar.ExecuteNonQuery();
             this.Close();
@@ -72,13 +64,13 @@ namespace Формы_Сучкова
 
         private void R_tovar_Load(object sender, EventArgs e)
         {
-            list_category = new List<Category>();
-            list_subcategory = new List<Subcategory>();
+            list_category = new List<Category>(); //создание листа с категориями
+            list_subcategory = new List<Subcategory>(); // создание листа с подкатегориями
             StreamReader sr;
-            string s = "localhost";
+            string s = "localhost"; // подключение по умолчани.
             try
             {
-                if ((sr = new StreamReader(@"ip_base.txt")) != null)
+                if ((sr = new StreamReader(@"ip_base.txt")) != null) //считывание ip - адреса базы с файла
                      s = sr.ReadLine();
             }
 
@@ -86,34 +78,36 @@ namespace Формы_Сучкова
             {
                 MessageBox.Show("Error Base!");
             }
-            con_r_tovar = new OracleConnection("Data Source=(DESCRIPTION =(ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = " + s + ")(PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = xe))); User Id=" + "admin" + ";Password=" + "123" + ";");
+            con_r_tovar = new OracleConnection("Data Source=(DESCRIPTION =(ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = " + s + ")(PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = xe))); User Id=" + "admin" + ";Password=" + "123" + ";"); // подключение к бд с логином admin и паролем 123
             cmd_r_tovar = new OracleCommand("", con_r_tovar);
             con_r_tovar.Open();
-            cmd_r_tovar.CommandText = "SELECT * from CATEGORY";
+            cmd_r_tovar.CommandText = "SELECT * from CATEGORY"; // запрос на получение всех данных о категориях
             dr_r_tovar = cmd_r_tovar.ExecuteReader();
             
             while (dr_r_tovar.Read())
             {
-                comboBox1.Items.Add(dr_r_tovar[1].ToString());
-                list_category.Add(new Category(dr_r_tovar[1].ToString(), Convert.ToInt32(dr_r_tovar[0])));
+                comboBox1.Items.Add(dr_r_tovar[1].ToString()); // заполение комбобокса для категорий
+                //добавление данных в лист категорий
+                list_category.Add(new Category(dr_r_tovar[1].ToString(), Convert.ToInt32(dr_r_tovar[0])));  
             }
 
-            cmd_r_tovar.CommandText = "select * from SUBCATEGORY";
+            cmd_r_tovar.CommandText = "select * from SUBCATEGORY"; // запрос на получение всех подкатегорий
 
             dr_r_tovar = cmd_r_tovar.ExecuteReader();
+            // добавление всех подкатегорий в лист подкатегорий
             while (dr_r_tovar.Read())
             {
-                list_subcategory.Add(new Subcategory(Convert.ToInt32(dr_r_tovar[0]),dr_r_tovar[2].ToString(), Convert.ToInt32(dr_r_tovar[1]), Convert.ToInt32(dr_r_tovar[3]), Convert.ToInt32(dr_r_tovar[4]) ));
+                list_subcategory.Add(new Subcategory(Convert.ToInt32(dr_r_tovar[0]),dr_r_tovar[2].ToString(), Convert.ToInt32(dr_r_tovar[1]), Convert.ToInt32(dr_r_tovar[3]), Convert.ToInt32(dr_r_tovar[4]) )); 
                 
             }
             if (flag_prod)
                 load_product(pk_prod);
 
         }
-
-        public void load_product(int pk_product)
+        // метод на загрузку данных о товаре с базы данных и вывод его на форму
+        public void load_product(int pk_product) 
         {
-            string ss="select * From Product where PK_PROD="+pk_product;
+            string ss="select * From Product where PK_PROD="+pk_product; // запрос на получение всей информации о товаре с ПК pk_product
             cmd_r_tovar.CommandText = ss;
             dr_r_tovar = cmd_r_tovar.ExecuteReader();
             dr_r_tovar.Read();
@@ -184,7 +178,7 @@ namespace Формы_Сучкова
             }
             textBox4.Text = old_product.opisanie;
             if (old_product.flag_owner == 1)
-            checkBox1.Checked = true;
+                checkBox1.Checked = true;
 
             
         }
@@ -362,6 +356,8 @@ namespace Формы_Сучкова
 
             if (checkBox1.Checked == true)
                 flag_owner = 1;
+            else
+                flag_owner = 0;
 
 
             if (comboBox1.SelectedIndex == -1)
@@ -405,6 +401,7 @@ namespace Формы_Сучкова
             old_product.expect_price = expected_price;
             old_product.flag_owner = flag_owner;
             old_product.opisanie = about_product;
+            
 
         }
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -440,6 +437,11 @@ namespace Формы_Сучкова
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
