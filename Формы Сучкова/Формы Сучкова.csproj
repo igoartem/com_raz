@@ -97,6 +97,7 @@
     <Compile Include="Harakteristik.Designer.cs">
       <DependentUpon>Harakteristik.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inpit_act.cs" />
     <Compile Include="Kategory.cs">
       <SubType>Form</SubType>
     </Compile>
