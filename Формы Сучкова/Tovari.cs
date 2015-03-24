@@ -38,10 +38,12 @@ namespace Формы_Сучкова
         public void find_refresh()
         {
             //Поиск
+            comboBox1.Items.Clear();
+            comboBox2.Items.Clear();
+            comboBox4.Items.Clear();
 
             comboBox3.SelectedIndex = 0;
             
-
             cmd1.CommandText = "SELECT * from CATEGORY";
             dr1 = cmd1.ExecuteReader();
 
@@ -356,7 +358,7 @@ namespace Формы_Сучкова
             if (cnt == 1)
             {
                 R_tovar r_tovar = new R_tovar();
-                r_tovar.ShowDialog(this,pk);
+                //r_tovar.ShowDialog(this,pk);
                 refresh();
             }
             else
