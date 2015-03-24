@@ -41,6 +41,8 @@ namespace Формы_Сучкова
             comboBox1.Items.Clear();
             comboBox2.Items.Clear();
             comboBox4.Items.Clear();
+            list_category.Clear();
+            list_subcategory.Clear();
 
             comboBox3.SelectedIndex = 0;
             
@@ -357,8 +359,8 @@ namespace Формы_Сучкова
             }
             if (cnt == 1)
             {
-                R_tovar r_tovar = new R_tovar(this, pk); //вызов описания фии
-                r_tovar.ShowDialog();
+                //R_tovar r_tovar = new R_tovar(this, pk); //вызов описания фии
+                //r_tovar.ShowDialog();
                 refresh();
             }
             else
