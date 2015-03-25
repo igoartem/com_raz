@@ -91,7 +91,7 @@
             this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(243, 403);
+            this.groupBox2.Size = new System.Drawing.Size(243, 409);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Товар:";
@@ -263,10 +263,10 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(9, 288);
+            this.textBox4.Location = new System.Drawing.Point(6, 288);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(231, 109);
+            this.textBox4.Size = new System.Drawing.Size(231, 115);
             this.textBox4.TabIndex = 0;
             // 
             // comboBox1
