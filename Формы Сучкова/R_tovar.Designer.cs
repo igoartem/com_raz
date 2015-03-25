@@ -181,7 +181,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(143, 20);
             this.textBox2.TabIndex = 11;
-
             this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
@@ -357,6 +356,7 @@
             this.button4.TabIndex = 11;
             this.button4.Text = "Вернуть в продажу";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -369,7 +369,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(534, 427);
+            this.button6.Location = new System.Drawing.Point(535, 427);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(98, 34);
             this.button6.TabIndex = 13;

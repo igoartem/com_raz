@@ -26,6 +26,7 @@ namespace Формы_Сучкова
         public bool flag_prod = false;
         public int pk_prod=0;
         Product old_product; // объект типа Product, нуженя для редактирования товара
+        Product new_prod;
         public R_tovar() // конструктор по умолчанию
         {
             InitializeComponent();
@@ -289,11 +290,11 @@ namespace Формы_Сучкова
 
             get_all();
 
-            
-            Product new_prod = new Product(pk_subcat, name, serial_number, min_inp_price, commis, pay_stay, expected_price,flag_owner,about_product);
-            static_class.product = new_prod;
-            this.Close();
-
+            if (new_prod != null)
+            {
+                static_class.product = new_prod;
+                this.Close();
+            }
         }
 
         public void get_all()
@@ -386,6 +387,7 @@ namespace Формы_Сучкова
 
             }
 
+            new_prod = new Product(pk_subcat, name, serial_number, min_inp_price, commis, pay_stay, expected_price, flag_owner, about_product);
 
         }
 
@@ -409,8 +411,10 @@ namespace Формы_Сучкова
             if(comboBox2.SelectedIndex!=-1)
             for (int i = 0; i < list_subcategory.Count; i++)
                 if (list_subcategory[i].name == comboBox2.Items[comboBox2.SelectedIndex])
-                    textBox2.Text = list_subcategory[i].comission.ToString() ;
-           
+                {
+                    textBox2.Text = list_subcategory[i].comission.ToString();
+                    textBox3.Text = list_subcategory[i].pay_stay.ToString();
+                }
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -444,6 +448,21 @@ namespace Формы_Сучкова
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            
+            get_all_old(); // подготавливаем все значения для обновления записи
+            old_product.pk_cheque = 0;
+            old_product.finish_price = 0;
+            old_product.garant = 0;
+            old_product.pk_stat = 21;
+            string ss;
+            ss = old_product.makeSQLupdate(); // запускаем метод генерации скрипта для обновления
+            cmd_r_tovar.CommandText = ss;
+            cmd_r_tovar.ExecuteNonQuery();
+            this.Close();
         }
     }
 }
