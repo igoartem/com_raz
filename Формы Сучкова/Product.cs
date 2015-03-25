@@ -22,8 +22,9 @@ namespace Формы_Сучкова
         public int finish_price { get; set; }
         public int flag_owner { get; set; }
         public int garant { get; set; }
+        public string opisanie { get; set; }
 
-        public Product(int pk_prod, int pk_act, int pk_subcat, string name, string sn, int pk_cheque, int min_inp_price, int comission, int pay_stay, int pk_stat, int expect_price, int finish_price, int flag_owner, int garant)
+        public Product(int pk_prod, int pk_act, int pk_subcat, string name, string sn, int pk_cheque, int min_inp_price, int comission, int pay_stay, int pk_stat, int expect_price, int finish_price, int flag_owner, int garant, string opisanie)
         {
             this.pk_prod = pk_prod;
             this.pk_act = pk_act;
@@ -39,6 +40,7 @@ namespace Формы_Сучкова
             this.finish_price = finish_price;
             this.flag_owner = flag_owner;
             this.garant = garant;
+            this.opisanie = opisanie;
         }
 
         public Product(int pk_act, int pk_subcat, string name, string sn, int min_inp_price, int comission, int pay_stay, int expect_price, int flag_owner)
@@ -57,7 +59,7 @@ namespace Формы_Сучкова
             //this.garant = garant;
         }
 
-        public Product(int pk_subcat, string name, string sn, int min_inp_price, int comission, int pay_stay, int expect_price, int flag_owner)
+        public Product(int pk_subcat, string name, string sn, int min_inp_price, int comission, int pay_stay, int expect_price, int flag_owner,string opisanie)
         {
             this.pk_subcat = pk_subcat;
             this.name = name;
@@ -68,6 +70,7 @@ namespace Формы_Сучкова
             this.pk_stat = 21;                              //В продаже, при необходимости изменить
             this.expect_price = expect_price;
             this.flag_owner = flag_owner;
+            this.opisanie = opisanie;
         }
 
         public string makeSQLinsert()
@@ -130,19 +133,27 @@ namespace Формы_Сучкова
                 s1 += " finish_price," + " ,";
                 s2 += finish_price + " ,";
             }
-            if (flag_owner != 0)
-            {
+            
                 s1 += " flag_owner,";
                 s2 += flag_owner + " ,";
-            }
+            
+
             if (garant != 0)
             {
                 s1 += " garant,";
                 s2 += garant + " ,";
             }
+            if (opisanie != "")
+            {
+                s1 += " OPISANIE,";
+                s2 += "'"+opisanie + "' ,";
+            }
+
+
             s2 = s2.Substring(0, s2.Length - 1);       //затёр ,
             s1 = s1.Substring(0, s1.Length - 1);
             s2 += ")";
+
 
             string s3 = s1 + s2;
             return s3;
@@ -179,25 +190,33 @@ namespace Формы_Сучкова
             {
                 s1 += " pk_cheque = " + pk_cheque + ",";
             }
+            else
+                s1 += " pk_cheque = null,";
+
             if (pk_stat != 0)
             {
                 s1 += " pk_stat = " + pk_stat + ",";
             }
+            else
+                s1 += " pk_stat = null,";
+
             if (expect_price != 0)
             {
                 s1 += " expect_price = " + expect_price + ",";
             }
-            if (finish_price != 0)
-            {
+           
                 s1 += " finish_price = " + finish_price + ",";
-            }
-            if (flag_owner != 0)
-            {
+            
+            
                 s1 += " flag_owner = " + flag_owner + ",";
-            }
-            if (garant != 0)
-            {
+            
+            
                 s1 += " garant = " + garant + ",";
+            
+            if (opisanie != "")
+            {
+                s1 += " OPISANIE = '" + opisanie + "',";
+               
             }
 
             s1 = s1.Substring(0, s1.Length - 1);
