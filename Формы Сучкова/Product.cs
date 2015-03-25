@@ -146,7 +146,7 @@ namespace Формы_Сучкова
             if (opisanie != "")
             {
                 s1 += " OPISANIE,";
-                s2 += opisanie + " ,";
+                s2 += "'"+opisanie + "' ,";
             }
 
 
@@ -190,25 +190,29 @@ namespace Формы_Сучкова
             {
                 s1 += " pk_cheque = " + pk_cheque + ",";
             }
+            else
+                s1 += " pk_cheque = null,";
+
             if (pk_stat != 0)
             {
                 s1 += " pk_stat = " + pk_stat + ",";
             }
+            else
+                s1 += " pk_stat = null,";
+
             if (expect_price != 0)
             {
                 s1 += " expect_price = " + expect_price + ",";
             }
-            if (finish_price != 0)
-            {
+           
                 s1 += " finish_price = " + finish_price + ",";
-            }
+            
             
                 s1 += " flag_owner = " + flag_owner + ",";
             
-            if (garant != 0)
-            {
+            
                 s1 += " garant = " + garant + ",";
-            }
+            
             if (opisanie != "")
             {
                 s1 += " OPISANIE = '" + opisanie + "',";
