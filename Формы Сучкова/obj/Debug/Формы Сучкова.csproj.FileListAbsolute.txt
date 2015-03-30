@@ -47,6 +47,7 @@ D:\Repo\Формы Сучкова\obj\Debug\Формы_Сучкова.Tovari.res
 D:\Repo\Формы Сучкова\obj\Debug\Формы_Сучкова.Workers.resources
 D:\Repo\Формы Сучкова\obj\Debug\Формы_Сучкова.Zayavka.resources
 D:\Repo\Формы Сучкова\obj\Debug\Формы Сучкова.csproj.GenerateResource.Cache
+<<<<<<< HEAD
 C:\com_raz\Формы Сучкова\obj\Debug\Формы Сучкова.csprojResolveAssemblyReference.cache
 C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы Сучкова.csprojResolveAssemblyReference.cache
 C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы_Сучкова.Add_redact_worker.resources
@@ -73,3 +74,5 @@ C:\Users\HP\Desktop\nigga\Формы Сучкова\bin\Debug\Формы Суч�
 C:\Users\HP\Desktop\nigga\Формы Сучкова\bin\Debug\Формы Сучкова.pdb
 C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы Сучкова.exe
 C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы Сучкова.pdb
+=======
+>>>>>>> origin/artem_2
