@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data;
 using System.Data.OracleClient;
 using System.IO;
 
@@ -60,7 +59,7 @@ namespace Формы_Сучкова
         private void button2_Click(object sender, EventArgs e)
         {
             string fio, number_phone, passport, seller;
-            int kol_days;
+           // int kol_days;
             DateTime date_fin, date_start;
 
             if (textBox1.Text == "")
