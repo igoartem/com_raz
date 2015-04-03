@@ -57,9 +57,9 @@
             this.PK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonCheck = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.buttonBroken = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -338,15 +338,15 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // buttonCheck
             // 
-            this.button3.Location = new System.Drawing.Point(326, 427);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(98, 34);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Чек";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.buttonCheck.Location = new System.Drawing.Point(326, 427);
+            this.buttonCheck.Name = "buttonCheck";
+            this.buttonCheck.Size = new System.Drawing.Size(98, 34);
+            this.buttonCheck.TabIndex = 10;
+            this.buttonCheck.Text = "Чек";
+            this.buttonCheck.UseVisualStyleBackColor = true;
+            this.buttonCheck.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -358,18 +358,18 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button5
+            // buttonBroken
             // 
-            this.button5.Location = new System.Drawing.Point(118, 427);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(98, 34);
-            this.button5.TabIndex = 12;
-            this.button5.Text = "Принять сломанный";
-            this.button5.UseVisualStyleBackColor = true;
+            this.buttonBroken.Location = new System.Drawing.Point(118, 427);
+            this.buttonBroken.Name = "buttonBroken";
+            this.buttonBroken.Size = new System.Drawing.Size(98, 34);
+            this.buttonBroken.TabIndex = 12;
+            this.buttonBroken.Text = "Принять сломанный";
+            this.buttonBroken.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(535, 427);
+            this.button6.Location = new System.Drawing.Point(534, 427);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(98, 34);
             this.button6.TabIndex = 13;
@@ -383,9 +383,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(644, 473);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.buttonBroken);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.buttonCheck);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
@@ -417,9 +417,9 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonCheck;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button buttonBroken;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox6;

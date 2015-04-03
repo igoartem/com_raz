@@ -25,7 +25,7 @@ namespace Формы_Сучкова
         public int commis = 0, min_inp_price = 0, expected_price = 0, pk_subcat = 0, pay_stay = 0, flag_owner = 0;
         public bool flag_prod = false;
         public int pk_prod=0;
-        Product old_product; // объект типа Product, нуженя для редактирования товара
+        Product old_product; // объект типа Product, нужен для редактирования товара
         Product new_prod;
         public R_tovar() // конструктор по умолчанию
         {
@@ -37,15 +37,15 @@ namespace Формы_Сучкова
             label10.Visible = false;
             textBox8.Visible = false;
             button2.Visible = false;
-            button3.Visible = false;
+            buttonCheck.Visible = false;
             button4.Visible = false;
-            button5.Visible=false;
+            buttonBroken.Visible=false;
             button1.Visible = false;
         }
         public R_tovar(Tovari my,int pk) //конструктор для редактирования товаров
         {
             InitializeComponent();
-            button5.Visible = false;
+            buttonBroken.Visible = false;
             button6.Visible = false;
             flag_prod = true;
             pk_prod = pk;
@@ -105,7 +105,7 @@ namespace Формы_Сучкова
                 load_product(pk_prod);
 
         }
-        // метод на загрузку данных о товаре с базы данных и вывод его на форму
+        // метод на загрузку данных о товаре с БД и вывод его на форму
         public void load_product(int pk_product) 
         {
             string ss="select * From Product where PK_PROD="+pk_product; // запрос на получение всей информации о товаре с ПК pk_product
@@ -124,7 +124,7 @@ namespace Формы_Сучкова
             old_product = new Product(Convert.ToInt32(dr_r_tovar[0]), Convert.ToInt32(dr_r_tovar[1]), Convert.ToInt32(dr_r_tovar[2]), dr_r_tovar[3].ToString(), dr_r_tovar[4].ToString(), pk_check, Convert.ToInt32(dr_r_tovar[6]), Convert.ToInt32(dr_r_tovar[7]), Convert.ToInt32(dr_r_tovar[8]), Convert.ToInt32(dr_r_tovar[9]), Convert.ToInt32(dr_r_tovar[10]),fin_price , Convert.ToInt32(dr_r_tovar[12]), garant,dr_r_tovar[14].ToString());
 
             if (old_product.pk_cheque == 0)
-                button3.Visible = false;
+                buttonCheck.Visible = false;
             load_to_form();
         }
 
@@ -170,6 +170,7 @@ namespace Формы_Сучкова
                 groupBox1.Enabled = false;
                 groupBox2.Enabled = false;
                 button1.Enabled = false;
+                buttonBroken.Visible = true;
             }
             else
             {

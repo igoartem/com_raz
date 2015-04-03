@@ -129,11 +129,6 @@ namespace Формы_Сучкова
             }
             count = dataGridView1.Rows.Count;
             //dataGridView1.Enabled = true;       // посчитали все элементы и включили грид
-        } 
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -226,7 +221,7 @@ namespace Формы_Сучкова
         private void редактированиеКатегорийToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Kategory kategory = new Kategory();
-            kategory.Show();
+            kategory.ShowDialog();
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -381,5 +376,7 @@ namespace Формы_Сучкова
             r_tovar.ShowDialog();
             refresh();
         }
+
+
     }
 }

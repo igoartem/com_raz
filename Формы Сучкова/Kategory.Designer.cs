@@ -30,11 +30,10 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.kategor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonDel = new System.Windows.Forms.Button();
             this.PK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kategor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -51,6 +50,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.kategor,
@@ -59,34 +60,32 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(305, 363);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             // 
-            // button1
+            // buttonAdd
             // 
-            this.button1.Location = new System.Drawing.Point(335, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 36);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Добавить категорию";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonAdd.Location = new System.Drawing.Point(335, 12);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(125, 36);
+            this.buttonAdd.TabIndex = 3;
+            this.buttonAdd.Text = "Добавить категорию";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
-            // button2
+            // buttonDel
             // 
-            this.button2.Location = new System.Drawing.Point(335, 54);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(125, 36);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Удалить категорию";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonDel.Location = new System.Drawing.Point(335, 54);
+            this.buttonDel.Name = "buttonDel";
+            this.buttonDel.Size = new System.Drawing.Size(125, 36);
+            this.buttonDel.TabIndex = 4;
+            this.buttonDel.Text = "Удалить категорию";
+            this.buttonDel.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // PK
             // 
-            this.button3.Location = new System.Drawing.Point(335, 96);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(125, 36);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Посмотреть подкатегории";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.PK.HeaderText = "Pk";
+            this.PK.Name = "PK";
             // 
             // kategor
             // 
@@ -94,23 +93,17 @@
             this.kategor.HeaderText = "Категория";
             this.kategor.Name = "kategor";
             // 
-            // PK
-            // 
-            this.PK.HeaderText = "Pk";
-            this.PK.Name = "PK";
-            this.PK.Visible = false;
-            // 
             // Kategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 395);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonDel);
+            this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.groupBox1);
             this.Name = "Kategory";
             this.Text = "Kategory";
+            this.Load += new System.EventHandler(this.Kategory_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -121,9 +114,8 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.Button buttonDel;
         private System.Windows.Forms.DataGridViewTextBoxColumn kategor;
         private System.Windows.Forms.DataGridViewTextBoxColumn PK;
     }
