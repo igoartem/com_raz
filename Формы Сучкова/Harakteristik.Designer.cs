@@ -34,8 +34,12 @@
             this.PK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxPay = new System.Windows.Forms.TextBox();
+            this.textBoxCom = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -43,22 +47,24 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(3, 38);
+            this.groupBox1.Location = new System.Drawing.Point(267, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(317, 353);
+            this.groupBox1.Size = new System.Drawing.Size(265, 283);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Характеристики товаров:";
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.harakt,
             this.PK});
             this.dataGridView1.Location = new System.Drawing.Point(6, 19);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(305, 363);
+            this.dataGridView1.Size = new System.Drawing.Size(250, 246);
             this.dataGridView1.TabIndex = 0;
             // 
             // harakt
@@ -75,7 +81,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(326, 54);
+            this.button2.Location = new System.Drawing.Point(554, 87);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(125, 36);
             this.button2.TabIndex = 8;
@@ -84,19 +90,19 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(326, 12);
+            this.button1.Location = new System.Drawing.Point(554, 31);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(125, 36);
             this.button1.TabIndex = 7;
             this.button1.Text = "Добавить характеристику";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // textBoxName
             // 
-            this.textBox1.Location = new System.Drawing.Point(86, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(228, 20);
-            this.textBox1.TabIndex = 13;
+            this.textBoxName.Location = new System.Drawing.Point(114, 12);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(124, 20);
+            this.textBoxName.TabIndex = 13;
             // 
             // label1
             // 
@@ -107,18 +113,55 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Подкатегория:";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 57);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 13);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Плата за простой";
+            // 
+            // textBoxPay
+            // 
+            this.textBoxPay.Location = new System.Drawing.Point(114, 50);
+            this.textBoxPay.Name = "textBoxPay";
+            this.textBoxPay.Size = new System.Drawing.Size(124, 20);
+            this.textBoxPay.TabIndex = 15;
+            // 
+            // textBoxCom
+            // 
+            this.textBoxCom.Location = new System.Drawing.Point(114, 92);
+            this.textBoxCom.Name = "textBoxCom";
+            this.textBoxCom.Size = new System.Drawing.Size(124, 20);
+            this.textBoxCom.TabIndex = 17;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(10, 99);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 13);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Комиссия";
+            // 
             // Harakteristik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(455, 395);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(697, 307);
+            this.Controls.Add(this.textBoxCom);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.textBoxPay);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Harakteristik";
-            this.Text = "Характеристики";
+            this.Text = "Подкатегория";
+            this.Load += new System.EventHandler(this.Harakteristik_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -132,9 +175,13 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn harakt;
         private System.Windows.Forms.DataGridViewTextBoxColumn PK;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBoxPay;
+        private System.Windows.Forms.TextBox textBoxCom;
+        private System.Windows.Forms.Label label3;
     }
 }

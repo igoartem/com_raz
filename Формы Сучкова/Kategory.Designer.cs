@@ -32,8 +32,8 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonDel = new System.Windows.Forms.Button();
-            this.PK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kategor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -81,17 +81,19 @@
             this.buttonDel.TabIndex = 4;
             this.buttonDel.Text = "Удалить категорию";
             this.buttonDel.UseVisualStyleBackColor = true;
-            // 
-            // PK
-            // 
-            this.PK.HeaderText = "Pk";
-            this.PK.Name = "PK";
+            this.buttonDel.Click += new System.EventHandler(this.buttonDel_Click);
             // 
             // kategor
             // 
             this.kategor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.kategor.HeaderText = "Категория";
             this.kategor.Name = "kategor";
+            // 
+            // PK
+            // 
+            this.PK.HeaderText = "Pk";
+            this.PK.Name = "PK";
+            this.PK.Visible = false;
             // 
             // Kategory
             // 

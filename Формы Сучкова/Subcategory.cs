@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Формы_Сучкова
 {
-    class Subcategory
+    public class Subcategory
     {
         public int pk_subcat { get; set; }
         public int pk_cat { get; set; }
@@ -33,6 +33,27 @@ namespace Формы_Сучкова
             this.pay_stay = pay_stay;
 
 
+        }
+
+
+
+
+        public string makeSQLinsert()
+        {
+            string s1 = "insert into Subcategory (pk_cat, name, comission, pay_stay) VALUES ('" + pk_cat + "', '" + name + "', '" + comission + "', '" + pay_stay + "' )";
+            return s1;
+        }
+
+        public string makeSQLupdate()
+        {
+            string s1 = "update Subcategory SET name = '" + name + "', pk_cat = '" +  pk_cat + "', comission = '" + comission + "', pay_stay = '" + pay_stay + "' where pk_subcat= " + pk_subcat;
+            return s1;
+        }
+
+        public string makeSQLdelete()
+        {
+            string s1 = "delete Subcategory  where pk_subcat= " + pk_subcat;
+            return s1;
         }
     }
 }

@@ -16,6 +16,7 @@ namespace Формы_Сучкова
     {
         private Category kat_father;
         private List<Subcategory> list_pcat;
+        private Subcategory me;
 
 
         OracleCommand cmd_pkat;  // нужно для подключения к базе данных 
@@ -59,6 +60,106 @@ namespace Формы_Сучкова
                 dataGridView1.Rows.Add(name, pk);
 
             }
+
+            
+
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            me = new Subcategory("Новая подкатегория",kat_father.pk_cat,0,0);
+            string s = me.makeSQLinsert();
+            cmd_pkat.CommandText = s;
+            cmd_pkat.ExecuteNonQuery();
+
+            s = "select max(pk_subcat) from subcategory";
+            cmd_pkat.CommandText = s;
+            dr_pkat = cmd_pkat.ExecuteReader();
+            dr_pkat.Read();
+            int pk_subcat = Convert.ToInt32(dr_pkat[0]);
+            me.pk_subcat = pk_subcat;
+
+            list_pcat.Add(me);
+            dataGridView1.Rows.Add(me.name, me.pk_subcat);
+        }
+
+        private void buttonDel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+
+                    if (MessageBox.Show("Вы действительно хотите удалить выбранные подкатегории?", "", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                    {
+
+                        foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                        {
+                            int cur_pk = Convert.ToInt32(row.Cells[1].Value.ToString());
+                            me = list_pcat.Find(x => x.pk_subcat == cur_pk);
+                            string s = me.makeSQLdelete();
+                            cmd_pkat.CommandText = s;
+                            cmd_pkat.ExecuteNonQuery();
+
+
+                            list_pcat.Remove(me);
+
+                        }
+
+
+                        dataGridView1.Rows.Clear();
+
+                        foreach (Subcategory c in list_pcat)
+                        {
+                            dataGridView1.Rows.Add(c.name, c.pk_subcat);
+
+
+                        }
+                    }
+                }
+                else            //если ничего не выделено, то удаляем текущую
+                {
+                    if (MessageBox.Show("Вы действительно хотите удалить данную категорию?", "", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        int cur_pk = Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value.ToString());
+                        me = list_pcat.Find(x => x.pk_subcat == cur_pk);
+                        string s = me.makeSQLdelete();
+                        cmd_pkat.CommandText = s;
+                        cmd_pkat.ExecuteNonQuery();
+
+
+                        list_pcat.Remove(me);
+
+
+
+                        dataGridView1.Rows.Clear();
+
+                        foreach (Subcategory c in list_pcat)
+                        {
+                            dataGridView1.Rows.Add(c.name, c.pk_subcat);
+
+
+                        }
+
+                    }
+
+
+
+                } //MessageBox.Show("Сначала нужно выделить строки");
+            }
+            catch
+            {
+                MessageBox.Show("Сначала нужно все соответствующие товары и характеристики");
+            }
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            int cur_pk = Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value.ToString());
+            me = list_pcat.Find(x => x.pk_subcat == cur_pk);
+            Harakteristik p_kat = new Harakteristik(me);
+            p_kat.ShowDialog();
         }
     }
 }

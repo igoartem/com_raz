@@ -32,7 +32,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.P_kategor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PK = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button3 = new System.Windows.Forms.Button();
             this.buttonDel = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -63,6 +62,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(305, 363);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // P_kategor
             // 
@@ -76,15 +76,6 @@
             this.PK.Name = "PK";
             this.PK.Visible = false;
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(325, 95);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(125, 36);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Посмотреть характеристики";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // buttonDel
             // 
             this.buttonDel.Location = new System.Drawing.Point(325, 53);
@@ -93,6 +84,7 @@
             this.buttonDel.TabIndex = 8;
             this.buttonDel.Text = "Удалить подкатегорию";
             this.buttonDel.UseVisualStyleBackColor = true;
+            this.buttonDel.Click += new System.EventHandler(this.buttonDel_Click);
             // 
             // buttonAdd
             // 
@@ -102,6 +94,7 @@
             this.buttonAdd.TabIndex = 7;
             this.buttonAdd.Text = "Добавить подкатегорию";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // label1
             // 
@@ -116,6 +109,7 @@
             // 
             this.textBoxKategory.Location = new System.Drawing.Point(81, 6);
             this.textBoxKategory.Name = "textBoxKategory";
+            this.textBoxKategory.ReadOnly = true;
             this.textBoxKategory.Size = new System.Drawing.Size(238, 20);
             this.textBoxKategory.TabIndex = 11;
             // 
@@ -127,7 +121,6 @@
             this.Controls.Add(this.textBoxKategory);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.buttonDel);
             this.Controls.Add(this.buttonAdd);
             this.Name = "P_kategory";
@@ -144,7 +137,6 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button buttonDel;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Label label1;

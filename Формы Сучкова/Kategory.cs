@@ -108,5 +108,75 @@ namespace Формы_Сучкова
 
 
         }
+
+        private void buttonDel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+
+                    if (MessageBox.Show("Вы действительно хотите удалить выбранные категории?", "", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                    {
+
+                        foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                        {
+                            int cur_pk = Convert.ToInt32(row.Cells[1].Value.ToString());
+                            me = list_cat.Find(x => x.pk_cat == cur_pk);
+                            string s = me.makeSQLdelete();
+                            cmd_kat.CommandText = s;
+                            cmd_kat.ExecuteNonQuery();
+
+
+                            list_cat.Remove(me);
+
+                        }
+
+
+                        dataGridView1.Rows.Clear();
+
+                        foreach (Category c in list_cat)
+                        {
+                            dataGridView1.Rows.Add(c.name, c.pk_cat);
+
+
+                        }
+                    }
+                }
+                else            //если ничего не выделено, то удаляем текущую
+                {
+                    if (MessageBox.Show("Вы действительно хотите удалить данную категорию?", "", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        int cur_pk = Convert.ToInt32(dataGridView1.CurrentRow.Cells[1].Value.ToString());
+                        me = list_cat.Find(x => x.pk_cat == cur_pk);
+                        string s = me.makeSQLdelete();
+                        cmd_kat.CommandText = s;
+                        cmd_kat.ExecuteNonQuery();
+
+
+                        list_cat.Remove(me);
+
+
+
+                        dataGridView1.Rows.Clear();
+
+                        foreach (Category c in list_cat)
+                        {
+                            dataGridView1.Rows.Add(c.name, c.pk_cat);
+
+
+                        }
+
+                    }
+
+
+
+                } //MessageBox.Show("Сначала нужно выделить строки");
+            }
+            catch
+            { 
+                MessageBox.Show("Сначала нужно все соответствующие подкатегории"); 
+            }
+        }
     }
 }
