@@ -57,12 +57,46 @@ namespace Формы_Сучкова
             button3.Visible = false;
         }
 
+        public bool proverka()
+        {
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                if (dataGridView1.Rows[i].Cells[1].Value == null)
+                {
+                    MessageBox.Show("Не заполнено поле наименование!");
+                    return false;
+                }
+                if (dataGridView1.Rows[i].Cells[2].Value == null)
+                {
+                    MessageBox.Show("Не заполнено поле плата за простой!");
+                    return false;
+                }
+                if (dataGridView1.Rows[i].Cells[3].Value == null)
+                {
+                    MessageBox.Show("Не заполнено поле цена приемки!");
+                    return false;
+                }
+                if (dataGridView1.Rows[i].Cells[4].Value == null)
+                {
+                    MessageBox.Show("Не заполнено поле цена продажи!");
+                    return false;
+                }
+                if (dataGridView1.Rows[i].Cells[5].Value == null)
+                {
+                    MessageBox.Show("Не заполнено поле комиссия!");
+                    return false;
+                }
+                
+            }
+            return true;
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             string fio, number_phone, passport, seller;
             int kol_days;
             DateTime date_fin, date_start;
-
+           
             if (textBox1.Text == "")
             {
                 MessageBox.Show("Не заполнено поле ФИО!");
@@ -99,7 +133,8 @@ namespace Формы_Сучкова
                 MessageBox.Show("Не добавлено ни одного товара!");
                 return;
             }
-
+            if (!proverka())
+                return;
 
             if (pk < 0)
             {
