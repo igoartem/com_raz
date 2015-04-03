@@ -387,7 +387,11 @@ namespace Формы_Сучкова
 
             }
 
-            new_prod = new Product(pk_subcat, name, serial_number, min_inp_price, commis, pay_stay, expected_price, flag_owner, about_product);
+//<<<<<<< HEAD
+            Product new_prod = new Product(pk_subcat, name, serial_number, min_inp_price, commis, pay_stay, expected_price, flag_owner, textBox4.Text);
+            static_class.product = new_prod;
+            this.Close();
+
 
         }
 
