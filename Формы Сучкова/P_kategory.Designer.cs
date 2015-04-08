@@ -60,6 +60,7 @@
             this.PK});
             this.dataGridView1.Location = new System.Drawing.Point(6, 19);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(305, 363);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
@@ -69,11 +70,13 @@
             this.P_kategor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.P_kategor.HeaderText = "Подкатегория";
             this.P_kategor.Name = "P_kategor";
+            this.P_kategor.ReadOnly = true;
             // 
             // PK
             // 
             this.PK.HeaderText = "PK";
             this.PK.Name = "PK";
+            this.PK.ReadOnly = true;
             this.PK.Visible = false;
             // 
             // buttonDel

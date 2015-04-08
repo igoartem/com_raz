@@ -47,6 +47,7 @@ namespace Формы_Сучкова
 
             list_pcat = new List<Subcategory>();
 
+            dataGridView1.Rows.Clear();
 
             while (dr_pkat.Read())
             {
@@ -160,6 +161,7 @@ namespace Формы_Сучкова
             me = list_pcat.Find(x => x.pk_subcat == cur_pk);
             Harakteristik p_kat = new Harakteristik(me);
             p_kat.ShowDialog();
+            P_kategory_Load(sender, e);
         }
     }
 }
