@@ -85,6 +85,7 @@
       <DependentUpon>Arhiv.cs</DependentUpon>
     </Compile>
     <Compile Include="Category.cs" />
+    <Compile Include="Characteristic.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,7 +98,7 @@
     <Compile Include="Harakteristik.Designer.cs">
       <DependentUpon>Harakteristik.cs</DependentUpon>
     </Compile>
-    <Compile Include="Inpit_act.cs" />
+    <Compile Include="Input_act.cs" />
     <Compile Include="Kategory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +145,7 @@
       <DependentUpon>Setting.cs</DependentUpon>
     </Compile>
     <Compile Include="static_class.cs" />
+    <Compile Include="static_connect.cs" />
     <Compile Include="Statistic.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,6 +232,8 @@
     <EmbeddedResource Include="Zayavka.resx">
       <DependentUpon>Zayavka.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Category.datasource" />
+    <None Include="Properties\DataSources\Kategory.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

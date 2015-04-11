@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Формы_Сучкова
 {
-    class Inpit_act
+    class Input_act
     {
         public int pk_act { get; set; }
         public DateTime date_inp { get; set; }
@@ -16,7 +16,7 @@ namespace Формы_Сучкова
 
 
 
-        public Inpit_act(int pk_worker, int pk_sell)
+        public Input_act(int pk_worker, int pk_sell)
         {
             this.pk_worker = pk_worker;
             this.pk_sell = pk_sell;

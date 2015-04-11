@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data;
 using System.Data.OracleClient;
 using System.IO;
 
@@ -60,7 +59,7 @@ namespace Формы_Сучкова
         private void button2_Click(object sender, EventArgs e)
         {
             string fio, number_phone, passport, seller;
-            int kol_days;
+           // int kol_days;
             DateTime date_fin, date_start;
 
             if (textBox1.Text == "")
@@ -113,7 +112,7 @@ namespace Формы_Сучкова
                 dr_akt_priem.Read();
                 int pk_sell = Convert.ToInt32(dr_akt_priem[0]);
 
-                Inpit_act inp_act = new Inpit_act(static_class.worker, pk_sell); //здесь надо будет менять работника
+                Input_act inp_act = new Input_act(static_class.worker, pk_sell); //здесь надо будет менять работника
 
                 inp_act.date_inp = date_start;
                 inp_act.date_end = date_fin;

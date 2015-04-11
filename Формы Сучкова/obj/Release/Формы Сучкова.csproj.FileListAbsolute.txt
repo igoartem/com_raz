@@ -1,0 +1,25 @@
+C:\Users\HP\Desktop\nigga\Формы Сучкова\bin\Release\Формы Сучкова.exe.config
+C:\Users\HP\Desktop\nigga\Формы Сучкова\bin\Release\Формы Сучкова.exe
+C:\Users\HP\Desktop\nigga\Формы Сучкова\bin\Release\Формы Сучкова.pdb
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Release\Формы Сучкова.csprojResolveAssemblyReference.cache
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Release\Формы_Сучкова.Add_redact_worker.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Release\Формы_Сучкова.Akt_priem.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Release\Формы_Сучкова.Akt_spis.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Release\Формы_Сучкова.Arhiv.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Release\Формы_Сучкова.Form1.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Release\Формы_Сучкова.Harakteristik.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Release\Формы_Сучкова.Kategory.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Release\Формы_Сучкова.Prodaja.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Release\Формы_Сучкова.Properties.Resources.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Release\Формы_Сучкова.P_kategory.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Release\Формы_Сучкова.Redact_zayavka.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Release\Формы_Сучкова.R_tovar.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Release\Формы_Сучкова.R_tovar_arh.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Release\Формы_Сучкова.Setting.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Release\Формы_Сучкова.Statistic.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Release\Формы_Сучкова.Tovari.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Release\Формы_Сучкова.Workers.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Release\Формы_Сучкова.Zayavka.resources
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Release\Формы Сучкова.csproj.GenerateResource.Cache
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Release\Формы Сучкова.exe
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Release\Формы Сучкова.pdb
