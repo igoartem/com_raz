@@ -36,5 +36,11 @@ namespace Формы_Сучкова
             return s1;
         }
 
+        public string makeSQLdelete()
+        {
+            string s1 = "delete Category  where pk_cat= " + pk_cat;
+            return s1;
+        }
+
     }
 }
