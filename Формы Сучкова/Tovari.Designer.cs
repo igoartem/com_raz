@@ -421,6 +421,7 @@
             this.просмотрЗаявокToolStripMenuItem.Name = "просмотрЗаявокToolStripMenuItem";
             this.просмотрЗаявокToolStripMenuItem.Size = new System.Drawing.Size(115, 20);
             this.просмотрЗаявокToolStripMenuItem.Text = "Просмотр заявок";
+            this.просмотрЗаявокToolStripMenuItem.Click += new System.EventHandler(this.просмотрЗаявокToolStripMenuItem_Click);
             // 
             // настройкиToolStripMenuItem
             // 

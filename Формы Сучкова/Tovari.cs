@@ -377,6 +377,12 @@ namespace Формы_Сучкова
             refresh();
         }
 
+        private void просмотрЗаявокToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Zayavka zay = new Zayavka();
+            zay.ShowDialog();
+        }
+
 
     }
 }

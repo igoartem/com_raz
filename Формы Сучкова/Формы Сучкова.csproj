@@ -126,6 +126,7 @@
     <Compile Include="Redact_zayavka.Designer.cs">
       <DependentUpon>Redact_zayavka.cs</DependentUpon>
     </Compile>
+    <Compile Include="Request.cs" />
     <Compile Include="R_tovar.cs">
       <SubType>Form</SubType>
     </Compile>
