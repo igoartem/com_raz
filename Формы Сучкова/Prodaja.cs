@@ -130,6 +130,15 @@ namespace Формы_Сучкова
             button1.Visible = false;
         }
 
+        public Prodaja(R_tovar_arh my, int pk_inp)
+        {
+            rejim = 1;
+            pk = pk_inp;
+            InitializeComponent();
+            label5.Text = "Чек продажи";
+            button1.Visible = false;
+        }
+
         public void connect()
         {
             StreamReader sr;
