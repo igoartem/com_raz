@@ -58,6 +58,15 @@ namespace Формы_Сучкова
             button3.Visible = false;
         }
 
+        public Akt_priem(R_tovar_arh my, int pk_act)
+        {
+            pk = pk_act;
+            InitializeComponent();
+            connect();
+            button1.Visible = false;
+            button3.Visible = false;
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             string fio, number_phone, passport, seller;

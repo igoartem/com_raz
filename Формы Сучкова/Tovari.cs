@@ -227,15 +227,27 @@ namespace Формы_Сучкова
         {
             //Удаление
             
-            for (int i = 0; i < dataGridView1.RowCount; i++) //просто удалим чекнутые товары
+            for (int i = 0; i < dataGridView1.RowCount; i++) //просто отправим в архив чекнутые товары
             {
                 if (dataGridView1.Rows[i].Cells[0].Value != null)
                 {
                     if (dataGridView1.Rows[i].Cells[0].Value.ToString() == "true")
                     {
-                        cmd1.CommandText = "delete from product where product.pk_prod = " + dataGridView1.Rows[i].Cells[9].Value.ToString();
-                        cmd1.ExecuteNonQuery();
-                        //textBox4.Text = dataGridView1.Rows[i].Cells[9].Value.ToString();
+                        if (dataGridView1.Rows[i].Cells[5].Value.ToString() != "Продано")
+                        {
+                            MessageBox.Show("Товар " + dataGridView1.Rows[i].Cells[1].Value.ToString() + " не продан!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        }
+                        else if (dataGridView1.Rows[i].Cells[10].Value != null && (int)dataGridView1.Rows[i].Cells[10].Value > 0)
+                        {
+                            MessageBox.Show("У товара " + dataGridView1.Rows[i].Cells[1].Value.ToString() + " не кончилась гарантия!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        }
+                        else
+                        {
+                            cmd1.CommandText = "insert into PRODUCT_AR (pk_prod_ar, NAME, SN, PK_SUBCAT, PK_CHEQUE, PK_ACT, MIN_INP_PRICE, FINISH_PRICE, EXPECT_PRICE) select product.pk_prod, product.name, product.SN, product.PK_SUBCAT, product.PK_CHEQUE, product.PK_ACT, product.MIN_INP_PRICE, product.FINISH_PRICE, product.EXPECT_PRICE  from product where pk_prod = " + dataGridView1.Rows[i].Cells[9].Value.ToString();
+                            cmd1.ExecuteNonQuery();
+                            cmd1.CommandText = "delete from product where product.pk_prod = " + dataGridView1.Rows[i].Cells[9].Value.ToString();
+                            cmd1.ExecuteNonQuery();
+                        }
                     }
                 }
             }
@@ -375,6 +387,19 @@ namespace Формы_Сучкова
             R_tovar r_tovar = new R_tovar(this, pk); //вызов описания фии
             r_tovar.ShowDialog();
             refresh();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Arhiv arh = new Arhiv();
+            arh.ShowDialog();
+            refresh();
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
 

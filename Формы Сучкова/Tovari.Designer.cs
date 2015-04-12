@@ -59,7 +59,6 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.работникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,6 +71,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -109,6 +109,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(847, 422);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
             // 
             // Select
@@ -369,25 +370,15 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(878, 108);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(125, 30);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Удалить\r\nОтправить в архив";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // button3
             // 
-            this.button3.Enabled = false;
             this.button3.Location = new System.Drawing.Point(878, 144);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(125, 30);
             this.button3.TabIndex = 4;
             this.button3.Text = "Открыть архив";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // menuStrip1
             // 
@@ -483,6 +474,16 @@
             this.button8.Text = "Списать товар";
             this.button8.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(878, 108);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(125, 30);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Отправить в архив";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Tovari
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -535,7 +536,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
@@ -561,5 +561,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Date_end;
         private System.Windows.Forms.DataGridViewTextBoxColumn PK;
         private System.Windows.Forms.DataGridViewTextBoxColumn Garant;
+        private System.Windows.Forms.Button button2;
     }
 }
