@@ -52,15 +52,15 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.naim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Znach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.buttonCheck = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.buttonBroken = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.naim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Znach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -291,6 +291,11 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.naim,
@@ -300,23 +305,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(362, 384);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // naim
-            // 
-            this.naim.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.naim.HeaderText = "Наименование";
-            this.naim.Name = "naim";
-            // 
-            // Znach
-            // 
-            this.Znach.HeaderText = "Значение";
-            this.Znach.Name = "Znach";
-            // 
-            // PK
-            // 
-            this.PK.HeaderText = "PK";
-            this.PK.Name = "PK";
-            this.PK.Visible = false;
             // 
             // button1
             // 
@@ -377,6 +365,24 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // naim
+            // 
+            this.naim.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.naim.HeaderText = "Наименование";
+            this.naim.Name = "naim";
+            this.naim.ReadOnly = true;
+            // 
+            // Znach
+            // 
+            this.Znach.HeaderText = "Значение";
+            this.Znach.Name = "Znach";
+            // 
+            // PK
+            // 
+            this.PK.HeaderText = "PK";
+            this.PK.Name = "PK";
+            this.PK.Visible = false;
+            // 
             // R_tovar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -432,10 +438,10 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn naim;
         private System.Windows.Forms.DataGridViewTextBoxColumn Znach;
         private System.Windows.Forms.DataGridViewTextBoxColumn PK;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
