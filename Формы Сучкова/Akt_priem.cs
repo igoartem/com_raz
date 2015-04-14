@@ -15,6 +15,7 @@ namespace Формы_Сучкова
     public partial class Akt_priem : Form
     {
         List<Product> list_product;
+        List<elemOfConfTable> list_elem;
         OracleCommand cmd_akt_priem;     //
         OracleConnection con_akt_priem;  // Подключение для вывода товаров в таблицу
         OracleDataReader dr_akt_priem;   //
@@ -23,6 +24,7 @@ namespace Формы_Сучкова
         public void connect()
         {
             list_product = new List<Product>();
+            list_elem = new List<elemOfConfTable>();
             StreamReader sr;        // загрузка файла с адресом хоста с бд
             string s = null;
             try
@@ -54,6 +56,23 @@ namespace Формы_Сучкова
             connect();
             button1.Visible = false;
             button3.Visible = false;
+        }
+
+        public Akt_priem(R_tovar_arh my, int pk_act)
+        {
+            pk = pk_act;
+            InitializeComponent();
+            connect();
+            button1.Visible = false;
+            button3.Visible = false;
+            button2.Visible = false;
+            textBox1.Enabled = false;
+            textBox2.Enabled = false;
+            textBox3.Enabled = false;
+            textBox4.Enabled = false;
+            textBox6.Enabled = false;
+            dateTimePicker1.Enabled = false;
+            dateTimePicker2.Enabled = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -138,6 +157,33 @@ namespace Формы_Сучкова
                     cmd_akt_priem.CommandText = ss;
                     cmd_akt_priem.ExecuteNonQuery();
 
+                    ss = "select PK_PROD from product where PK_ACT='" + list_product[i].pk_act +
+                        "' AND PK_SUBCAT='" + list_product[i].pk_subcat +
+                        "' and NAME='" + list_product[i].name + 
+                        "' and SN='" + list_product[i].sn +
+                        "' and MIN_INP_PRICE='"+ list_product[i].min_inp_price +
+                        "' and COMISSION= '"+ list_product[i].comission+
+                        "' and PAY_STAY= '"+ list_product[i].pay_stay+
+                        "' and PK_STAT= '"+ list_product[i].pk_stat+
+                        "' and EXPECT_PRICE= '"+ list_product[i].expect_price+
+                        "' and FLAG_OWNER= '"+ list_product[i].flag_owner+
+                        "' and OPISANIE= '"+ list_product[i].opisanie+
+                        "'";
+                    cmd_akt_priem.CommandText = ss;
+                    dr_akt_priem = cmd_akt_priem.ExecuteReader();
+                    dr_akt_priem.Read();
+                    int pk_tov = Convert.ToInt32(dr_akt_priem[0]);
+                    for (int j = 0; j < list_elem.Count; j++)
+                    {
+                        if (list_elem[j].pk_prod == i)
+                        {
+                            list_elem[j].pk_prod = pk_tov;
+                            ss=list_elem[j].makeSQLinsert();
+                            cmd_akt_priem.CommandText = ss;
+                            cmd_akt_priem.ExecuteNonQuery();
+                        }
+                    }
+                    //получаем ПК добавленного товара товара 
                 }
             }
             else
@@ -158,12 +204,20 @@ namespace Формы_Сучкова
             R_tovar form_priem = new R_tovar(this);
             form_priem.ShowDialog();
 
+            
             Product prod = static_class.product;
+
+            List<elemOfConfTable> list_el = static_class.list_char;
             if (prod != null)
             {
                 list_product.Add(prod);
                 add_datagrid(list_product[list_product.Count - 1]);
-                static_class.product = null;
+                for (int i = 0; i < list_el.Count; i++)
+                {
+                    list_el[i].pk_prod = list_product.Count - 1;
+                    list_elem.Add(list_el[i]);
+                }
+                    static_class.product = null;
             }
         }
 
@@ -178,7 +232,13 @@ namespace Формы_Сучкова
             else
             {
                 list_product.RemoveAt(dataGridView1.CurrentCell.RowIndex);
-                update_datagrid();
+                
+                        
+                list_elem.RemoveAll(elemOfConfTable => elemOfConfTable.pk_prod == dataGridView1.CurrentCell.RowIndex);
+
+
+                update_list_elem(dataGridView1.CurrentCell.RowIndex);
+                    update_datagrid();
             }
         }
 
@@ -207,6 +267,14 @@ namespace Формы_Сучкова
             {
                 add_datagrid(list_product[i]);
             }
+        }
+
+        private void update_list_elem(int pk_del)
+        {
+
+            for (int i = 0; i < list_elem.Count; i++)
+                if (list_elem[i].pk_prod > pk_del)
+                    list_elem[i].pk_prod--;
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -275,6 +343,33 @@ namespace Формы_Сучкова
                     dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[4].ReadOnly = true;
                     dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[5].ReadOnly = true;
                 }
+
+                cmd_akt_priem.CommandText = "select product_ar.FLAG_OWNER, product_ar.NAME, product_ar.PAY_STAY, product_ar.MIN_INP_PRICE, product_ar.EXPECT_PRICE, product_ar.COMISSION from input_act, product_ar where input_act.PK_ACT = " + pk + " and product_ar.PK_ACT = input_act.PK_ACT";
+                dr_akt_priem = cmd_akt_priem.ExecuteReader();
+
+                dataGridView1.Enabled = false;
+                while (dr_akt_priem.Read())
+                {
+                    dataGridView1.Rows.Add();
+
+                    if (Convert.ToInt32(dr_akt_priem[0]) == 1)
+                    {
+                        dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[0].Value = true;
+                    }
+
+                    dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[1].Value = dr_akt_priem[1].ToString(); // naimenov
+                    dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[2].Value = dr_akt_priem[2].ToString(); //FIO
+                    dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[3].Value = dr_akt_priem[3].ToString(); //garant
+                    dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[4].Value = dr_akt_priem[4].ToString(); //exp_cost
+                    dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[5].Value = dr_akt_priem[5].ToString(); // Fin_price
+                    dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[0].ReadOnly = true;
+                    dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[1].ReadOnly = true;
+                    dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[2].ReadOnly = true;
+                    dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[3].ReadOnly = true;
+                    dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[4].ReadOnly = true;
+                    dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[5].ReadOnly = true;
+                }
+
                 dataGridView1.Enabled = true;
             }
         }
@@ -290,6 +385,11 @@ namespace Формы_Сучкова
             //textBox4.Enabled = false;
             textBox4.Text = ss;
             //textBox4.Enabled = true;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -227,15 +227,49 @@ namespace Формы_Сучкова
         {
             //Удаление
             
-            for (int i = 0; i < dataGridView1.RowCount; i++) //просто удалим чекнутые товары
+            for (int i = 0; i < dataGridView1.RowCount; i++) //просто отправим в архив чекнутые товары
             {
                 if (dataGridView1.Rows[i].Cells[0].Value != null)
                 {
                     if (dataGridView1.Rows[i].Cells[0].Value.ToString() == "true")
                     {
-                        cmd1.CommandText = "delete from product where product.pk_prod = " + dataGridView1.Rows[i].Cells[9].Value.ToString();
-                        cmd1.ExecuteNonQuery();
-                        //textBox4.Text = dataGridView1.Rows[i].Cells[9].Value.ToString();
+                        if (dataGridView1.Rows[i].Cells[5].Value.ToString() != "Продано")
+                        {
+                            MessageBox.Show("Товар " + dataGridView1.Rows[i].Cells[1].Value.ToString() + " не продан!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        }
+                        else if (dataGridView1.Rows[i].Cells[10].Value != null && (int)dataGridView1.Rows[i].Cells[10].Value > 0)
+                        {
+                            MessageBox.Show("У товара " + dataGridView1.Rows[i].Cells[1].Value.ToString() + " не кончилась гарантия!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        }
+                        else
+                        {
+                            List<elemOfConfTable> list_elemConfTable = new List<elemOfConfTable>();
+                            
+                            cmd1.CommandText = "SELECT pk_tab, value, pk_prod, pk_char from table_conform where pk_prod = " + dataGridView1.Rows[i].Cells[9].Value.ToString(); ;
+                            dr1 = cmd1.ExecuteReader();
+
+                            while (dr1.Read())
+                            {
+                                list_elemConfTable.Add(new elemOfConfTable(Convert.ToInt32(dr1[0]), dr1[1].ToString(), Convert.ToInt32(dr1[2]), Convert.ToInt32(dr1[3])));
+                            }
+
+                            cmd1.CommandText = "insert into PRODUCT_AR (pk_prod_ar, NAME, SN, PK_SUBCAT, PK_CHEQUE, PK_ACT, MIN_INP_PRICE, FINISH_PRICE, EXPECT_PRICE, OPISANIE, FLAG_OWNER, COMISSION, PAY_STAY, PK_STAT, GARANT) select product.pk_prod, product.name, product.SN, product.PK_SUBCAT, product.PK_CHEQUE, product.PK_ACT, product.MIN_INP_PRICE, product.FINISH_PRICE, product.EXPECT_PRICE, product.OPISANIE, product.FLAG_OWNER, product.COMISSION, product.PAY_STAY, product.PK_STAT, product.GARANT  from product where pk_prod = " + dataGridView1.Rows[i].Cells[9].Value.ToString();
+                            cmd1.ExecuteNonQuery();
+
+                            for (int j = 0; j < list_elemConfTable.Count; j++)
+                            {
+                                cmd1.CommandText = list_elemConfTable[j].makeSQLinsert_AR();
+                                cmd1.ExecuteNonQuery();
+                            }
+
+                            string ss = "delete from table_conform where table_conform.pk_prod = " + dataGridView1.Rows[i].Cells[9].Value.ToString();
+
+                            cmd1.CommandText = ss;// "delete from table_conform where table_conform.pk_prod = " + dataGridView1.Rows[i].Cells[9].Value.ToString();
+                            cmd1.ExecuteNonQuery();
+
+                            cmd1.CommandText = "delete from product where product.pk_prod = " + dataGridView1.Rows[i].Cells[9].Value.ToString();
+                            cmd1.ExecuteNonQuery();
+                        }
                     }
                 }
             }
@@ -377,10 +411,29 @@ namespace Формы_Сучкова
             refresh();
         }
 
+<<<<<<< HEAD
         private void просмотрЗаявокToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Zayavka zay = new Zayavka();
             zay.ShowDialog();
+=======
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Arhiv arh = new Arhiv();
+            arh.ShowDialog();
+            refresh();
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+>>>>>>> origin/Serega
         }
 
 

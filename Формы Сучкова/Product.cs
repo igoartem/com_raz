@@ -23,6 +23,22 @@ namespace Формы_Сучкова
         public int flag_owner { get; set; }
         public int garant { get; set; }
         public string opisanie { get; set; }
+        public int pk_act_spis { get; set; }
+
+        public Product(int pk_prod, int pk_act_spis, string name, string sn, int pk_subcat, int pk_cheque, int pk_act, int min_inp_price, int finish_price, int expect_price, string opisanie)
+        {
+            this.pk_prod = pk_prod;
+            this.pk_act = pk_act;
+            this.pk_act_spis = pk_act_spis;
+            this.pk_subcat = pk_subcat;
+            this.name = name;
+            this.sn = sn;
+            this.pk_cheque = pk_cheque;
+            this.min_inp_price = min_inp_price;
+            this.expect_price = expect_price;
+            this.finish_price = finish_price;
+            this.opisanie = opisanie;
+        }
 
         public Product(int pk_prod, int pk_act, int pk_subcat, string name, string sn, int pk_cheque, int min_inp_price, int comission, int pay_stay, int pk_stat, int expect_price, int finish_price, int flag_owner, int garant, string opisanie)
         {

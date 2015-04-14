@@ -57,7 +57,28 @@ namespace Формы_Сучкова
                 dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[3].ReadOnly = true;
                 dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[6].ReadOnly = true;
 
+                dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[5].Value = (Convert.ToInt32(dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[4].Value) - Convert.ToInt32(dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[6].Value));
+
+                summ += Convert.ToInt32(dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[6].Value);
+            }
+            cmd_prod.CommandText = "select product_ar.pk_prod_ar, product_ar.name, seller.FIO, product_ar.garant, product_ar.expect_price,product_ar.finish_price,product_ar.min_inp_price from product_ar, input_act, seller where product_ar.PK_cheque = " + pk.ToString() + " and product_ar.PK_ACT = input_act.PK_ACT and input_act.PK_SELL = seller.PK_SELL";
+            dr_prod = cmd_prod.ExecuteReader();
+
+            while (dr_prod.Read())
+            {
+                dataGridView1.Rows.Add();
+                dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[0].Value = dr_prod[0].ToString(); // PK
+                dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[1].Value = dr_prod[1].ToString(); // naimenov
+                dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[2].Value = dr_prod[2].ToString(); //FIO
+                dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[3].Value = dr_prod[3].ToString(); //garant
+                dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[4].Value = dr_prod[4].ToString(); //exp_cost
+                dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[6].Value = dr_prod[5].ToString(); // Fin_price
+                dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[7].Value = dr_prod[6].ToString(); // min price
+                dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[3].ReadOnly = true;
+                dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[6].ReadOnly = true;
+
             dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[5].Value = (Convert.ToInt32(dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[4].Value) - Convert.ToInt32(dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[6].Value));
+
 
             summ += Convert.ToInt32(dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[6].Value);
             }
@@ -122,6 +143,15 @@ namespace Формы_Сучкова
         }
 
         public Prodaja(R_tovar my,int pk_inp)
+        {
+            rejim = 1;
+            pk = pk_inp;
+            InitializeComponent();
+            label5.Text = "Чек продажи";
+            button1.Visible = false;
+        }
+
+        public Prodaja(R_tovar_arh my, int pk_inp)
         {
             rejim = 1;
             pk = pk_inp;
