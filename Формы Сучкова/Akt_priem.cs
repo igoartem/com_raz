@@ -15,6 +15,7 @@ namespace Формы_Сучкова
     public partial class Akt_priem : Form
     {
         List<Product> list_product;
+        List<elemOfConfTable> list_elem;
         OracleCommand cmd_akt_priem;     //
         OracleConnection con_akt_priem;  // Подключение для вывода товаров в таблицу
         OracleDataReader dr_akt_priem;   //
@@ -23,6 +24,7 @@ namespace Формы_Сучкова
         public void connect()
         {
             list_product = new List<Product>();
+            list_elem = new List<elemOfConfTable>();
             StreamReader sr;        // загрузка файла с адресом хоста с бд
             string s = null;
             try
@@ -147,6 +149,33 @@ namespace Формы_Сучкова
                     cmd_akt_priem.CommandText = ss;
                     cmd_akt_priem.ExecuteNonQuery();
 
+                    ss = "select PK_PROD from product where PK_ACT='" + list_product[i].pk_act +
+                        "' AND PK_SUBCAT='" + list_product[i].pk_subcat +
+                        "' and NAME='" + list_product[i].name + 
+                        "' and SN='" + list_product[i].sn +
+                        "' and MIN_INP_PRICE='"+ list_product[i].min_inp_price +
+                        "' and COMISSION= '"+ list_product[i].comission+
+                        "' and PAY_STAY= '"+ list_product[i].pay_stay+
+                        "' and PK_STAT= '"+ list_product[i].pk_stat+
+                        "' and EXPECT_PRICE= '"+ list_product[i].expect_price+
+                        "' and FLAG_OWNER= '"+ list_product[i].flag_owner+
+                        "' and OPISANIE= '"+ list_product[i].opisanie+
+                        "'";
+                    cmd_akt_priem.CommandText = ss;
+                    dr_akt_priem = cmd_akt_priem.ExecuteReader();
+                    dr_akt_priem.Read();
+                    int pk_tov = Convert.ToInt32(dr_akt_priem[0]);
+                    for (int j = 0; j < list_elem.Count; j++)
+                    {
+                        if (list_elem[j].pk_prod == i)
+                        {
+                            list_elem[j].pk_prod = pk_tov;
+                            ss=list_elem[j].makeSQLinsert();
+                            cmd_akt_priem.CommandText = ss;
+                            cmd_akt_priem.ExecuteNonQuery();
+                        }
+                    }
+                    //получаем ПК добавленного товара товара 
                 }
             }
             else
@@ -167,12 +196,20 @@ namespace Формы_Сучкова
             R_tovar form_priem = new R_tovar(this);
             form_priem.ShowDialog();
 
+            
             Product prod = static_class.product;
+
+            List<elemOfConfTable> list_el = static_class.list_char;
             if (prod != null)
             {
                 list_product.Add(prod);
                 add_datagrid(list_product[list_product.Count - 1]);
-                static_class.product = null;
+                for (int i = 0; i < list_el.Count; i++)
+                {
+                    list_el[i].pk_prod = list_product.Count - 1;
+                    list_elem.Add(list_el[i]);
+                }
+                    static_class.product = null;
             }
         }
 
@@ -187,7 +224,13 @@ namespace Формы_Сучкова
             else
             {
                 list_product.RemoveAt(dataGridView1.CurrentCell.RowIndex);
-                update_datagrid();
+                
+                        
+                list_elem.RemoveAll(elemOfConfTable => elemOfConfTable.pk_prod == dataGridView1.CurrentCell.RowIndex);
+
+
+                update_list_elem(dataGridView1.CurrentCell.RowIndex);
+                    update_datagrid();
             }
         }
 
@@ -216,6 +259,14 @@ namespace Формы_Сучкова
             {
                 add_datagrid(list_product[i]);
             }
+        }
+
+        private void update_list_elem(int pk_del)
+        {
+
+            for (int i = 0; i < list_elem.Count; i++)
+                if (list_elem[i].pk_prod > pk_del)
+                    list_elem[i].pk_prod--;
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -299,6 +350,11 @@ namespace Формы_Сучкова
             //textBox4.Enabled = false;
             textBox4.Text = ss;
             //textBox4.Enabled = true;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

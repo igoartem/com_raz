@@ -20,12 +20,33 @@ Fatal NI connect error 12541, connecting to:
 
 
 ***********************************************************************
+<<<<<<< HEAD
+Fatal NI connect error 12170.
+=======
 Fatal NI connect error 12541, connecting to:
  (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=37.23.234.24)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=XE)(CID=(PROGRAM=D:\Repo\Формы Сучкова\bin\Debug\Формы Сучкова.exe)(HOST=LENOVO-NOTEBOOK)(USER=Lenovo))))
+>>>>>>> origin/Serega
 
   VERSION INFORMATION:
 	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
 	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
+<<<<<<< HEAD
+  Time: 25-МАР-2015 10:03:40
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12535
+    TNS-12535: TNS:operation timed out
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: Operation timed out
+    nt secondary err code: 60
+    nt OS err code: 0
+  Client address: <unknown>
+
+
+***********************************************************************
+Fatal NI connect error 12170.
+=======
   Time: 25-МАР-2015 00:13:17
   Tracing not turned on.
   Tns error struct:
@@ -41,10 +62,28 @@ Fatal NI connect error 12541, connecting to:
 ***********************************************************************
 Fatal NI connect error 12541, connecting to:
  (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=37.23.234.24)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=XE)(CID=(PROGRAM=D:\Repo\Формы Сучкова\bin\Debug\Формы Сучкова.vshost.exe)(HOST=LENOVO-NOTEBOOK)(USER=Lenovo))))
+>>>>>>> origin/Serega
 
   VERSION INFORMATION:
 	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
 	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
+<<<<<<< HEAD
+  Time: 25-МАР-2015 10:08:57
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12535
+    TNS-12535: TNS:operation timed out
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: Operation timed out
+    nt secondary err code: 60
+    nt OS err code: 0
+  Client address: <unknown>
+
+
+***********************************************************************
+Fatal NI connect error 12170.
+=======
   Time: 25-МАР-2015 00:13:38
   Tracing not turned on.
   Tns error struct:
@@ -60,10 +99,28 @@ Fatal NI connect error 12541, connecting to:
 ***********************************************************************
 Fatal NI connect error 12541, connecting to:
  (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=37.23.234.24)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=XE)(CID=(PROGRAM=D:\Repo\Формы Сучкова\bin\Debug\Формы Сучкова.vshost.exe)(HOST=LENOVO-NOTEBOOK)(USER=Lenovo))))
+>>>>>>> origin/Serega
 
   VERSION INFORMATION:
 	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
 	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
+<<<<<<< HEAD
+  Time: 25-МАР-2015 10:09:17
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12535
+    TNS-12535: TNS:operation timed out
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: Operation timed out
+    nt secondary err code: 60
+    nt OS err code: 0
+  Client address: <unknown>
+
+
+***********************************************************************
+Fatal NI connect error 12170.
+=======
   Time: 25-МАР-2015 00:14:24
   Tracing not turned on.
   Tns error struct:
@@ -79,10 +136,24 @@ Fatal NI connect error 12541, connecting to:
 ***********************************************************************
 Fatal NI connect error 12541, connecting to:
  (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=37.23.234.24)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=XE)(CID=(PROGRAM=D:\Repo\Формы Сучкова\bin\Debug\Формы Сучкова.vshost.exe)(HOST=LENOVO-NOTEBOOK)(USER=Lenovo))))
+>>>>>>> origin/Serega
 
   VERSION INFORMATION:
 	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
 	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
+<<<<<<< HEAD
+  Time: 25-МАР-2015 10:09:46
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12535
+    TNS-12535: TNS:operation timed out
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: Operation timed out
+    nt secondary err code: 60
+    nt OS err code: 0
+  Client address: <unknown>
+=======
   Time: 25-МАР-2015 00:16:47
   Tracing not turned on.
   Tns error struct:
@@ -92,4 +163,43 @@ Fatal NI connect error 12541, connecting to:
     nt main err code: 511
     TNS-00511: No listener
     nt secondary err code: 61
+    nt OS err code: 0
+>>>>>>> origin/Serega
+
+
+***********************************************************************
+Fatal NI connect error 12543, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.1.3)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=XE)(CID=(PROGRAM=C:\com_raz\Формы Сучкова\bin\Debug\Формы Сучкова.vshost.exe)(HOST=ARTEM_PC)(USER=Artem))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 08-АПР-2015 11:21:07
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12543
+    TNS-12543: TNS:destination host unreachable
+    ns secondary err code: 12560
+    nt main err code: 513
+    TNS-00513: Destination host unreachable
+    nt secondary err code: 51
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12543, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.1.3)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=XE)(CID=(PROGRAM=C:\com_raz\Формы Сучкова\bin\Debug\Формы Сучкова.vshost.exe)(HOST=ARTEM_PC)(USER=Artem))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 08-АПР-2015 11:21:31
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12543
+    TNS-12543: TNS:destination host unreachable
+    ns secondary err code: 12560
+    nt main err code: 513
+    TNS-00513: Destination host unreachable
+    nt secondary err code: 51
     nt OS err code: 0

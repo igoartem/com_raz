@@ -21,6 +21,9 @@ namespace Формы_Сучкова
 
         List<Category> list_category; // лист категорий
         List<Subcategory> list_subcategory; // лист подкатегорий
+
+        List<Characteristic> list_characteric; //лист характеристик
+
         public string name = "", serial_number = "", about_product = "";
         public int commis = 0, min_inp_price = 0, expected_price = 0, pk_subcat = 0, pay_stay = 0, flag_owner = 0;
         public bool flag_prod = false;
@@ -67,6 +70,7 @@ namespace Формы_Сучкова
         {
             list_category = new List<Category>(); //создание листа с категориями
             list_subcategory = new List<Subcategory>(); // создание листа с подкатегориями
+            list_characteric = new List<Characteristic>();
             StreamReader sr;
             string s = "localhost"; // подключение по умолчани.
             try
@@ -101,6 +105,19 @@ namespace Формы_Сучкова
                 list_subcategory.Add(new Subcategory(Convert.ToInt32(dr_r_tovar[0]),dr_r_tovar[2].ToString(), Convert.ToInt32(dr_r_tovar[1]), Convert.ToInt32(dr_r_tovar[3]), Convert.ToInt32(dr_r_tovar[4]) )); 
                 
             }
+
+            cmd_r_tovar.CommandText = "Select * from CHARACTERISTIC"; // запрос на получение всех характеристик данной подкатегории
+            dr_r_tovar = cmd_r_tovar.ExecuteReader();
+
+            while (dr_r_tovar.Read())
+            {
+                list_characteric.Add(new Characteristic(dr_r_tovar[1].ToString(), Convert.ToInt32(dr_r_tovar[2]), Convert.ToInt32(dr_r_tovar[0])));
+                //list_.Add(new Subcategory(Convert.ToInt32(dr_r_tovar[0]), dr_r_tovar[2].ToString(), Convert.ToInt32(dr_r_tovar[1]), Convert.ToInt32(dr_r_tovar[3]), Convert.ToInt32(dr_r_tovar[4])));
+
+            }
+
+
+
             if (flag_prod)
                 load_product(pk_prod);
 
@@ -376,6 +393,7 @@ namespace Формы_Сучкова
             }
             else
             {
+
                 int kol_vo = list_subcategory.Count;
                
                 for (int i = 0; i < kol_vo; i++)
@@ -388,9 +406,20 @@ namespace Формы_Сучкова
 
             }
 
-//<<<<<<< HEAD
+
             Product new_prod = new Product(pk_subcat, name, serial_number, min_inp_price, commis, pay_stay, expected_price, flag_owner, textBox4.Text);
-            static_class.product = new_prod;
+
+            List<elemOfConfTable> list_elemConfTable = new List<elemOfConfTable>();
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                if (dataGridView1.Rows[i].Cells[1].Value!=null)
+                    list_elemConfTable.Add(new elemOfConfTable(dataGridView1.Rows[i].Cells[1].Value.ToString(), Convert.ToInt32( dataGridView1.Rows[i].Cells[2].Value)));
+                else
+                    list_elemConfTable.Add(new elemOfConfTable("", Convert.ToInt32(dataGridView1.Rows[i].Cells[2].Value)));
+            }
+                static_class.product = new_prod;
+                static_class.list_char = list_elemConfTable;
+
             this.Close();
 
 
@@ -413,12 +442,25 @@ namespace Формы_Сучкова
         }
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int kol_vo=0;
             if(comboBox2.SelectedIndex!=-1)
             for (int i = 0; i < list_subcategory.Count; i++)
                 if (list_subcategory[i].name == comboBox2.Items[comboBox2.SelectedIndex])
                 {
                     textBox2.Text = list_subcategory[i].comission.ToString();
                     textBox3.Text = list_subcategory[i].pay_stay.ToString();
+                    dataGridView1.Rows.Clear();
+                    for (int j = 0; j < list_characteric.Count; j++)
+                    {
+                        if (list_characteric[j].pk_subcat == list_subcategory[i].pk_subcat)
+                        {
+                            dataGridView1.Rows.Add();
+                            dataGridView1.Rows[kol_vo].Cells[0].Value = list_characteric[j].name;
+                            dataGridView1.Rows[kol_vo].Cells[2].Value = list_characteric[j].pk_char;
+                            kol_vo++;
+                        }
+
+                    }
                 }
         }
 
