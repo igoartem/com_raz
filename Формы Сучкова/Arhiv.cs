@@ -213,6 +213,15 @@ namespace Формы_Сучкова
         {
             int pk = Convert.ToInt32(dataGridView1.CurrentRow.Cells[8].Value);
             R_tovar_arh r_tovar = new R_tovar_arh(this, pk); //вызов описания фии
+
+            r_tovar.ShowDialog();
+            refresh();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            int pk = Convert.ToInt32(dataGridView1.CurrentRow.Cells[8].Value);
+            R_tovar_arh r_tovar = new R_tovar_arh(this, pk); //вызов описания фии
             r_tovar.ShowDialog();
             refresh();
         }

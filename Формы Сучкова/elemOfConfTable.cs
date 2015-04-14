@@ -37,6 +37,20 @@ namespace Формы_Сучкова
             this.pk_tab = pk_tab;
         }
 
+        public elemOfConfTable(int pk_tab, string value, int pk_prod, int pk_char)
+        {
+            this.value = value;
+            this.pk_char = pk_char;
+            this.pk_prod = pk_prod;
+            this.pk_tab = pk_tab;
+        }
+
+        public string makeSQLinsert_AR()
+        {
+            string s1 = "insert into TABLE_CONFORM_AR (PK_TAB, VALUE, PK_PROD, PK_CHAR) VALUES ('" + pk_tab + "','" + value + "', '" + pk_prod + "','" + pk_char + "' )";
+            return s1;
+        }
+
         public string makeSQLinsert()
         {
             string s1 = "insert into TABLE_CONFORM (VALUE, PK_PROD, PK_CHAR) VALUES ('" + value + "', '" + pk_prod + "','"+pk_char+"' )";

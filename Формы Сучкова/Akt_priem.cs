@@ -65,6 +65,14 @@ namespace Формы_Сучкова
             connect();
             button1.Visible = false;
             button3.Visible = false;
+            button2.Visible = false;
+            textBox1.Enabled = false;
+            textBox2.Enabled = false;
+            textBox3.Enabled = false;
+            textBox4.Enabled = false;
+            textBox6.Enabled = false;
+            dateTimePicker1.Enabled = false;
+            dateTimePicker2.Enabled = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -335,6 +343,33 @@ namespace Формы_Сучкова
                     dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[4].ReadOnly = true;
                     dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[5].ReadOnly = true;
                 }
+
+                cmd_akt_priem.CommandText = "select product_ar.FLAG_OWNER, product_ar.NAME, product_ar.PAY_STAY, product_ar.MIN_INP_PRICE, product_ar.EXPECT_PRICE, product_ar.COMISSION from input_act, product_ar where input_act.PK_ACT = " + pk + " and product_ar.PK_ACT = input_act.PK_ACT";
+                dr_akt_priem = cmd_akt_priem.ExecuteReader();
+
+                dataGridView1.Enabled = false;
+                while (dr_akt_priem.Read())
+                {
+                    dataGridView1.Rows.Add();
+
+                    if (Convert.ToInt32(dr_akt_priem[0]) == 1)
+                    {
+                        dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[0].Value = true;
+                    }
+
+                    dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[1].Value = dr_akt_priem[1].ToString(); // naimenov
+                    dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[2].Value = dr_akt_priem[2].ToString(); //FIO
+                    dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[3].Value = dr_akt_priem[3].ToString(); //garant
+                    dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[4].Value = dr_akt_priem[4].ToString(); //exp_cost
+                    dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[5].Value = dr_akt_priem[5].ToString(); // Fin_price
+                    dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[0].ReadOnly = true;
+                    dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[1].ReadOnly = true;
+                    dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[2].ReadOnly = true;
+                    dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[3].ReadOnly = true;
+                    dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[4].ReadOnly = true;
+                    dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[5].ReadOnly = true;
+                }
+
                 dataGridView1.Enabled = true;
             }
         }
