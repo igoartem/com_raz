@@ -372,6 +372,7 @@
             this.buttonBroken.TabIndex = 12;
             this.buttonBroken.Text = "Принять сломанный";
             this.buttonBroken.UseVisualStyleBackColor = true;
+            this.buttonBroken.Click += new System.EventHandler(this.buttonBroken_Click);
             // 
             // button6
             // 

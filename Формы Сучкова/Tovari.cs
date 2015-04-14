@@ -204,6 +204,9 @@ namespace Формы_Сучкова
                 {
                     if (dataGridView1.Rows[i].Cells[0].Value.ToString() == "true")
                     {
+                        if (dataGridView1.Rows[i].Cells[5].Value.ToString() == "Сломано")
+                            MessageBox.Show("Нельзя продать сломанный товар!");
+                        else
                         list.Add(Convert.ToInt32(dataGridView1.Rows[i].Cells[9].Value.ToString()));
                     }
                 }
