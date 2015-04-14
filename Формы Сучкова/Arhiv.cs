@@ -216,5 +216,12 @@ namespace Формы_Сучкова
             r_tovar.ShowDialog();
             refresh();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            int pk_tov=401;
+            R_tovar_arh r_tov = new R_tovar_arh(this,pk_tov);
+            r_tov.ShowDialog();
+        }
     }
 }

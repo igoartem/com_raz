@@ -243,7 +243,9 @@ namespace Формы_Сучкова
                         }
                         else
                         {
-                            cmd1.CommandText = "insert into PRODUCT_AR (pk_prod_ar, NAME, SN, PK_SUBCAT, PK_CHEQUE, PK_ACT, MIN_INP_PRICE, FINISH_PRICE, EXPECT_PRICE) select product.pk_prod, product.name, product.SN, product.PK_SUBCAT, product.PK_CHEQUE, product.PK_ACT, product.MIN_INP_PRICE, product.FINISH_PRICE, product.EXPECT_PRICE  from product where pk_prod = " + dataGridView1.Rows[i].Cells[9].Value.ToString();
+
+                            string sr="insert into PRODUCT_AR (pk_prod_ar, NAME, SN, PK_SUBCAT, PK_CHEQUE, PK_ACT, MIN_INP_PRICE, FINISH_PRICE, EXPECT_PRICE) select product.pk_prod, product.name, product.SN, product.PK_SUBCAT, product.PK_CHEQUE, product.PK_ACT, product.MIN_INP_PRICE, product.FINISH_PRICE, product.EXPECT_PRICE  from product where pk_prod = " + dataGridView1.Rows[i].Cells[9].Value.ToString();
+                            cmd1.CommandText = sr;
                             cmd1.ExecuteNonQuery();
                             cmd1.CommandText = "delete from product where product.pk_prod = " + dataGridView1.Rows[i].Cells[9].Value.ToString();
                             cmd1.ExecuteNonQuery();

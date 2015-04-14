@@ -52,15 +52,15 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.naim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Znach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.buttonCheck = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.buttonBroken = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.naim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Znach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -306,6 +306,24 @@
             this.dataGridView1.Size = new System.Drawing.Size(362, 384);
             this.dataGridView1.TabIndex = 0;
             // 
+            // naim
+            // 
+            this.naim.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.naim.HeaderText = "Наименование";
+            this.naim.Name = "naim";
+            this.naim.ReadOnly = true;
+            // 
+            // Znach
+            // 
+            this.Znach.HeaderText = "Значение";
+            this.Znach.Name = "Znach";
+            // 
+            // PK
+            // 
+            this.PK.HeaderText = "PK";
+            this.PK.Name = "PK";
+            this.PK.Visible = false;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(534, 427);
@@ -364,24 +382,6 @@
             this.button6.Text = "Добавить";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // naim
-            // 
-            this.naim.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.naim.HeaderText = "Наименование";
-            this.naim.Name = "naim";
-            this.naim.ReadOnly = true;
-            // 
-            // Znach
-            // 
-            this.Znach.HeaderText = "Значение";
-            this.Znach.Name = "Znach";
-            // 
-            // PK
-            // 
-            this.PK.HeaderText = "PK";
-            this.PK.Name = "PK";
-            this.PK.Visible = false;
             // 
             // R_tovar
             // 
