@@ -53,7 +53,6 @@ D:\Repo\Формы Сучкова\obj\Debug\Формы Сучкова.exe
 D:\Repo\Формы Сучкова\obj\Debug\Формы Сучкова.pdb
 D:\Repo\Формы Сучкова\bin\Debug\Формы Сучкова.exe
 D:\Repo\Формы Сучкова\bin\Debug\Формы Сучкова.pdb
-D:\Repo\Формы Сучкова\obj\Debug\Формы Сучкова.csprojResolveAssemblyReference.cache
 D:\Repo\Формы Сучкова\obj\Debug\Формы_Сучкова.Add_redact_worker.resources
 D:\Repo\Формы Сучкова\obj\Debug\Формы_Сучкова.Akt_priem.resources
 D:\Repo\Формы Сучкова\obj\Debug\Формы_Сучкова.Akt_spis.resources

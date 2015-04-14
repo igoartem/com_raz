@@ -245,15 +245,15 @@ namespace Формы_Сучкова
                         {
                             List<elemOfConfTable> list_elemConfTable = new List<elemOfConfTable>();
                             
-                            cmd1.CommandText = "SELECT pk_tab, value, pkprod, pk_char from table_conform where pk_prod = " + dataGridView1.Rows[i].Cells[9].Value.ToString(); ;
+                            cmd1.CommandText = "SELECT pk_tab, value, pk_prod, pk_char from table_conform where pk_prod = " + dataGridView1.Rows[i].Cells[9].Value.ToString(); ;
                             dr1 = cmd1.ExecuteReader();
 
                             while (dr1.Read())
                             {
-                                list_elemConfTable.Add(new elemOfConfTable((int)dr2[0], dr2[1].ToString(), (int)dr2[2], (int)dr2[3]));
+                                list_elemConfTable.Add(new elemOfConfTable(Convert.ToInt32(dr1[0]), dr1[1].ToString(), Convert.ToInt32(dr1[2]), Convert.ToInt32(dr1[3])));
                             }
 
-                            cmd1.CommandText = "delete from table_conform where product.pk_prod = " + dataGridView1.Rows[i].Cells[9].Value.ToString();
+                            cmd1.CommandText = "insert into PRODUCT_AR (pk_prod_ar, NAME, SN, PK_SUBCAT, PK_CHEQUE, PK_ACT, MIN_INP_PRICE, FINISH_PRICE, EXPECT_PRICE, OPISANIE, FLAG_OWNER, COMISSION, PAY_STAY, PK_STAT, GARANT) select product.pk_prod, product.name, product.SN, product.PK_SUBCAT, product.PK_CHEQUE, product.PK_ACT, product.MIN_INP_PRICE, product.FINISH_PRICE, product.EXPECT_PRICE, product.OPISANIE, product.FLAG_OWNER, product.COMISSION, product.PAY_STAY, product.PK_STAT, product.GARANT  from product where pk_prod = " + dataGridView1.Rows[i].Cells[9].Value.ToString();
                             cmd1.ExecuteNonQuery();
 
                             for (int j = 0; j < list_elemConfTable.Count; j++)
@@ -261,8 +261,12 @@ namespace Формы_Сучкова
                                 cmd1.CommandText = list_elemConfTable[j].makeSQLinsert_AR();
                                 cmd1.ExecuteNonQuery();
                             }
-                            cmd1.CommandText = "insert into PRODUCT_AR (pk_prod_ar, NAME, SN, PK_SUBCAT, PK_CHEQUE, PK_ACT, MIN_INP_PRICE, FINISH_PRICE, EXPECT_PRICE, OPISANIE, FLAG_OWNER, COMISSION, PAY_STAY, PK_STAT, GARANT) select product.pk_prod, product.name, product.SN, product.PK_SUBCAT, product.PK_CHEQUE, product.PK_ACT, product.MIN_INP_PRICE, product.FINISH_PRICE, product.EXPECT_PRICE, product.OPISANIE, product.FLAG_OWNER, product.COMISSION, product.PAY_STAY, product.PK_STAT, product.GARANT  from product where pk_prod = " + dataGridView1.Rows[i].Cells[9].Value.ToString();
+
+                            string ss = "delete from table_conform where table_conform.pk_prod = " + dataGridView1.Rows[i].Cells[9].Value.ToString();
+
+                            cmd1.CommandText = ss;// "delete from table_conform where table_conform.pk_prod = " + dataGridView1.Rows[i].Cells[9].Value.ToString();
                             cmd1.ExecuteNonQuery();
+
                             cmd1.CommandText = "delete from product where product.pk_prod = " + dataGridView1.Rows[i].Cells[9].Value.ToString();
                             cmd1.ExecuteNonQuery();
                         }

@@ -49,7 +49,7 @@ namespace Формы_Сучкова
 
         public string makeSQLinsert_AR()
         {
-            string s1 = "insert into TABLE_CONFORM_AR (PK_TAB, VALUE, PK_PROD, PK_CHAR) VALUES ('" + pk_tab + "','" + value + "', '" + pk_prod + "','" + pk_char + "' )";
+            string s1 = "insert into TABLE_CONFORM_AR (PK_TAB_AR, VALUE, PK_PROD_AR, PK_CHAR) VALUES ('" + pk_tab + "','" + value + "', '" + pk_prod + "','" + pk_char + "' )";
             return s1;
         }
 
