@@ -174,6 +174,7 @@ namespace Формы_Сучкова
             cmd_har.ExecuteNonQuery();
            // buttonSave.Enabled = false;
             groupBox2.Enabled = false;
+            buttonEdit.Enabled = true;
         }
 
         private void buttonCans_Click(object sender, EventArgs e)
@@ -183,6 +184,7 @@ namespace Формы_Сучкова
             textBoxCom.Text = sub_father.comission.ToString();
             //buttonSave.Enabled = false;
             groupBox2.Enabled = false;
+            buttonEdit.Enabled = true;
         }
 
         private void textBoxName_TextChanged(object sender, EventArgs e)
@@ -193,6 +195,7 @@ namespace Формы_Сучкова
         private void buttonEdit_Click(object sender, EventArgs e)
         {
             groupBox2.Enabled = true;
+            buttonEdit.Enabled = false;
         }
     }
 }
