@@ -20,6 +20,8 @@ namespace Формы_Сучкова
 
         List<Category> list_category; // лист категорий
         List<Subcategory> list_subcategory; // лист подкатегорий
+        List<elemOfConfTable> list_elemConf; //
+
         public string name = "", serial_number = "", about_product = "";
         public int pk_akt_spis = 0, min_inp_price = 0, expected_price = 0, pk_subcat = 0, pay_stay = 0, flag_owner = 0;
         public bool flag_prod = false;
@@ -36,6 +38,7 @@ namespace Формы_Сучкова
         {
             InitializeComponent();
             pk_prod = pk;
+
         }
 
         private void R_tovar_arh_Load(object sender, EventArgs e)
@@ -75,6 +78,21 @@ namespace Формы_Сучкова
             {
                 list_subcategory.Add(new Subcategory(Convert.ToInt32(dr_r_tovar[0]), dr_r_tovar[2].ToString(), Convert.ToInt32(dr_r_tovar[1]), Convert.ToInt32(dr_r_tovar[3]), Convert.ToInt32(dr_r_tovar[4])));
             }
+            string ss;
+            list_elemConf = new List<elemOfConfTable>();
+            ss = "select table_conform_ar.PK_TAB_AR,table_conform_ar.PK_CHAR,table_conform_ar.VALUE,CHARACTERISTIC.NAME from TABLE_CONFORM_AR,CHARACTERISTIC where PK_PROD_AR=" + pk_prod + " and table_conform_ar.PK_CHAR = CHARACTERISTIC.PK_CHAR";
+            cmd_r_tovar.CommandText = ss;
+            dr_r_tovar = cmd_r_tovar.ExecuteReader();
+            dr_r_tovar.Read();
+            dataGridView1.Rows.Clear();
+
+            while (dr_r_tovar.Read())
+            {
+                list_elemConf.Add(new elemOfConfTable(dr_r_tovar[2].ToString(), Convert.ToInt32(dr_r_tovar[1]), pk_prod, Convert.ToInt32(dr_r_tovar[0]), dr_r_tovar[3].ToString()));
+
+            }
+
+
             load_product(pk_prod);
         }
         // метод на загрузку данных о товаре с БД и вывод его на форму
@@ -140,7 +158,17 @@ namespace Формы_Сучкова
             textBox8.Text = old_product.finish_price.ToString();
             groupBox1.Enabled = false;
             groupBox2.Enabled = false;
+            dataGridView1.Enabled = false;
             textBox4.Text = old_product.opisanie;
+
+            for (int i = 0; i < list_elemConf.Count; i++)
+            {
+                dataGridView1.Rows.Add();
+                dataGridView1.Rows[i].Cells[0].Value = list_elemConf[i].name_char;
+                dataGridView1.Rows[i].Cells[1].Value = list_elemConf[i].value;
+                dataGridView1.Rows[i].Cells[2].Value = list_elemConf[i].pk_tab;
+
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -153,6 +181,11 @@ namespace Формы_Сучкова
         {
             Akt_priem akt = new Akt_priem(this, old_product.pk_act);
             akt.ShowDialog();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

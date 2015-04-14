@@ -12,6 +12,7 @@ namespace Формы_Сучкова
         public int pk_char { get; set; }
         public int pk_prod { get; set; }
         public int pk_tab { get; set; }
+        public string name_char { get; set; }
 
         public elemOfConfTable(string value, int pk_char)
         {
@@ -29,12 +30,13 @@ namespace Формы_Сучкова
 
         }
 
-        public elemOfConfTable(string value, int pk_char, int pk_prod, int pk_tab)
+        public elemOfConfTable(string value, int pk_char, int pk_prod, int pk_tab,string name_char)
         {
             this.value = value;
             this.pk_char = pk_char;
             this.pk_prod = pk_prod;
             this.pk_tab = pk_tab;
+            this.name_char = name_char;
         }
 
         public elemOfConfTable(int pk_tab, string value, int pk_prod, int pk_char)
