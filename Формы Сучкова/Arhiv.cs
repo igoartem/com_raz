@@ -130,6 +130,10 @@ namespace Формы_Сучкова
                     if (dataGridView1.Rows[i].Cells[0].Value.ToString() == "true")
                     {
                         //textBox4.Text = dataGridView1.Rows[i].Cells[8].Value.ToString();
+                        string ss = "delete from table_conform_ar where table_conform_ar.pk_prod_ar = " + dataGridView1.Rows[i].Cells[8].Value.ToString();
+
+                        cmd1.CommandText = ss;// "delete from table_conform where table_conform.pk_prod = " + dataGridView1.Rows[i].Cells[9].Value.ToString();
+                        cmd1.ExecuteNonQuery();
                         cmd1.CommandText = "delete from product_ar where product_ar.pk_prod_ar = " + dataGridView1.Rows[i].Cells[8].Value.ToString();
                         cmd1.ExecuteNonQuery();
                         //textBox4.Text = dataGridView1.Rows[i].Cells[9].Value.ToString();

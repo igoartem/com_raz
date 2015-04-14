@@ -571,7 +571,7 @@ namespace Формы_Сучкова
         {
             
             get_all_old(); // подготавливаем все значения для обновления записи
-            old_product.pk_cheque = 0;
+            //old_product.pk_cheque = 0;
             old_product.finish_price = 0;
             old_product.garant = 0;
             old_product.pk_stat = 21;
