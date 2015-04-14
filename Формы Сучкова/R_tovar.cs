@@ -24,6 +24,7 @@ namespace Формы_Сучкова
 
         List<elemOfConfTable> list_elemConf; //
 
+
         List<Characteristic> list_characteric; //лист характеристик
 
         public string name = "", serial_number = "", about_product = "";
@@ -55,7 +56,15 @@ namespace Формы_Сучкова
             flag_prod = true;
             pk_prod = pk;
         }
-        
+
+        public R_tovar(Akt_priem my, int pk) //конструктор для редактирования товаров
+        {
+            InitializeComponent();
+            buttonBroken.Visible = false;
+            button6.Visible = false;
+            flag_prod = true;
+            pk_prod = pk;
+        }
 
         private void button1_Click(object sender, EventArgs e) // кнопка сохранения товара
         {
@@ -152,6 +161,7 @@ namespace Формы_Сучкова
 
             if (old_product.pk_cheque == 0)
                 buttonCheck.Visible = false;
+            
 
             list_elemConf = new List<elemOfConfTable>();
             ss = "select table_conform.PK_TAB,table_conform.PK_CHAR,table_conform.VALUE,CHARACTERISTIC.NAME from TABLE_CONFORM,CHARACTERISTIC where PK_PROD=" + pk_product + " and table_conform.PK_CHAR = CHARACTERISTIC.PK_CHAR";
@@ -220,6 +230,14 @@ namespace Формы_Сучкова
                 textBox8.Visible = false;
                 label10.Visible = false;
                 button4.Visible = false;
+            }
+            if (old_product.pk_stat == 47)
+            {
+                buttonBroken.Visible = false;
+                groupBox1.Enabled = true;
+                groupBox2.Enabled = true;
+                button1.Enabled=true;
+                dataGridView1.Enabled = true;
             }
             textBox4.Text = old_product.opisanie;
             if (old_product.flag_owner == 1)
@@ -557,6 +575,16 @@ namespace Формы_Сучкова
             old_product.finish_price = 0;
             old_product.garant = 0;
             old_product.pk_stat = 21;
+            string ss;
+            ss = old_product.makeSQLupdate(); // запускаем метод генерации скрипта для обновления
+            cmd_r_tovar.CommandText = ss;
+            cmd_r_tovar.ExecuteNonQuery();
+            this.Close();
+        }
+
+        private void buttonBroken_Click(object sender, EventArgs e)
+        {
+            old_product.pk_stat = 47;
             string ss;
             ss = old_product.makeSQLupdate(); // запускаем метод генерации скрипта для обновления
             cmd_r_tovar.CommandText = ss;
