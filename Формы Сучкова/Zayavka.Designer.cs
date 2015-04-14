@@ -30,14 +30,15 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.buttonEdit = new System.Windows.Forms.Button();
+            this.buttonDel = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
             this.Naim = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Kategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.P_Kategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.FIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -48,7 +49,7 @@
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(461, 435);
+            this.groupBox1.Size = new System.Drawing.Size(650, 435);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Перечень заявок";
@@ -61,58 +62,40 @@
             this.Cost,
             this.Kategory,
             this.P_Kategory,
+            this.FIO,
+            this.Phone,
             this.PK});
             this.dataGridView1.Location = new System.Drawing.Point(6, 19);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(449, 410);
+            this.dataGridView1.Size = new System.Drawing.Size(644, 410);
             this.dataGridView1.TabIndex = 0;
             // 
-            // Naim
+            // buttonEdit
             // 
-            this.Naim.HeaderText = "Наименование";
-            this.Naim.Name = "Naim";
+            this.buttonEdit.Location = new System.Drawing.Point(659, 64);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Size = new System.Drawing.Size(125, 36);
+            this.buttonEdit.TabIndex = 12;
+            this.buttonEdit.Text = "Отредактировать";
+            this.buttonEdit.UseVisualStyleBackColor = true;
             // 
-            // Cost
+            // buttonDel
             // 
-            this.Cost.HeaderText = "Цена";
-            this.Cost.Name = "Cost";
+            this.buttonDel.Location = new System.Drawing.Point(659, 106);
+            this.buttonDel.Name = "buttonDel";
+            this.buttonDel.Size = new System.Drawing.Size(125, 36);
+            this.buttonDel.TabIndex = 11;
+            this.buttonDel.Text = "Удалить ";
+            this.buttonDel.UseVisualStyleBackColor = true;
             // 
-            // Kategory
+            // buttonAdd
             // 
-            this.Kategory.HeaderText = "Категория";
-            this.Kategory.Name = "Kategory";
-            // 
-            // P_Kategory
-            // 
-            this.P_Kategory.HeaderText = "Подкатегория";
-            this.P_Kategory.Name = "P_Kategory";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(470, 54);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(125, 36);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Отредактировать";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(470, 96);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(125, 36);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Удалить ";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(470, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 36);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Добавить";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonAdd.Location = new System.Drawing.Point(659, 22);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(125, 36);
+            this.buttonAdd.TabIndex = 10;
+            this.buttonAdd.Text = "Добавить";
+            this.buttonAdd.UseVisualStyleBackColor = true;
             // 
             // Naim
             // 
@@ -133,6 +116,16 @@
             // 
             this.P_Kategory.HeaderText = "Подкатегория";
             this.P_Kategory.Name = "P_Kategory";
+            // 
+            // FIO
+            // 
+            this.FIO.HeaderText = "ФИО";
+            this.FIO.Name = "FIO";
+            // 
+            // Phone
+            // 
+            this.Phone.HeaderText = "Телефон";
+            this.Phone.Name = "Phone";
             // 
             // PK
             // 
@@ -144,13 +137,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(601, 441);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(816, 441);
+            this.Controls.Add(this.buttonEdit);
+            this.Controls.Add(this.buttonDel);
+            this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.groupBox1);
             this.Name = "Zayavka";
             this.Text = "Заявка";
+            this.Load += new System.EventHandler(this.Zayavka_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -161,13 +155,15 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonEdit;
+        private System.Windows.Forms.Button buttonDel;
+        private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.DataGridViewTextBoxColumn Naim;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cost;
         private System.Windows.Forms.DataGridViewTextBoxColumn Kategory;
         private System.Windows.Forms.DataGridViewTextBoxColumn P_Kategory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FIO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn PK;
     }
 }
