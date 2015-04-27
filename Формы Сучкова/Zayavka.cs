@@ -47,7 +47,7 @@ namespace Формы_Сучкова
             con_zay = new OracleConnection(con_str); // подключение к бд с логином admin и паролем 123
             cmd_zay = new OracleCommand("", con_zay);
             con_zay.Open();
-            cmd_zay.CommandText = "SELECT * from REQUEST"; // запрос на получение всех данных о категориях
+            cmd_zay.CommandText = "SELECT * from REQUEST"; // запрос на получение всех 
             dr_zay = cmd_zay.ExecuteReader();
 
             list_zay = new List<Request>();
@@ -58,15 +58,128 @@ namespace Формы_Сучкова
             {
                 int pk = Convert.ToInt32(dr_zay[0]);
                 DateTime dateQ = DateTime.Now;
-                int pk_appl = Convert.ToInt32(dr_zay[2]);
-                int pk_subcat = Convert.ToInt32(dr_zay[3]);
-                string about = dr_zay[4].ToString();
-                list_zay.Add(new Request(pk, pk_appl,pk_subcat,about,dateQ));
+               // int pk_appl = Convert.ToInt32(dr_zay[2]);
+                int pk_subcat = Convert.ToInt32(dr_zay[2]);
+                string about = dr_zay[3].ToString();
+                string FIO = dr_zay[4].ToString();
+                string phone = dr_zay[5].ToString();
+                int price = Convert.ToInt32(dr_zay[6]);
+                list_zay.Add(new Request(pk, FIO, pk_subcat,about,dateQ,phone,price));
 
-               // dataGridView1.Rows.Add(name, pk);
+
+                //OracleCommand cmd_zay2 = new OracleCommand("", con_zay);
+                cmd_zay.CommandText = "SELECT name from Subcategory";
+                OracleDataReader dr_zay2 = cmd_zay.ExecuteReader();
+                dr_zay2.Read();
+                string subcat = dr_zay2[0].ToString();
+                dataGridView1.Rows.Add(subcat, about, price, FIO, phone, pk);
 
             }
           
+        }
+
+        void ReloadDataGrid()
+        {
+            dataGridView1.Rows.Clear();
+
+            foreach (Request c in list_zay)
+            {
+
+                cmd_zay.CommandText = "SELECT name from Subcategory where pk_subcat = " + c.pk_subcat;
+                OracleDataReader dr_zay2 = cmd_zay.ExecuteReader();
+                dr_zay2.Read();
+                string subcat = dr_zay2[0].ToString();
+                dataGridView1.Rows.Add(subcat, c.about, c.price, c.FIO, c.phone, c.pk_request);
+
+            }
+        
+        
+        
+        }
+
+        private void buttonDel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+
+                    if (MessageBox.Show("Вы действительно хотите удалить выбранные заявки?", "", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                    {
+
+                        foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                        {
+                            int cur_pk = Convert.ToInt32(row.Cells[5].Value.ToString());
+                            me = list_zay.Find(x => x.pk_request == cur_pk);
+                            string s = me.makeSQLdelete();
+                            cmd_zay.CommandText = s;
+                            cmd_zay.ExecuteNonQuery();
+
+                            list_zay.Remove(me);
+
+                        }
+                        ReloadDataGrid();                       
+                    }
+                }
+                else            //если ничего не выделено, то удаляем текущую
+                {
+                    if (MessageBox.Show("Вы действительно хотите удалить данную заявку?", "", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        int cur_pk = Convert.ToInt32(dataGridView1.CurrentRow.Cells[5].Value.ToString());
+                        me = list_zay.Find(x => x.pk_request == cur_pk);
+                        string s = me.makeSQLdelete();
+                        cmd_zay.CommandText = s;
+                        cmd_zay.ExecuteNonQuery();
+
+                        list_zay.Remove(me);
+
+                        ReloadDataGrid();
+                    }
+                } //MessageBox.Show("Сначала нужно выделить строки");
+            }
+            catch
+            {
+                MessageBox.Show("Error");
+            }
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            R_zayavka zay = new R_zayavka(list_zay);
+            zay.ShowDialog();
+
+            ReloadDataGrid();
+
+            //me = new Request("Новый заявитель",0,"",DateTime.Now,"",0);
+            //string s = me.makeSQLinsert();
+            //cmd_zay.CommandText = s;
+            //cmd_zay.ExecuteNonQuery();
+
+            //s = "select max(pk_request) from request";
+            //cmd_zay.CommandText = s;
+            //dr_zay = cmd_zay.ExecuteReader();
+            //dr_zay.Read();
+            //int pk_request = Convert.ToInt32(dr_zay[0]);
+            //me.pk_request = pk_request;
+
+            //list_zay.Add(me);
+
+            //cmd_zay.CommandText = "SELECT name from Subcategory";
+            //OracleDataReader dr_zay2 = cmd_zay.ExecuteReader();
+            //dr_zay2.Read();
+            //string subcat = dr_zay2[0].ToString();
+            //dataGridView1.Rows.Add(subcat, me.about, me.price, me.FIO, me.phone, me.pk_request);
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int cur_pk = Convert.ToInt32(dataGridView1.CurrentRow.Cells[5].Value.ToString());
+            // me = new Category(name,pk);
+            me = list_zay.Find(x => x.pk_request == cur_pk);
+            R_zayavka zay = new R_zayavka(list_zay, me);
+            zay.ShowDialog();
+
+            ReloadDataGrid();
         }
     }
 }

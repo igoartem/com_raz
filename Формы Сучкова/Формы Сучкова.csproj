@@ -121,12 +121,6 @@
     <Compile Include="P_kategory.Designer.cs">
       <DependentUpon>P_kategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Redact_zayavka.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Redact_zayavka.Designer.cs">
-      <DependentUpon>Redact_zayavka.cs</DependentUpon>
-    </Compile>
     <Compile Include="Request.cs" />
     <Compile Include="R_tovar.cs">
       <SubType>Form</SubType>
@@ -139,6 +133,12 @@
     </Compile>
     <Compile Include="R_tovar_arh.Designer.cs">
       <DependentUpon>R_tovar_arh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="R_zayavka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="R_zayavka.Designer.cs">
+      <DependentUpon>R_zayavka.cs</DependentUpon>
     </Compile>
     <Compile Include="Setting.cs">
       <SubType>Form</SubType>
@@ -209,14 +209,14 @@
     <EmbeddedResource Include="P_kategory.resx">
       <DependentUpon>P_kategory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Redact_zayavka.resx">
-      <DependentUpon>Redact_zayavka.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="R_tovar.resx">
       <DependentUpon>R_tovar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="R_tovar_arh.resx">
       <DependentUpon>R_tovar_arh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="R_zayavka.resx">
+      <DependentUpon>R_zayavka.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Setting.resx">
       <DependentUpon>Setting.cs</DependentUpon>

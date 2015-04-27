@@ -411,12 +411,13 @@ namespace Формы_Сучкова
             refresh();
         }
 
-<<<<<<< HEAD
+
         private void просмотрЗаявокToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Zayavka zay = new Zayavka();
             zay.ShowDialog();
-=======
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
             Arhiv arh = new Arhiv();
@@ -433,7 +434,7 @@ namespace Формы_Сучкова
         private void button8_Click(object sender, EventArgs e)
         {
 
->>>>>>> origin/Serega
+
         }
 
 
