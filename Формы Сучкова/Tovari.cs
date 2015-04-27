@@ -414,6 +414,16 @@ namespace Формы_Сучкова
             refresh();
         }
 
+<<<<<<< HEAD
+=======
+
+        private void просмотрЗаявокToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Zayavka zay = new Zayavka();
+            zay.ShowDialog();
+        }
+
+>>>>>>> origin/misha
         private void button3_Click(object sender, EventArgs e)
         {
             Arhiv arh = new Arhiv();
@@ -431,6 +441,7 @@ namespace Формы_Сучкова
         {
             //Списание
 
+<<<<<<< HEAD
             List<int> list = new List<int>();
 
             for (int i = 0; i < dataGridView1.RowCount; i++)    //обходим грид и смотрим есть ли чекнутые товары
@@ -451,6 +462,9 @@ namespace Формы_Сучкова
             }
             else
                 MessageBox.Show("Не выбран ни один товар", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+=======
+
+>>>>>>> origin/misha
         }
 
 
