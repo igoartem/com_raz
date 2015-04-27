@@ -233,7 +233,6 @@ namespace Формы_Сучкова
             {
                 list_product.RemoveAt(dataGridView1.CurrentCell.RowIndex);
                 
-                        
                 list_elem.RemoveAll(elemOfConfTable => elemOfConfTable.pk_prod == dataGridView1.CurrentCell.RowIndex);
 
 
