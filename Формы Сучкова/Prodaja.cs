@@ -87,6 +87,12 @@ namespace Формы_Сучкова
 
         public void load_prod()
         {
+            cmd_prod.CommandText = "select worker.fio from worker where pk_worker = " + static_class.worker.ToString();
+            dr_prod = cmd_prod.ExecuteReader();
+            dr_prod.Read();
+            textBox4.Text = dr_prod[0].ToString();
+            textBox5.Text = DateTime.Now.ToString();
+
             textBox5.Text = DateTime.Now.ToString();
 
             StreamReader sr;
