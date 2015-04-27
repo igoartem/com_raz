@@ -22,8 +22,9 @@ namespace Формы_Сучкова
         int rejim;
         string str1;
 
-        public Akt_spis(int pk)
+        public Akt_spis(int pkk)
         {
+            pk = pkk;
             rejim = 1;
             InitializeComponent();
         }
@@ -88,11 +89,32 @@ namespace Формы_Сучкова
 
         public void load_view()
         {
+            textBox2.Enabled = false;
             button2.Visible = false;
-            cmd_spis.CommandText = "select act_spis.date_spis, act_spis.prichina, worker.fio from act_spis, worker where pk_worker = act_spis.pk_worker and act_spis.pk_act_spis = " + pk.ToString();
+            string sss = "select act_spis.date_spis, act_spis.prichina, worker.fio from act_spis, worker where worker.pk_worker = act_spis.pk_worker and act_spis.pk_act_spis = " + pk.ToString();
+
+            cmd_spis.CommandText = sss;
             dr_spis = cmd_spis.ExecuteReader();
             dr_spis.Read();
             textBox1.Text = dr_spis[0].ToString();
+            textBox2.Text = dr_spis[1].ToString();
+            textBox3.Text = dr_spis[2].ToString();
+
+            sss = "SELECT product_ar.name, input_act.date_inp, status.name, product_ar.MIN_INP_PRICE, product_ar.PK_PROD_ar FROM status, product_ar, input_act where product_ar.PK_act = input_act.PK_act and product_ar.PK_stat = status.PK_stat and product_ar.pk_act_spis = " + pk.ToString();
+
+
+            cmd_spis.CommandText = sss;
+            dr_spis = cmd_spis.ExecuteReader();
+
+            while (dr_spis.Read())
+            {
+                dataGridView1.Rows.Add();
+                dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[0].Value = dr_spis[0].ToString(); // naim
+                dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[1].Value = dr_spis[1].ToString(); // date
+                dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[2].Value = dr_spis[2].ToString(); //stat
+                dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[3].Value = dr_spis[3].ToString(); //min_price
+                dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[4].Value = dr_spis[4].ToString(); //pk
+            }
 
         }
 
@@ -138,7 +160,10 @@ namespace Формы_Сучкова
                             cmd_spis.CommandText = "insert into PRODUCT_AR (pk_prod_ar, NAME, SN, PK_SUBCAT, PK_CHEQUE, PK_ACT, MIN_INP_PRICE, FINISH_PRICE, EXPECT_PRICE, OPISANIE, FLAG_OWNER, COMISSION, PAY_STAY, PK_STAT, GARANT) select product.pk_prod, product.name, product.SN, product.PK_SUBCAT, product.PK_CHEQUE, product.PK_ACT, product.MIN_INP_PRICE, product.FINISH_PRICE, product.EXPECT_PRICE, product.OPISANIE, product.FLAG_OWNER, product.COMISSION, product.PAY_STAY, product.PK_STAT, product.GARANT  from product where pk_prod = " + dataGridView1.Rows[i].Cells[4].Value.ToString();
                             cmd_spis.ExecuteNonQuery();
 
-                            cmd_spis.CommandText = "UPDATE product SET PK_ACT_SPIS = " + temp + " where PK_ACT_SPIS = " + dataGridView1.Rows[i].Cells[4].Value.ToString();
+                            
+                            string sss = "UPDATE product_ar SET PK_ACT_SPIS = " + temp + " where pk_prod_ar = " + dataGridView1.Rows[i].Cells[4].Value.ToString();
+                            cmd_spis.CommandText = sss;
+                            cmd_spis.ExecuteNonQuery();
 
                             for (int j = 0; j < list_elemConfTable.Count; j++)
                             {
