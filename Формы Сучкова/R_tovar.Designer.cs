@@ -122,7 +122,6 @@
             this.label10.Size = new System.Drawing.Size(85, 13);
             this.label10.TabIndex = 18;
             this.label10.Text = "Итоговая цена:";
-            this.label10.Visible = false;
             // 
             // textBox7
             // 
