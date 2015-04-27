@@ -187,5 +187,11 @@ namespace Формы_Сучкова
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Akt_spis akt = new Akt_spis(old_product.pk_act_spis);
+            akt.ShowDialog();
+        }
     }
 }
