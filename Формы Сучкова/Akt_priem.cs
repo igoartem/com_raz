@@ -233,7 +233,6 @@ namespace Формы_Сучкова
             {
                 list_product.RemoveAt(dataGridView1.CurrentCell.RowIndex);
                 
-                        
                 list_elem.RemoveAll(elemOfConfTable => elemOfConfTable.pk_prod == dataGridView1.CurrentCell.RowIndex);
 
 
@@ -322,6 +321,7 @@ namespace Формы_Сучкова
                 dr_akt_priem = cmd_akt_priem.ExecuteReader();
 
                 dataGridView1.Enabled = false;
+             
                 while (dr_akt_priem.Read())
                 {
                     dataGridView1.Rows.Add();
@@ -329,13 +329,19 @@ namespace Формы_Сучкова
                     if (Convert.ToInt32(dr_akt_priem[0]) == 1)
                     {
                         dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[0].Value = true;
+                       
                     }
+                    
 
                     dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[1].Value = dr_akt_priem[1].ToString(); // naimenov
+                    
+
                     dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[2].Value = dr_akt_priem[2].ToString(); //FIO
+                    
                     dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[3].Value = dr_akt_priem[3].ToString(); //garant
                     dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[4].Value = dr_akt_priem[4].ToString(); //exp_cost
                     dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[5].Value = dr_akt_priem[5].ToString(); // Fin_price
+                    
                     dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[0].ReadOnly = true;
                     dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[1].ReadOnly = true;
                     dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[2].ReadOnly = true;
@@ -390,6 +396,10 @@ namespace Формы_Сучкова
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
         }
     }
 }

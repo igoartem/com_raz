@@ -122,7 +122,6 @@
             this.label10.Size = new System.Drawing.Size(85, 13);
             this.label10.TabIndex = 18;
             this.label10.Text = "Итоговая цена:";
-            this.label10.Visible = false;
             // 
             // textBox7
             // 
@@ -372,6 +371,7 @@
             this.buttonBroken.TabIndex = 12;
             this.buttonBroken.Text = "Принять сломанный";
             this.buttonBroken.UseVisualStyleBackColor = true;
+            this.buttonBroken.Click += new System.EventHandler(this.buttonBroken_Click);
             // 
             // button6
             // 

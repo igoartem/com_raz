@@ -47,6 +47,7 @@ D:\Repo\Формы Сучкова\obj\Debug\Формы_Сучкова.Tovari.res
 D:\Repo\Формы Сучкова\obj\Debug\Формы_Сучкова.Workers.resources
 D:\Repo\Формы Сучкова\obj\Debug\Формы_Сучкова.Zayavka.resources
 D:\Repo\Формы Сучкова\obj\Debug\Формы Сучкова.csproj.GenerateResource.Cache
+<<<<<<< HEAD
 C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы_Сучкова.Add_redact_worker.resources
 C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы_Сучкова.Akt_priem.resources
 C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы_Сучкова.Akt_spis.resources
@@ -72,3 +73,6 @@ C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы Суч�
 C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы Сучкова.pdb
 C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы_Сучкова.R_zayavka.resources
 C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы Сучкова.csprojResolveAssemblyReference.cache
+=======
+D:\Repo\Формы Сучкова\obj\Debug\Формы Сучкова.csprojResolveAssemblyReference.cache
+>>>>>>> origin/Serega

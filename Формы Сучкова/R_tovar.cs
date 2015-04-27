@@ -24,6 +24,7 @@ namespace Формы_Сучкова
 
         List<elemOfConfTable> list_elemConf; //
 
+
         List<Characteristic> list_characteric; //лист характеристик
 
         public string name = "", serial_number = "", about_product = "";
@@ -39,13 +40,13 @@ namespace Формы_Сучкова
         public R_tovar(Akt_priem my) // конструктор для добавления товаров из акта приемки 
         {
             InitializeComponent();
-            label10.Visible = false;
-            textBox8.Visible = false;
-            button2.Visible = false;
-            buttonCheck.Visible = false;
-            button4.Visible = false;
-            buttonBroken.Visible=false;
-            button1.Visible = false;
+            label10.Enabled = false;
+            textBox8.Enabled = false;
+            button2.Enabled = false;
+            buttonCheck.Enabled = false;
+            button4.Enabled = false;
+            buttonBroken.Enabled=false;
+            button1.Enabled = false;
         }
         public R_tovar(Tovari my,int pk) //конструктор для редактирования товаров
         {
@@ -55,7 +56,15 @@ namespace Формы_Сучкова
             flag_prod = true;
             pk_prod = pk;
         }
-        
+
+        public R_tovar(Akt_priem my, int pk) //конструктор для редактирования товаров
+        {
+            InitializeComponent();
+            buttonBroken.Visible = false;
+            button6.Visible = false;
+            flag_prod = true;
+            pk_prod = pk;
+        }
 
         private void button1_Click(object sender, EventArgs e) // кнопка сохранения товара
         {
@@ -150,8 +159,7 @@ namespace Формы_Сучкова
             }
             old_product = new Product(Convert.ToInt32(dr_r_tovar[0]), Convert.ToInt32(dr_r_tovar[1]), Convert.ToInt32(dr_r_tovar[2]), dr_r_tovar[3].ToString(), dr_r_tovar[4].ToString(), pk_check, Convert.ToInt32(dr_r_tovar[6]), Convert.ToInt32(dr_r_tovar[7]), Convert.ToInt32(dr_r_tovar[8]), Convert.ToInt32(dr_r_tovar[9]), Convert.ToInt32(dr_r_tovar[10]),fin_price , Convert.ToInt32(dr_r_tovar[12]), garant,dr_r_tovar[14].ToString());
 
-            if (old_product.pk_cheque == 0)
-                buttonCheck.Visible = false;
+            
 
             list_elemConf = new List<elemOfConfTable>();
             ss = "select table_conform.PK_TAB,table_conform.PK_CHAR,table_conform.VALUE,CHARACTERISTIC.NAME from TABLE_CONFORM,CHARACTERISTIC where PK_PROD=" + pk_product + " and table_conform.PK_CHAR = CHARACTERISTIC.PK_CHAR";
@@ -205,21 +213,46 @@ namespace Формы_Сучкова
             textBox3.Text = old_product.pay_stay.ToString();
             textBox6.Text = old_product.min_inp_price.ToString();
             textBox7.Text = old_product.expect_price.ToString();
-            if (old_product.pk_cheque != 0)
+            
+                if (old_product.pk_stat == 21)
+                {
+                    textBox8.Text = old_product.finish_price.ToString();
+                    label10.Enabled = true;
+                    groupBox1.Enabled = true;
+                    groupBox2.Enabled = true;
+                    buttonBroken.Visible = true;
+                    dataGridView1.Enabled = false;
+                    buttonBroken.Enabled = false;
+                    button4.Enabled = false;
+                    buttonCheck.Enabled = true;
+                    textBox8.Enabled = false;
+                }
+                if(old_product.pk_stat==22)
+                {
+                    textBox8.Text = old_product.finish_price.ToString();
+                    label10.Enabled = true;
+                    groupBox1.Enabled = false;
+                    groupBox2.Enabled = false;
+                    button1.Enabled = false;
+                    buttonBroken.Visible = true;
+                    dataGridView1.Enabled = false;
+                    buttonBroken.Enabled = true;
+                    button4.Enabled = true;
+
+                }
+            
+           
+                
+            
+            if (old_product.pk_stat == 47)
             {
-                textBox8.Text = old_product.finish_price.ToString();
-                label10.Visible = true;
-                groupBox1.Enabled = false;
-                groupBox2.Enabled = false;
-                button1.Enabled = false;
-                buttonBroken.Visible = true;
-                dataGridView1.Enabled = false;
-            }
-            else
-            {
-                textBox8.Visible = false;
-                label10.Visible = false;
-                button4.Visible = false;
+                buttonBroken.Visible = false;
+                groupBox1.Enabled = true;
+                groupBox2.Enabled = true;
+                button1.Enabled=true;
+                dataGridView1.Enabled = true;
+                textBox8.Enabled = false;
+
             }
             textBox4.Text = old_product.opisanie;
             if (old_product.flag_owner == 1)
@@ -553,10 +586,20 @@ namespace Формы_Сучкова
         {
             
             get_all_old(); // подготавливаем все значения для обновления записи
-            old_product.pk_cheque = 0;
-            old_product.finish_price = 0;
-            old_product.garant = 0;
+            //old_product.pk_cheque = 0;
+            //old_product.finish_price = 0;
+            //old_product.garant = 0;
             old_product.pk_stat = 21;
+            string ss;
+            ss = old_product.makeSQLupdate(); // запускаем метод генерации скрипта для обновления
+            cmd_r_tovar.CommandText = ss;
+            cmd_r_tovar.ExecuteNonQuery();
+            this.Close();
+        }
+
+        private void buttonBroken_Click(object sender, EventArgs e)
+        {
+            old_product.pk_stat = 47;
             string ss;
             ss = old_product.makeSQLupdate(); // запускаем метод генерации скрипта для обновления
             cmd_r_tovar.CommandText = ss;

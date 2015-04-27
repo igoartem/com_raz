@@ -412,7 +412,6 @@
             this.просмотрЗаявокToolStripMenuItem.Name = "просмотрЗаявокToolStripMenuItem";
             this.просмотрЗаявокToolStripMenuItem.Size = new System.Drawing.Size(115, 20);
             this.просмотрЗаявокToolStripMenuItem.Text = "Просмотр заявок";
-            this.просмотрЗаявокToolStripMenuItem.Click += new System.EventHandler(this.просмотрЗаявокToolStripMenuItem_Click);
             // 
             // настройкиToolStripMenuItem
             // 
@@ -467,7 +466,6 @@
             // 
             // button8
             // 
-            this.button8.Enabled = false;
             this.button8.Location = new System.Drawing.Point(878, 180);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(125, 30);

@@ -53,6 +53,12 @@ namespace Формы_Сучкова
             return s1;
         }
 
+        public string makeSQLinsert_return_from_AR()
+        {
+            string s1 = "insert into TABLE_CONFORM (PK_TAB, VALUE, PK_PROD, PK_CHAR) VALUES ('" + pk_tab + "','" + value + "', '" + pk_prod + "','" + pk_char + "' )";
+            return s1;
+        }
+
         public string makeSQLinsert()
         {
             string s1 = "insert into TABLE_CONFORM (VALUE, PK_PROD, PK_CHAR) VALUES ('" + value + "', '" + pk_prod + "','"+pk_char+"' )";

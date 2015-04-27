@@ -204,7 +204,10 @@ namespace Формы_Сучкова
                 {
                     if (dataGridView1.Rows[i].Cells[0].Value.ToString() == "true")
                     {
-                        list.Add(Convert.ToInt32(dataGridView1.Rows[i].Cells[9].Value.ToString()));
+                        if (dataGridView1.Rows[i].Cells[5].Value.ToString() == "Сломано")
+                            MessageBox.Show("Нельзя продать сломанный товар!");
+                        else
+                            list.Add(Convert.ToInt32(dataGridView1.Rows[i].Cells[9].Value.ToString()));
                     }
                 }
             }
@@ -411,6 +414,7 @@ namespace Формы_Сучкова
             refresh();
         }
 
+<<<<<<< HEAD
 
         private void просмотрЗаявокToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -418,6 +422,8 @@ namespace Формы_Сучкова
             zay.ShowDialog();
         }
 
+=======
+>>>>>>> origin/Serega
         private void button3_Click(object sender, EventArgs e)
         {
             Arhiv arh = new Arhiv();
@@ -433,8 +439,32 @@ namespace Формы_Сучкова
 
         private void button8_Click(object sender, EventArgs e)
         {
+            //Списание
 
+<<<<<<< HEAD
 
+=======
+            List<int> list = new List<int>();
+
+            for (int i = 0; i < dataGridView1.RowCount; i++)    //обходим грид и смотрим есть ли чекнутые товары
+            {
+                if (dataGridView1.Rows[i].Cells[0].Value != null)
+                {
+                    if (dataGridView1.Rows[i].Cells[0].Value.ToString() == "true")
+                    {
+                        list.Add(Convert.ToInt32(dataGridView1.Rows[i].Cells[9].Value.ToString()));
+                    }
+                }
+            }
+            if (list.Count != 0)
+            {
+                Akt_spis form_prodaja = new Akt_spis(list); // вызвали форму и передали лист с пк товаров
+                form_prodaja.ShowDialog();
+                refresh();
+            }
+            else
+                MessageBox.Show("Не выбран ни один товар", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+>>>>>>> origin/Serega
         }
 
 
