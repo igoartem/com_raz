@@ -8,7 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OracleClient;
+using System.Diagnostics;
 using System.IO;
+using System.Runtime.InteropServices;
+using Microsoft.Office.Interop.Excel;
+using System.Collections.Generic;
+using Excel = Microsoft.Office.Interop.Excel;
+
+using Application = Microsoft.Office.Interop.Excel.Application;
+
+
 
 namespace Формы_Сучкова
 {
@@ -20,6 +29,10 @@ namespace Формы_Сучкова
         OracleConnection con_akt_priem;  // Подключение для вывода товаров в таблицу
         OracleDataReader dr_akt_priem;   //
         int pk = -1;
+        private Application application;
+        private Workbook workBook;
+        private Worksheet worksheet;
+
 
         public void connect()
         {
@@ -117,7 +130,7 @@ namespace Формы_Сучкова
                 MessageBox.Show("Не добавлено ни одного товара!");
                 return;
             }
-
+            Input_act inp_act;
 
             if (pk < 0)
             {
@@ -131,7 +144,7 @@ namespace Формы_Сучкова
                 dr_akt_priem.Read();
                 int pk_sell = Convert.ToInt32(dr_akt_priem[0]);
 
-                Input_act inp_act = new Input_act(static_class.worker, pk_sell); //здесь надо будет менять работника
+                inp_act = new Input_act(static_class.worker, pk_sell); //здесь надо будет менять работника
 
                 inp_act.date_inp = date_start;
                 inp_act.date_end = date_fin;
@@ -193,11 +206,104 @@ namespace Формы_Сучкова
 
                 cmd_akt_priem.CommandText = "UPDATE input_act set date_end = TO_DATE('" + date_fin.ToString() + "','DD.MM.YYYY HH24:MI:SS') where input_act.pk_act = '" + pk.ToString() + "'";
                 cmd_akt_priem.ExecuteNonQuery();
+                dr_akt_priem.Read();
             }
 
+           
+            DialogResult result;
+
+           result= MessageBox.Show("Распечатать акт приемки?", "Акт приемки", MessageBoxButtons.YesNo);
+           if (result == System.Windows.Forms.DialogResult.Yes)
+           {
+               string zap = "select max(PK_ACT) from input_act";
+               cmd_akt_priem.CommandText = zap;
+               dr_akt_priem = cmd_akt_priem.ExecuteReader();
+               dr_akt_priem.Read();
+               int pk_ = Convert.ToInt32(dr_akt_priem[0]);
+
+               zap = "select fio from worker where  PK_WORKER ="+static_class.worker;
+               cmd_akt_priem.CommandText = zap;
+               dr_akt_priem = cmd_akt_priem.ExecuteReader();
+               dr_akt_priem.Read();
+               string fio_work=dr_akt_priem[0].ToString();
+               application = new Application { Visible = true, DisplayAlerts = false };
+
+
+               string template = "primer.xlsx";
+               workBook = application.Workbooks.Open(Path.Combine(Environment.CurrentDirectory, template));
+               worksheet = workBook.ActiveSheet as Worksheet;
+               worksheet.Range["C1"].Value = pk_;
+               worksheet.Range["C2"].Value = fio;
+               worksheet.Range["C3"].Value = passport;
+               worksheet.Range["C4"].Value = number_phone;
+               worksheet.Range["C5"].Value = fio_work;
+               worksheet.Range["C6"].Value =  date_start.ToString();
+               worksheet.Range["C7"].Value = date_fin.ToString();
+
+               zap = "select NAME,sn,MIN_INP_PRICE,COMISSION,EXPECT_PRICE,FLAG_OWNER,PAY_STAY from product where PK_ACT=" + pk_;
+               cmd_akt_priem.CommandText = zap;
+               dr_akt_priem = cmd_akt_priem.ExecuteReader();
+               
+
+               int nn = 1;
+               int ne=10;
+               while (dr_akt_priem.Read())
+               {
+                   worksheet.Range["B" + ne].Value = nn;
+                   if(dr_akt_priem[5].ToString()=="1")
+                       worksheet.Range["C"+ne].Value = "+";
+                   else
+                       worksheet.Range["C"+ne].Value = "-";
+
+                   worksheet.Range["D" + ne].Value = dr_akt_priem[0].ToString();
+                   worksheet.Range["E" + ne].Value = dr_akt_priem[6].ToString();
+                   worksheet.Range["F" + ne].Value = dr_akt_priem[2].ToString();
+                   worksheet.Range["G" + ne].Value = dr_akt_priem[4].ToString();
+                   worksheet.Range["H" + ne].Value = dr_akt_priem[3].ToString();
+                   worksheet.Range["I" + ne].Value = dr_akt_priem[1].ToString();
+
+                   ne++;
+                   nn++;
+               }
+
+
+               string savedFileName = "book"+pk_+".xlsx";
+               workBook.SaveAs(Path.Combine(Environment.CurrentDirectory, savedFileName));
+               CloseExcel();
+
+           }
             this.Close();
 
         }
+
+        private void CloseExcel()
+        {
+            if (application != null)
+            {
+
+
+                int excelProcessId = -1;
+                GetWindowThreadProcessId(application.Hwnd, ref excelProcessId);
+
+                Marshal.ReleaseComObject(worksheet);
+                workBook.Close();
+                Marshal.ReleaseComObject(workBook);
+                application.Quit();
+                Marshal.ReleaseComObject(application);
+
+                application = null;
+                // Прибиваем висящий процесс
+                try
+                {
+                    Process process = Process.GetProcessById(excelProcessId);
+                    process.Kill();
+                }
+                finally { }
+            }
+        }
+
+        [DllImport("user32.dll", SetLastError = true)]
+        static extern uint GetWindowThreadProcessId(int hWnd, ref int lpdwProcessId);
 
         private void button3_Click(object sender, EventArgs e)
         {
