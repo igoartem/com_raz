@@ -472,7 +472,6 @@ namespace Формы_Сучкова
 
                 }
 
-
             }
 
             if (!flag_prod)
