@@ -424,11 +424,6 @@ namespace Формы_Сучкова
             refresh();
         }
 
-<<<<<<< HEAD
-=======
-
-       
->>>>>>> origin/artem_3
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -467,27 +462,19 @@ namespace Формы_Сучкова
             }
             else
                 MessageBox.Show("Не выбран ни один товар", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-<<<<<<< HEAD
-=======
 
-
-
->>>>>>> origin/artem_3
         }
 
         private void просмотрЗаявокToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             Zayavka zay = new Zayavka();
             zay.ShowDialog();
-<<<<<<< HEAD
         }
 
         private void работникиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Workers work = new Workers();
             work.ShowDialog();
-=======
->>>>>>> origin/artem_3
         }
 
 
