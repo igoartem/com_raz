@@ -40,7 +40,7 @@
             this.button1.Location = new System.Drawing.Point(201, 64);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Вход";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -59,7 +59,7 @@
             this.textBox1.Location = new System.Drawing.Point(66, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(210, 20);
-            this.textBox1.TabIndex = 2;
+            this.textBox1.TabIndex = 1;
             // 
             // label2
             // 
@@ -75,7 +75,8 @@
             this.textBox2.Location = new System.Drawing.Point(66, 38);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(210, 20);
-            this.textBox2.TabIndex = 4;
+            this.textBox2.TabIndex = 2;
+            this.textBox2.UseSystemPasswordChar = true;
             // 
             // Form1
             // 
@@ -87,7 +88,8 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Location = new System.Drawing.Point(500, 500);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
