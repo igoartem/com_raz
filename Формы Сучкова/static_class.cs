@@ -8,6 +8,7 @@ namespace Формы_Сучкова
 {
     class static_class
     {
+        public static bool exit = true;
         public static Product product;
         public static int worker;
         public static string worker_fio;

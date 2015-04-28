@@ -483,6 +483,12 @@ namespace Формы_Сучкова
             st.ShowDialog();
         }
 
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            static_class.exit = false;
+            this.Close();
+        }
+
 
     }
 }
