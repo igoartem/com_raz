@@ -398,6 +398,7 @@
             this.работникиToolStripMenuItem.Name = "работникиToolStripMenuItem";
             this.работникиToolStripMenuItem.Size = new System.Drawing.Size(168, 20);
             this.работникиToolStripMenuItem.Text = "Работники и руководители";
+            this.работникиToolStripMenuItem.Click += new System.EventHandler(this.работникиToolStripMenuItem_Click_1);
             // 
             // редактированиеКатегорийToolStripMenuItem
             // 

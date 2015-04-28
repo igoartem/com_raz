@@ -72,4 +72,3 @@ D:\Repo\Формы Сучкова\obj\Debug\Формы_Сучкова.Zayavka.re
 D:\Repo\Формы Сучкова\obj\Debug\Формы Сучкова.csproj.GenerateResource.Cache
 D:\Repo\Формы Сучкова\obj\Debug\Формы Сучкова.csprojResolveAssemblyReference.cache
 C:\com_raz\Формы Сучкова\obj\Debug\Формы_Сучкова.R_zayavka.resources
-C:\com_raz\Формы Сучкова\obj\Debug\Формы Сучкова.csprojResolveAssemblyReference.cache
