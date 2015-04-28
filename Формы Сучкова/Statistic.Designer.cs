@@ -64,7 +64,6 @@
             this.groupBox1.Size = new System.Drawing.Size(628, 161);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Статистика прибыли";
             // 
             // button1
             // 
@@ -192,7 +191,7 @@
             this.ClientSize = new System.Drawing.Size(689, 255);
             this.Controls.Add(this.groupBox1);
             this.Name = "Statistic";
-            this.Text = "Statistic";
+            this.Text = "Доходы";
             this.Load += new System.EventHandler(this.Statistic_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

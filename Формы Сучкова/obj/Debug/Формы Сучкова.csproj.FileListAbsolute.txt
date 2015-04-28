@@ -22,3 +22,4 @@ C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы_Суч�
 C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы Сучкова.csproj.GenerateResource.Cache
 C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы Сучкова.exe
 C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы Сучкова.pdb
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы Сучкова.csprojResolveAssemblyReference.cache
