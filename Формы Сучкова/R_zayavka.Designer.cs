@@ -38,10 +38,10 @@
             this.textBoxAbout = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBoxFIO = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.textBoxPhone = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.textBoxFIO = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.buttonCans = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
@@ -146,22 +146,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Заявитель";
             // 
-            // textBoxFIO
-            // 
-            this.textBoxFIO.Location = new System.Drawing.Point(91, 39);
-            this.textBoxFIO.Name = "textBoxFIO";
-            this.textBoxFIO.Size = new System.Drawing.Size(143, 20);
-            this.textBoxFIO.TabIndex = 19;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "ФИО:";
-            // 
             // textBoxPhone
             // 
             this.textBoxPhone.Location = new System.Drawing.Point(93, 82);
@@ -178,6 +162,22 @@
             this.label2.TabIndex = 20;
             this.label2.Text = "Телефон:";
             // 
+            // textBoxFIO
+            // 
+            this.textBoxFIO.Location = new System.Drawing.Point(91, 39);
+            this.textBoxFIO.Name = "textBoxFIO";
+            this.textBoxFIO.Size = new System.Drawing.Size(143, 20);
+            this.textBoxFIO.TabIndex = 19;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "ФИО:";
+            // 
             // buttonCans
             // 
             this.buttonCans.Location = new System.Drawing.Point(314, 233);
@@ -186,6 +186,7 @@
             this.buttonCans.TabIndex = 9;
             this.buttonCans.Text = "Отмена";
             this.buttonCans.UseVisualStyleBackColor = true;
+            this.buttonCans.Click += new System.EventHandler(this.buttonCans_Click);
             // 
             // buttonSave
             // 

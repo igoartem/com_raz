@@ -135,7 +135,7 @@ namespace Формы_Сучкова
             int kol_vo = list_category.Count;
             for (int i = 0; i < kol_vo; i++)
 
-                if (list_category[i].pk_cat == me.pk_request)
+                if (list_category[i].pk_cat == pk_cat)
                     name_cat = list_category[i].name;
 
 
@@ -315,6 +315,11 @@ namespace Формы_Сучкова
                 return;
 
             }
+        }
+
+        private void buttonCans_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
