@@ -46,6 +46,7 @@
             this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cost_itog = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.min_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -204,11 +205,23 @@
             this.min_cost.ReadOnly = true;
             this.min_cost.Width = 60;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(510, 338);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(108, 23);
+            this.button2.TabIndex = 23;
+            this.button2.Text = "Распечатать чек";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Prodaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(710, 371);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label8);
@@ -248,5 +261,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Discount;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cost_itog;
         private System.Windows.Forms.DataGridViewTextBoxColumn min_cost;
+        private System.Windows.Forms.Button button2;
     }
 }

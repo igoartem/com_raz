@@ -55,6 +55,7 @@
             this.komiss = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -310,11 +311,23 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(160, 494);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(80, 35);
+            this.button4.TabIndex = 24;
+            this.button4.Text = "Выгрузить в Exel";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Visible = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Akt_priem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(510, 535);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox3);
@@ -362,5 +375,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cost_buy;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cost_sell;
         private System.Windows.Forms.DataGridViewTextBoxColumn komiss;
+        private System.Windows.Forms.Button button4;
     }
 }

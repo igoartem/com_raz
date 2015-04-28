@@ -69,6 +69,7 @@ namespace Формы_Сучкова
             connect();
             button1.Visible = false;
             button3.Visible = false;
+            button4.Visible = true;
         }
 
         public Akt_priem(R_tovar_arh my, int pk_act)
@@ -86,6 +87,7 @@ namespace Формы_Сучкова
             textBox6.Enabled = false;
             dateTimePicker1.Enabled = false;
             dateTimePicker2.Enabled = false;
+            button4.Visible = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -269,7 +271,7 @@ namespace Формы_Сучкова
 
                string savedFileName = "book"+pk_+".xlsx";
                workBook.SaveAs(Path.Combine(Environment.CurrentDirectory, savedFileName));
-               CloseExcel();
+              // CloseExcel();
 
            }
             this.Close();
@@ -506,6 +508,71 @@ namespace Формы_Сучкова
 
         private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string zap;
+            int pk_ = pk;
+            zap = "select worker.FIO from input_act,worker where worker.PK_WORKER=input_act.PK_WORKER and pk_act=" + pk;
+            cmd_akt_priem.CommandText = zap;
+            dr_akt_priem = cmd_akt_priem.ExecuteReader();
+            dr_akt_priem.Read();
+            string fio_work = dr_akt_priem[0].ToString();
+
+            //zap = "select fio from worker where  PK_WORKER =" + ;
+            //cmd_akt_priem.CommandText = zap;
+            //dr_akt_priem = cmd_akt_priem.ExecuteReader();
+            //dr_akt_priem.Read();
+            //string fio_work = dr_akt_priem[0].ToString();
+            application = new Application { Visible = true, DisplayAlerts = false };
+
+            zap = "select seller.FIO,seller.PASSPORT,seller.PHONE,input_act.DATE_INP,input_act.DATE_END from input_act,seller,worker where seller.PK_SELL = input_act.PK_SELL and worker.PK_WORKER = input_act.PK_WORKER and input_act.PK_ACT="+pk_;
+            cmd_akt_priem.CommandText = zap;
+            dr_akt_priem = cmd_akt_priem.ExecuteReader();
+            dr_akt_priem.Read();
+
+            string template = "primer.xlsx";
+            workBook = application.Workbooks.Open(Path.Combine(Environment.CurrentDirectory, template));
+            worksheet = workBook.ActiveSheet as Worksheet;
+            worksheet.Range["C1"].Value = pk_;
+            worksheet.Range["C2"].Value = dr_akt_priem[0].ToString();
+            worksheet.Range["C3"].Value = dr_akt_priem[1].ToString();
+            worksheet.Range["C4"].Value = dr_akt_priem[2].ToString();
+            worksheet.Range["C5"].Value = fio_work;
+            worksheet.Range["C6"].Value = dr_akt_priem[3].ToString();
+            worksheet.Range["C7"].Value = dr_akt_priem[4].ToString();
+
+            zap = "select NAME,sn,MIN_INP_PRICE,COMISSION,EXPECT_PRICE,FLAG_OWNER,PAY_STAY from product where PK_ACT=" + pk_;
+            cmd_akt_priem.CommandText = zap;
+            dr_akt_priem = cmd_akt_priem.ExecuteReader();
+
+
+            int nn = 1;
+            int ne = 10;
+            while (dr_akt_priem.Read())
+            {
+                worksheet.Range["B" + ne].Value = nn;
+                if (dr_akt_priem[5].ToString() == "1")
+                    worksheet.Range["C" + ne].Value = "+";
+                else
+                    worksheet.Range["C" + ne].Value = "-";
+
+                worksheet.Range["D" + ne].Value = dr_akt_priem[0].ToString();
+                worksheet.Range["E" + ne].Value = dr_akt_priem[6].ToString();
+                worksheet.Range["F" + ne].Value = dr_akt_priem[2].ToString();
+                worksheet.Range["G" + ne].Value = dr_akt_priem[4].ToString();
+                worksheet.Range["H" + ne].Value = dr_akt_priem[3].ToString();
+                worksheet.Range["I" + ne].Value = dr_akt_priem[1].ToString();
+
+                ne++;
+                nn++;
+            }
+
+
+            string savedFileName = "book" + pk_ + ".xlsx";
+            workBook.SaveAs(Path.Combine(Environment.CurrentDirectory, savedFileName));
+            //CloseExcel();
         }
     }
 }

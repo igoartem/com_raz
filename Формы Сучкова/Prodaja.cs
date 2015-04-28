@@ -9,6 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OracleClient;
 using System.IO;
+using System.Runtime.InteropServices;
+using Microsoft.Office.Interop.Excel;
+using System.Collections.Generic;
+using Excel = Microsoft.Office.Interop.Excel;
+
+using Application = Microsoft.Office.Interop.Excel.Application;
 
 namespace Формы_Сучкова
 {
@@ -18,6 +24,10 @@ namespace Формы_Сучкова
         OracleCommand cmd_prod;
         OracleConnection con_prod;
         OracleDataReader dr_prod;
+
+        private Application application;
+        private Workbook workBook;
+        private Worksheet worksheet;
 
         bool loading = true;
         int summ = 0;
@@ -155,6 +165,7 @@ namespace Формы_Сучкова
             InitializeComponent();
             label5.Text = "Чек продажи";
             button1.Visible = false;
+            button2.Visible = true;
         }
 
         public Prodaja(R_tovar_arh my, int pk_inp)
@@ -222,6 +233,16 @@ namespace Формы_Сучкова
                 cmd_prod.CommandText = "UPDATE product set garant = '" + str3 + "', finish_price = '" + str5 + "', pk_stat = '" + 22 + "', pk_cheque = '" + temp + "' where pk_prod = '" + str0 + "'";
                 cmd_prod.ExecuteNonQuery();
             }
+
+            DialogResult result;
+
+           result= MessageBox.Show("Распечатать акт приемки?", "Акт приемки", MessageBoxButtons.YesNo);
+           if (result == System.Windows.Forms.DialogResult.Yes)
+           {
+               pk = Convert.ToInt32( temp);
+               save();
+           }
+
             this.Close();
         }
 
@@ -244,6 +265,58 @@ namespace Формы_Сучкова
                 }
                 textBox7.Text = summ.ToString();
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            save();
+
+        }
+
+        private void save()
+        {
+            string zap = "select cheque.PK_CHEQUE, DATE_CH,worker.FIO from cheque,worker where worker.PK_WORKER = cheque.PK_WORKER and cheque.PK_CHEQUE=" + pk;
+            cmd_prod.CommandText = zap;
+            dr_prod = cmd_prod.ExecuteReader();
+            dr_prod.Read();
+            string fio_work = dr_prod[2].ToString();
+            string date_prod = dr_prod[1].ToString();
+
+
+            zap = "select product.NAME,sn,FINISH_PRICE,GARANT from product where PK_CHEQUE=" + pk;
+            cmd_prod.CommandText = zap;
+            dr_prod = cmd_prod.ExecuteReader();
+            Product prod = new Product();
+
+            application = new Application { Visible = true, DisplayAlerts = false };
+            string template = "check.xlsx";
+            workBook = application.Workbooks.Open(Path.Combine(Environment.CurrentDirectory, template));
+            worksheet = workBook.ActiveSheet as Worksheet;
+            worksheet.Range["C2"].Value = pk;
+            worksheet.Range["C3"].Value = date_prod;
+            worksheet.Range["C4"].Value = fio_work;
+            int nn = 9;
+            int n = 1;
+
+            while (dr_prod.Read())
+            {
+                prod.name = dr_prod[0].ToString();
+                prod.sn = dr_prod[1].ToString();
+                prod.finish_price = Convert.ToInt32(dr_prod[2]);
+                prod.garant = Convert.ToInt32(dr_prod[3]);
+
+                worksheet.Range["B" + nn].Value = n;
+                worksheet.Range["C" + nn].Value = prod.name;
+                worksheet.Range["D" + nn].Value = prod.sn;
+                worksheet.Range["E" + nn].Value = prod.garant;
+                worksheet.Range["F" + nn].Value = prod.finish_price;
+                nn++;
+                n++;
+
+            }
+            string savedFileName = "check" + pk + ".xlsx";
+            workBook.SaveAs(Path.Combine(Environment.CurrentDirectory, savedFileName));
+            //string 
         }
     }
 }

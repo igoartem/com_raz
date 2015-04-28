@@ -25,6 +25,9 @@ namespace Формы_Сучкова
         public string opisanie { get; set; }
         public int pk_act_spis { get; set; }
 
+
+        public Product()
+        { }
         public Product(int pk_prod, int pk_act_spis, string name, string sn, int pk_subcat, int pk_cheque, int pk_act, int min_inp_price, int finish_price, int expect_price, string opisanie)
         {
             this.pk_prod = pk_prod;
