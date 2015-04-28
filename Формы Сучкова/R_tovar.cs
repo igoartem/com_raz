@@ -224,7 +224,10 @@ namespace Формы_Сучкова
                     dataGridView1.Enabled = false;
                     buttonBroken.Enabled = false;
                     button4.Enabled = false;
-                    buttonCheck.Enabled = true;
+                    if(old_product.pk_cheque!=0)
+                        buttonCheck.Enabled = true;
+                    else
+                        buttonCheck.Enabled = false;
                     textBox8.Enabled = false;
                 }
                 if(old_product.pk_stat==22)
