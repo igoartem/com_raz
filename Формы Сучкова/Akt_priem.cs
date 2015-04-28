@@ -406,6 +406,7 @@ namespace Формы_Сучкова
             DateTime dt = dateTimePicker1.Value;
             dt = dt.AddDays(kol_days);
             dateTimePicker2.Value = dt;
+            
             //dateTimePicker2.Enabled = true;
         }
 
