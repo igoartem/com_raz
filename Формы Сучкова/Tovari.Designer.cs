@@ -64,7 +64,6 @@
             this.работникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редактированиеКатегорийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.просмотрЗаявокToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.статистикаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -386,7 +385,6 @@
             this.работникиToolStripMenuItem,
             this.редактированиеКатегорийToolStripMenuItem,
             this.просмотрЗаявокToolStripMenuItem,
-            this.настройкиToolStripMenuItem,
             this.статистикаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -413,6 +411,7 @@
             this.просмотрЗаявокToolStripMenuItem.Name = "просмотрЗаявокToolStripMenuItem";
             this.просмотрЗаявокToolStripMenuItem.Size = new System.Drawing.Size(115, 20);
             this.просмотрЗаявокToolStripMenuItem.Text = "Просмотр заявок";
+<<<<<<< HEAD
             this.просмотрЗаявокToolStripMenuItem.Click += new System.EventHandler(this.просмотрЗаявокToolStripMenuItem_Click_1);
             // 
             // настройкиToolStripMenuItem
@@ -420,12 +419,16 @@
             this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
             this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
             this.настройкиToolStripMenuItem.Text = "Настройки";
+=======
+            this.просмотрЗаявокToolStripMenuItem.Click += new System.EventHandler(this.просмотрЗаявокToolStripMenuItem_Click);
+>>>>>>> origin/misha
             // 
             // статистикаToolStripMenuItem
             // 
             this.статистикаToolStripMenuItem.Name = "статистикаToolStripMenuItem";
             this.статистикаToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
             this.статистикаToolStripMenuItem.Text = "Статистика";
+            this.статистикаToolStripMenuItem.Click += new System.EventHandler(this.статистикаToolStripMenuItem_Click);
             // 
             // groupBox3
             // 
@@ -542,7 +545,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem настройкиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem работникиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem редактированиеКатегорийToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox3;

@@ -135,7 +135,7 @@ namespace Формы_Сучкова
             int kol_vo = list_category.Count;
             for (int i = 0; i < kol_vo; i++)
 
-                if (list_category[i].pk_cat == me.pk_request)
+                if (list_category[i].pk_cat == pk_cat)
                     name_cat = list_category[i].name;
 
 
@@ -308,13 +308,26 @@ namespace Формы_Сучкова
                 return;
 
             }
-            if (comboBox2.SelectedIndex == -1)
+
+            int index = comboBox2.SelectedIndex;
+            if (index == -1)
             {
                 MessageBox.Show("Не заполнено поле подкатегория!");
                 me = null;
                 return;
 
             }
+            else 
+            {
+
+                Subcategory sq = list_subcategory.Find(s => s.name == comboBox2.Items[index].ToString());
+                me.pk_subcat = sq.pk_subcat;
+            }
+        }
+
+        private void buttonCans_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

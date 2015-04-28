@@ -48,7 +48,7 @@ namespace Формы_Сучкова
 
         public string makeSQLupdate()
         {
-            string s1 = "update Request SET FIO = '" + FIO + "', pk_subcat='" + pk_subcat + "', price= '" + price + "',about='" + about + "',Date_req=TO_DATE('" + Date_req + "','DD.MM.YYYY HH24:MI:SS') where pk_request= " + pk_request;
+            string s1 = "update Request SET FIO = '" + FIO + "', pk_subcat='" + pk_subcat + "', price= '" + price + "', phone= '" + phone + "',about='" + about + "',Date_req=TO_DATE('" + Date_req + "','DD.MM.YYYY HH24:MI:SS') where pk_request= " + pk_request;
             return s1;
         }
 
