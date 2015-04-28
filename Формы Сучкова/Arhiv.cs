@@ -275,5 +275,10 @@ namespace Формы_Сучкова
             refresh();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }

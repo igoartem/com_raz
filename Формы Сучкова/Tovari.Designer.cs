@@ -399,6 +399,7 @@
             this.работникиToolStripMenuItem.Name = "работникиToolStripMenuItem";
             this.работникиToolStripMenuItem.Size = new System.Drawing.Size(168, 20);
             this.работникиToolStripMenuItem.Text = "Работники и руководители";
+            this.работникиToolStripMenuItem.Click += new System.EventHandler(this.работникиToolStripMenuItem_Click);
             // 
             // редактированиеКатегорийToolStripMenuItem
             // 
@@ -412,6 +413,7 @@
             this.просмотрЗаявокToolStripMenuItem.Name = "просмотрЗаявокToolStripMenuItem";
             this.просмотрЗаявокToolStripMenuItem.Size = new System.Drawing.Size(115, 20);
             this.просмотрЗаявокToolStripMenuItem.Text = "Просмотр заявок";
+            this.просмотрЗаявокToolStripMenuItem.Click += new System.EventHandler(this.просмотрЗаявокToolStripMenuItem_Click_1);
             // 
             // настройкиToolStripMenuItem
             // 

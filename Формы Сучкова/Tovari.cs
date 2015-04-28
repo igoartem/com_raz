@@ -86,6 +86,16 @@ namespace Формы_Сучкова
             dataGridView1.Enabled = true;
         }
 
+        public void refresh_worker()
+        {
+            textBox4.Text = static_class.worker_fio;
+            switch (static_class.worker_status)
+            {
+                case 0: textBox4.Text += "Работник"; break;
+                case 1: textBox4.Text += "\n Руководитель"; break;
+            }
+        }
+
         public void refresh_telo()
         {
             cmd1.CommandText = "SELECT product.name, category.name, subcategory.name, product.EXPECT_PRICE, status.NAME, product.FLAG_OWNER, input_act.DATE_INP, input_act.DATE_END, product.PK_PROD FROM input_act, product, status, category, subcategory where product.PK_SUBCAT = subcategory.PK_SUBCAT and subcategory.PK_CAT = category.PK_CAT and product.PK_STAT = status.PK_STAT and product.PK_ACT = input_act.PK_ACT";
@@ -183,7 +193,7 @@ namespace Формы_Сучкова
             con2 = new OracleConnection("Data Source=(DESCRIPTION =(ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = " + s + ")(PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = XE))); User Id=" + "admin" + ";Password=" + "123" + ";");
             cmd2 = new OracleCommand("", con2);
             con2.Open();
-
+            refresh_worker();
             refresh(); // обновим грид
             find_refresh();
 
@@ -414,16 +424,7 @@ namespace Формы_Сучкова
             refresh();
         }
 
-<<<<<<< HEAD
-=======
 
-        private void просмотрЗаявокToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Zayavka zay = new Zayavka();
-            zay.ShowDialog();
-        }
-
->>>>>>> origin/misha
         private void button3_Click(object sender, EventArgs e)
         {
             Arhiv arh = new Arhiv();
@@ -441,7 +442,6 @@ namespace Формы_Сучкова
         {
             //Списание
 
-<<<<<<< HEAD
             List<int> list = new List<int>();
 
             for (int i = 0; i < dataGridView1.RowCount; i++)    //обходим грид и смотрим есть ли чекнутые товары
@@ -462,9 +462,18 @@ namespace Формы_Сучкова
             }
             else
                 MessageBox.Show("Не выбран ни один товар", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-=======
+        }
 
->>>>>>> origin/misha
+        private void просмотрЗаявокToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Zayavka zay = new Zayavka();
+            zay.ShowDialog();
+        }
+
+        private void работникиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Workers work = new Workers();
+            work.ShowDialog();
         }
 
 

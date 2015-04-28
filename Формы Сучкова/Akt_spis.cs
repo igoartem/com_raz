@@ -161,7 +161,7 @@ namespace Формы_Сучкова
                             cmd_spis.ExecuteNonQuery();
 
                             
-                            string sss = "UPDATE product_ar SET PK_ACT_SPIS = " + temp + " where pk_prod_ar = " + dataGridView1.Rows[i].Cells[4].Value.ToString();
+                            string sss = "UPDATE product_ar SET PK_ACT_SPIS = '" + temp + "' where pk_prod_ar = " + dataGridView1.Rows[i].Cells[4].Value.ToString();
                             cmd_spis.CommandText = sss;
                             cmd_spis.ExecuteNonQuery();
 

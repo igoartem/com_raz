@@ -63,7 +63,6 @@ D:\Repo\Формы Сучкова\obj\Debug\Формы_Сучкова.Kategory.r
 D:\Repo\Формы Сучкова\obj\Debug\Формы_Сучкова.Prodaja.resources
 D:\Repo\Формы Сучкова\obj\Debug\Формы_Сучкова.Properties.Resources.resources
 D:\Repo\Формы Сучкова\obj\Debug\Формы_Сучкова.P_kategory.resources
-D:\Repo\Формы Сучкова\obj\Debug\Формы_Сучкова.Redact_zayavka.resources
 D:\Repo\Формы Сучкова\obj\Debug\Формы_Сучкова.R_tovar.resources
 D:\Repo\Формы Сучкова\obj\Debug\Формы_Сучкова.R_tovar_arh.resources
 D:\Repo\Формы Сучкова\obj\Debug\Формы_Сучкова.Setting.resources
@@ -72,4 +71,5 @@ D:\Repo\Формы Сучкова\obj\Debug\Формы_Сучкова.Tovari.res
 D:\Repo\Формы Сучкова\obj\Debug\Формы_Сучкова.Workers.resources
 D:\Repo\Формы Сучкова\obj\Debug\Формы_Сучкова.Zayavka.resources
 D:\Repo\Формы Сучкова\obj\Debug\Формы Сучкова.csproj.GenerateResource.Cache
+D:\Repo\Формы Сучкова\obj\Debug\Формы_Сучкова.R_zayavka.resources
 D:\Repo\Формы Сучкова\obj\Debug\Формы Сучкова.csprojResolveAssemblyReference.cache
