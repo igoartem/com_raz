@@ -411,17 +411,13 @@
             this.просмотрЗаявокToolStripMenuItem.Name = "просмотрЗаявокToolStripMenuItem";
             this.просмотрЗаявокToolStripMenuItem.Size = new System.Drawing.Size(115, 20);
             this.просмотрЗаявокToolStripMenuItem.Text = "Просмотр заявок";
-<<<<<<< HEAD
-            this.просмотрЗаявокToolStripMenuItem.Click += new System.EventHandler(this.просмотрЗаявокToolStripMenuItem_Click_1);
+
             // 
             // настройкиToolStripMenuItem
             // 
-            this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
-            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
-            this.настройкиToolStripMenuItem.Text = "Настройки";
-=======
+
             this.просмотрЗаявокToolStripMenuItem.Click += new System.EventHandler(this.просмотрЗаявокToolStripMenuItem_Click);
->>>>>>> origin/misha
+
             // 
             // статистикаToolStripMenuItem
             // 

@@ -424,10 +424,6 @@ namespace Формы_Сучкова
             refresh();
         }
 
-<<<<<<< HEAD
-
-=======
-
 
         private void просмотрЗаявокToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -435,8 +431,6 @@ namespace Формы_Сучкова
             zay.ShowDialog();
         }
 
-
->>>>>>> origin/misha
         private void button3_Click(object sender, EventArgs e)
         {
             Arhiv arh = new Arhiv();
@@ -454,11 +448,7 @@ namespace Формы_Сучкова
         {
             //Списание
 
-<<<<<<< HEAD
             List<int> list = new List<int>();
-=======
-    List<int> list = new List<int>();
->>>>>>> origin/misha
 
             for (int i = 0; i < dataGridView1.RowCount; i++)    //обходим грид и смотрим есть ли чекнутые товары
             {
@@ -481,23 +471,16 @@ namespace Формы_Сучкова
 
         }
 
-<<<<<<< HEAD
-        private void просмотрЗаявокToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            Zayavka zay = new Zayavka();
-            zay.ShowDialog();
-        }
 
         private void работникиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Workers work = new Workers();
             work.ShowDialog();
-=======
+        }
         private void статистикаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Statistic st = new Statistic();
             st.ShowDialog();
->>>>>>> origin/misha
         }
 
 
