@@ -1,9 +1,6 @@
 C:\Users\HP\Desktop\nigga\Формы Сучкова\bin\Debug\Формы Сучкова.exe.config
-C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы Сучкова.exe
-C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы Сучкова.pdb
 C:\Users\HP\Desktop\nigga\Формы Сучкова\bin\Debug\Формы Сучкова.exe
 C:\Users\HP\Desktop\nigga\Формы Сучкова\bin\Debug\Формы Сучкова.pdb
-C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы Сучкова.csprojResolveAssemblyReference.cache
 C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы_Сучкова.Add_redact_worker.resources
 C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы_Сучкова.Akt_priem.resources
 C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы_Сучкова.Akt_spis.resources
@@ -23,3 +20,5 @@ C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы_Суч�
 C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы_Сучкова.Workers.resources
 C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы_Сучкова.Zayavka.resources
 C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы Сучкова.csproj.GenerateResource.Cache
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы Сучкова.exe
+C:\Users\HP\Desktop\nigga\Формы Сучкова\obj\Debug\Формы Сучкова.pdb

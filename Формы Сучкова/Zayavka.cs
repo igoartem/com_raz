@@ -61,14 +61,15 @@ namespace Формы_Сучкова
                // int pk_appl = Convert.ToInt32(dr_zay[2]);
                 int pk_subcat = Convert.ToInt32(dr_zay[2]);
                 string about = dr_zay[3].ToString();
-                string FIO = dr_zay[4].ToString();
-                string phone = dr_zay[5].ToString();
-                int price = Convert.ToInt32(dr_zay[6]);
+                int price = Convert.ToInt32(dr_zay[4]);
+                string FIO = dr_zay[5].ToString();
+                string phone = dr_zay[6].ToString();
+                
                 list_zay.Add(new Request(pk, FIO, pk_subcat,about,dateQ,phone,price));
 
 
                 //OracleCommand cmd_zay2 = new OracleCommand("", con_zay);
-                cmd_zay.CommandText = "SELECT name from Subcategory";
+                cmd_zay.CommandText = "SELECT name from Subcategory where pk_subcat = " + pk_subcat;
                 OracleDataReader dr_zay2 = cmd_zay.ExecuteReader();
                 dr_zay2.Read();
                 string subcat = dr_zay2[0].ToString();

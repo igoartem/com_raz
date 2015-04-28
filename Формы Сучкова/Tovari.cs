@@ -463,6 +463,12 @@ namespace Формы_Сучкова
 
         }
 
+        private void статистикаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Statistic st = new Statistic();
+            st.ShowDialog();
+        }
+
 
     }
 }
