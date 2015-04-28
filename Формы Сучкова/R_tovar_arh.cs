@@ -102,8 +102,9 @@ namespace Формы_Сучкова
             cmd_r_tovar.CommandText = ss;
             dr_r_tovar = cmd_r_tovar.ExecuteReader();
             dr_r_tovar.Read();
-            int pk_check = 0;
-            int fin_price = 0;
+
+            int pk_check = 0, fin_price = 0;
+
             if (dr_r_tovar[5].ToString() != "")
             {
                 pk_check = Convert.ToInt32(dr_r_tovar[5]);
@@ -117,7 +118,8 @@ namespace Формы_Сучкова
             }
             else
                 button4.Enabled = false;
-            old_product = new Product(Convert.ToInt32(dr_r_tovar[0]), pk_akt_spis, dr_r_tovar[2].ToString(), dr_r_tovar[3].ToString(), Convert.ToInt32(dr_r_tovar[4]), Convert.ToInt32(dr_r_tovar[5]), Convert.ToInt32(dr_r_tovar[6]), Convert.ToInt32(dr_r_tovar[7]), Convert.ToInt32(dr_r_tovar[8]), Convert.ToInt32(dr_r_tovar[9]), dr_r_tovar[10].ToString());
+
+            old_product = new Product(Convert.ToInt32(dr_r_tovar[0].ToString()), pk_akt_spis, dr_r_tovar[2].ToString(), dr_r_tovar[3].ToString(), Convert.ToInt32(dr_r_tovar[4].ToString()), pk_check, Convert.ToInt32(dr_r_tovar[6].ToString()), Convert.ToInt32(dr_r_tovar[7].ToString()), fin_price, Convert.ToInt32(dr_r_tovar[9].ToString()), dr_r_tovar[10].ToString());
             load_to_form();
         }
 

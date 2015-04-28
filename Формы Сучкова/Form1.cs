@@ -76,14 +76,61 @@ namespace Формы_Сучкова
                 static_class.worker_fio = ss;
                 Tovari tov = new Tovari();
                 this.Visible = false;
-                con_log.Close();
                 tov.ShowDialog();
-                this.Close();
+                if (static_class.exit)
+                {
+                    this.Close();
+                    con_log.Close();
+                }
+                else
+                {
+                    this.Visible = true;
+                    this.textBox1.Focus();
+                    textBox1.Text = "";
+                    textBox2.Text = "";
+                    static_class.exit = true;
+                }
             //}
             //catch (Exception)
             //{
             //    MessageBox.Show("Неверный логин / пароль");
             //}
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+
+            if (!Char.IsDigit(ch) && ch == 13)
+            {
+                cmd_log.CommandText = "SELECT pk_worker, status, FIO from worker where login ='" + textBox1.Text + "' and password = '" + textBox2.Text + "'";
+                dr_log = cmd_log.ExecuteReader();
+                dr_log.Read();
+                //try
+                //{
+                string ss = dr_log[0].ToString();
+                static_class.worker = Convert.ToInt32(ss);
+                ss = dr_log[1].ToString();
+                static_class.worker_status = Convert.ToInt32(ss);
+                ss = dr_log[2].ToString();
+                static_class.worker_fio = ss;
+                Tovari tov = new Tovari();
+                this.Visible = false;
+                tov.ShowDialog();
+                if (static_class.exit)
+                {
+                    this.Close();
+                    con_log.Close();
+                }
+                else
+                {
+                    this.Visible = true;
+                    this.textBox1.Focus();
+                    textBox1.Text = "";
+                    textBox2.Text = "";
+                    static_class.exit = true;
+                }
+            }
         }
     }
 }

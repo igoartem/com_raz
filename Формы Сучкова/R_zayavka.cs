@@ -308,12 +308,20 @@ namespace Формы_Сучкова
                 return;
 
             }
-            if (comboBox2.SelectedIndex == -1)
+
+            int index = comboBox2.SelectedIndex;
+            if (index == -1)
             {
                 MessageBox.Show("Не заполнено поле подкатегория!");
                 me = null;
                 return;
 
+            }
+            else 
+            {
+
+                Subcategory sq = list_subcategory.Find(s => s.name == comboBox2.Items[index].ToString());
+                me.pk_subcat = sq.pk_subcat;
             }
         }
 
