@@ -31,6 +31,16 @@ namespace Формы_Сучкова
             InitializeComponent();
         }
 
+        private void prava()
+        {
+            if (static_class.worker_status == 0)
+            {
+                button6.Enabled = false;
+
+            }
+
+        }
+
         private void Arhiv_Load(object sender, EventArgs e)
         {
             load = true;
@@ -59,6 +69,7 @@ namespace Формы_Сучкова
             find_refresh();
 
             load = false; // и у же не загружаемся
+            prava();
         }
 
         public void find_refresh()

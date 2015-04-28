@@ -512,112 +512,74 @@ Fatal NI connect error 12516, connecting to:
 
 
 ***********************************************************************
-Fatal NI connect error 12543, connecting to:
- (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.1.7)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=XE)(CID=(PROGRAM=D:\Repo\Формы Сучкова\bin\Debug\Формы Сучкова.vshost.exe)(HOST=LENOVO-NOTEBOOK)(USER=Lenovo))))
+Fatal NI connect error 12170.
 
   VERSION INFORMATION:
 	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
 	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
-  Time: 28-АПР-2015 11:53:58
+  Time: 28-АПР-2015 14:03:49
   Tracing not turned on.
   Tns error struct:
-    ns main err code: 12543
-    TNS-12543: Message 12543 not found; No message file for product=NETWORK, facility=TNS
+    ns main err code: 12535
+    TNS-12535: TNS:operation timed out
     ns secondary err code: 12560
-    nt main err code: 513
-    TNS-00513: Message 513 not found; No message file for product=NETWORK, facility=TNS
-    nt secondary err code: 51
+    nt main err code: 505
+    TNS-00505: Operation timed out
+    nt secondary err code: 60
     nt OS err code: 0
+  Client address: <unknown>
+
+
+***********************************************************************
+Fatal NI connect error 12170.
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 28-АПР-2015 14:04:03
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12535
+    TNS-12535: TNS:operation timed out
+    ns secondary err code: 12560
+    nt main err code: 505
+    TNS-00505: Operation timed out
+    nt secondary err code: 60
+    nt OS err code: 0
+  Client address: <unknown>
 
 
 ***********************************************************************
 Fatal NI connect error 12543, connecting to:
- (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.1.7)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=XE)(CID=(PROGRAM=D:\Repo\Формы Сучкова\bin\Debug\Формы Сучкова.vshost.exe)(HOST=LENOVO-NOTEBOOK)(USER=Lenovo))))
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.1.1)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=xe)(CID=(PROGRAM=C:\com_raz\Формы Сучкова\bin\Debug\Формы Сучкова.vshost.exe)(HOST=ARTEM_PC)(USER=Artem))))
 
   VERSION INFORMATION:
 	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
 	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
-  Time: 28-АПР-2015 11:54:58
+  Time: 28-АПР-2015 14:58:18
   Tracing not turned on.
   Tns error struct:
     ns main err code: 12543
-    TNS-12543: Message 12543 not found; No message file for product=NETWORK, facility=TNS
+    TNS-12543: TNS:destination host unreachable
     ns secondary err code: 12560
     nt main err code: 513
-    TNS-00513: Message 513 not found; No message file for product=NETWORK, facility=TNS
-    nt secondary err code: 51
-    nt OS err code: 0
-
-
-***********************************************************************
-Fatal NI connect error 12543, connecting to:
- (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.1.7)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=XE)(CID=(PROGRAM=D:\Repo\Формы Сучкова\bin\Debug\Формы Сучкова.vshost.exe)(HOST=LENOVO-NOTEBOOK)(USER=Lenovo))))
-
-  VERSION INFORMATION:
-	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
-	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
-  Time: 28-АПР-2015 11:55:04
-  Tracing not turned on.
-  Tns error struct:
-    ns main err code: 12543
-    TNS-12543: Message 12543 not found; No message file for product=NETWORK, facility=TNS
-    ns secondary err code: 12560
-    nt main err code: 513
-    TNS-00513: Message 513 not found; No message file for product=NETWORK, facility=TNS
-    nt secondary err code: 51
-    nt OS err code: 0
-
-
-***********************************************************************
-Fatal NI connect error 12543, connecting to:
- (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.1.7)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=XE)(CID=(PROGRAM=D:\Repo\Формы Сучкова\bin\Debug\Формы Сучкова.vshost.exe)(HOST=LENOVO-NOTEBOOK)(USER=Lenovo))))
-
-  VERSION INFORMATION:
-	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
-	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
-  Time: 28-АПР-2015 11:55:21
-  Tracing not turned on.
-  Tns error struct:
-    ns main err code: 12543
-    TNS-12543: Message 12543 not found; No message file for product=NETWORK, facility=TNS
-    ns secondary err code: 12560
-    nt main err code: 513
-    TNS-00513: Message 513 not found; No message file for product=NETWORK, facility=TNS
-    nt secondary err code: 51
-    nt OS err code: 0
-
-
-***********************************************************************
-Fatal NI connect error 12543, connecting to:
- (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.1.7)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=XE)(CID=(PROGRAM=D:\Repo\Формы Сучкова\bin\Debug\Формы Сучкова.vshost.exe)(HOST=LENOVO-NOTEBOOK)(USER=Lenovo))))
-
-  VERSION INFORMATION:
-	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
-	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
-  Time: 28-АПР-2015 11:56:05
-  Tracing not turned on.
-  Tns error struct:
-    ns main err code: 12543
-    TNS-12543: Message 12543 not found; No message file for product=NETWORK, facility=TNS
-    ns secondary err code: 12560
-    nt main err code: 513
-    TNS-00513: Message 513 not found; No message file for product=NETWORK, facility=TNS
+    TNS-00513: Destination host unreachable
     nt secondary err code: 51
     nt OS err code: 0
 
 
 ***********************************************************************
 Fatal NI connect error 12516, connecting to:
- (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=127.0.0.1)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=XE)(CID=(PROGRAM=D:\Repo\Формы Сучкова\bin\Debug\Формы Сучкова.vshost.exe)(HOST=LENOVO-NOTEBOOK)(USER=Lenovo))))
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=XE)(CID=(PROGRAM=C:\com_raz\Формы Сучкова\bin\Debug\Формы Сучкова.vshost.exe)(HOST=ARTEM_PC)(USER=Artem))))
 
   VERSION INFORMATION:
 	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
 	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
-  Time: 28-АПР-2015 15:09:28
+  Time: 28-АПР-2015 16:19:14
   Tracing not turned on.
   Tns error struct:
     ns main err code: 12564
-    TNS-12564: Message 12564 not found; No message file for product=NETWORK, facility=TNS
+    TNS-12564: TNS:connection refused
     ns secondary err code: 0
     nt main err code: 0
     nt secondary err code: 0
@@ -626,16 +588,16 @@ Fatal NI connect error 12516, connecting to:
 
 ***********************************************************************
 Fatal NI connect error 12516, connecting to:
- (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=127.0.0.1)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=XE)(CID=(PROGRAM=D:\Repo\Формы Сучкова\bin\Debug\Формы Сучкова.vshost.exe)(HOST=LENOVO-NOTEBOOK)(USER=Lenovo))))
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=xe)(CID=(PROGRAM=C:\com_raz\Формы Сучкова\bin\Debug\Формы Сучкова.vshost.exe)(HOST=ARTEM_PC)(USER=Artem))))
 
   VERSION INFORMATION:
 	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
 	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
-  Time: 28-АПР-2015 15:10:44
+  Time: 28-АПР-2015 16:27:26
   Tracing not turned on.
   Tns error struct:
     ns main err code: 12564
-    TNS-12564: Message 12564 not found; No message file for product=NETWORK, facility=TNS
+    TNS-12564: TNS:connection refused
     ns secondary err code: 0
     nt main err code: 0
     nt secondary err code: 0
@@ -644,16 +606,16 @@ Fatal NI connect error 12516, connecting to:
 
 ***********************************************************************
 Fatal NI connect error 12516, connecting to:
- (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.1.88)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=XE)(CID=(PROGRAM=D:\Repo\Формы Сучкова\bin\Debug\Формы Сучкова.vshost.exe)(HOST=LENOVO-NOTEBOOK)(USER=Lenovo))))
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=XE)(CID=(PROGRAM=C:\com_raz\Формы Сучкова\bin\Debug\Формы Сучкова.vshost.exe)(HOST=ARTEM_PC)(USER=Artem))))
 
   VERSION INFORMATION:
 	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
 	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
-  Time: 28-АПР-2015 16:19:27
+  Time: 28-АПР-2015 16:27:32
   Tracing not turned on.
   Tns error struct:
     ns main err code: 12564
-    TNS-12564: Message 12564 not found; No message file for product=NETWORK, facility=TNS
+    TNS-12564: TNS:connection refused
     ns secondary err code: 0
     nt main err code: 0
     nt secondary err code: 0
@@ -662,16 +624,16 @@ Fatal NI connect error 12516, connecting to:
 
 ***********************************************************************
 Fatal NI connect error 12516, connecting to:
- (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.1.88)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=xe)(CID=(PROGRAM=D:\Repo\Формы Сучкова\bin\Debug\Формы Сучкова.vshost.exe)(HOST=LENOVO-NOTEBOOK)(USER=Lenovo))))
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=XE)(CID=(PROGRAM=C:\com_raz\Формы Сучкова\bin\Debug\Формы Сучкова.vshost.exe)(HOST=ARTEM_PC)(USER=Artem))))
 
   VERSION INFORMATION:
 	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
 	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
-  Time: 28-АПР-2015 16:19:39
+  Time: 28-АПР-2015 17:09:17
   Tracing not turned on.
   Tns error struct:
     ns main err code: 12564
-    TNS-12564: Message 12564 not found; No message file for product=NETWORK, facility=TNS
+    TNS-12564: TNS:connection refused
     ns secondary err code: 0
     nt main err code: 0
     nt secondary err code: 0
@@ -680,16 +642,16 @@ Fatal NI connect error 12516, connecting to:
 
 ***********************************************************************
 Fatal NI connect error 12516, connecting to:
- (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.1.88)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=XE)(CID=(PROGRAM=D:\Repo\Формы Сучкова\bin\Debug\Формы Сучкова.vshost.exe)(HOST=LENOVO-NOTEBOOK)(USER=Lenovo))))
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=XE)(CID=(PROGRAM=C:\com_raz\Формы Сучкова\bin\Debug\Формы Сучкова.vshost.exe)(HOST=ARTEM_PC)(USER=Artem))))
 
   VERSION INFORMATION:
 	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
 	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
-  Time: 28-АПР-2015 16:19:43
+  Time: 28-АПР-2015 17:10:30
   Tracing not turned on.
   Tns error struct:
     ns main err code: 12564
-    TNS-12564: Message 12564 not found; No message file for product=NETWORK, facility=TNS
+    TNS-12564: TNS:connection refused
     ns secondary err code: 0
     nt main err code: 0
     nt secondary err code: 0
@@ -698,16 +660,16 @@ Fatal NI connect error 12516, connecting to:
 
 ***********************************************************************
 Fatal NI connect error 12516, connecting to:
- (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.1.88)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=xe)(CID=(PROGRAM=D:\Repo\Формы Сучкова\bin\Debug\Формы Сучкова.vshost.exe)(HOST=LENOVO-NOTEBOOK)(USER=Lenovo))))
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=XE)(CID=(PROGRAM=C:\com_raz\Формы Сучкова\bin\Debug\Формы Сучкова.vshost.exe)(HOST=ARTEM_PC)(USER=Artem))))
 
   VERSION INFORMATION:
 	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
 	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
-  Time: 28-АПР-2015 16:54:20
+  Time: 28-АПР-2015 17:10:47
   Tracing not turned on.
   Tns error struct:
     ns main err code: 12564
-    TNS-12564: Message 12564 not found; No message file for product=NETWORK, facility=TNS
+    TNS-12564: TNS:connection refused
     ns secondary err code: 0
     nt main err code: 0
     nt secondary err code: 0
@@ -715,108 +677,57 @@ Fatal NI connect error 12516, connecting to:
 
 
 ***********************************************************************
-Fatal NI connect error 12516, connecting to:
- (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.1.88)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=xe)(CID=(PROGRAM=D:\Repo\Формы Сучкова\bin\Debug\Формы Сучкова.vshost.exe)(HOST=LENOVO-NOTEBOOK)(USER=Lenovo))))
+Fatal NI connect error 12545, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=<<<<<<< Temporary merge branch 1)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=XE)(CID=(PROGRAM=C:\com_raz\Формы Сучкова\bin\Debug\Формы Сучкова.vshost.exe)(HOST=ARTEM_PC)(USER=Artem))))
 
   VERSION INFORMATION:
 	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
 	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
-  Time: 28-АПР-2015 17:06:52
+  Time: 28-АПР-2015 21:34:24
   Tracing not turned on.
   Tns error struct:
-    ns main err code: 12564
-    TNS-12564: Message 12564 not found; No message file for product=NETWORK, facility=TNS
-    ns secondary err code: 0
-    nt main err code: 0
-    nt secondary err code: 0
+    ns main err code: 12545
+    TNS-12545: Connect failed because target host or object does not exist
+    ns secondary err code: 12560
+    nt main err code: 515
+    TNS-00515: Connect failed because target host or object does not exist
+    nt secondary err code: 1004
     nt OS err code: 0
 
 
 ***********************************************************************
-Fatal NI connect error 12516, connecting to:
- (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.1.88)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=XE)(CID=(PROGRAM=D:\Repo\Формы Сучкова\bin\Debug\Формы Сучкова.vshost.exe)(HOST=LENOVO-NOTEBOOK)(USER=Lenovo))))
+Fatal NI connect error 12541, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=178.186.25.156)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=XE)(CID=(PROGRAM=C:\com_raz\Формы Сучкова\bin\Debug\Формы Сучкова.vshost.exe)(HOST=ARTEM_PC)(USER=Artem))))
 
   VERSION INFORMATION:
 	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
 	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
-  Time: 28-АПР-2015 17:08:01
+  Time: 28-АПР-2015 21:38:16
   Tracing not turned on.
   Tns error struct:
-    ns main err code: 12564
-    TNS-12564: Message 12564 not found; No message file for product=NETWORK, facility=TNS
-    ns secondary err code: 0
-    nt main err code: 0
-    nt secondary err code: 0
+    ns main err code: 12541
+    TNS-12541: TNS:no listener
+    ns secondary err code: 12560
+    nt main err code: 511
+    TNS-00511: No listener
+    nt secondary err code: 61
     nt OS err code: 0
 
 
 ***********************************************************************
-Fatal NI connect error 12516, connecting to:
- (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.1.88)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=XE)(CID=(PROGRAM=D:\Repo\Формы Сучкова\bin\Debug\Формы Сучкова.vshost.exe)(HOST=LENOVO-NOTEBOOK)(USER=Lenovo))))
+Fatal NI connect error 12541, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=178.186.25.156)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=XE)(CID=(PROGRAM=C:\com_raz\Формы Сучкова\bin\Debug\Формы Сучкова.vshost.exe)(HOST=ARTEM_PC)(USER=Artem))))
 
   VERSION INFORMATION:
 	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
 	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
-  Time: 28-АПР-2015 17:08:21
+  Time: 28-АПР-2015 21:38:39
   Tracing not turned on.
   Tns error struct:
-    ns main err code: 12564
-    TNS-12564: Message 12564 not found; No message file for product=NETWORK, facility=TNS
-    ns secondary err code: 0
-    nt main err code: 0
-    nt secondary err code: 0
-    nt OS err code: 0
-
-
-***********************************************************************
-Fatal NI connect error 12516, connecting to:
- (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.1.88)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=XE)(CID=(PROGRAM=D:\Repo\Формы Сучкова\bin\Debug\Формы Сучкова.vshost.exe)(HOST=LENOVO-NOTEBOOK)(USER=Lenovo))))
-
-  VERSION INFORMATION:
-	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
-	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
-  Time: 28-АПР-2015 17:08:32
-  Tracing not turned on.
-  Tns error struct:
-    ns main err code: 12564
-    TNS-12564: Message 12564 not found; No message file for product=NETWORK, facility=TNS
-    ns secondary err code: 0
-    nt main err code: 0
-    nt secondary err code: 0
-    nt OS err code: 0
-
-
-***********************************************************************
-Fatal NI connect error 12516, connecting to:
- (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.1.88)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=XE)(CID=(PROGRAM=D:\Repo\Формы Сучкова\bin\Debug\Формы Сучкова.vshost.exe)(HOST=LENOVO-NOTEBOOK)(USER=Lenovo))))
-
-  VERSION INFORMATION:
-	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
-	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
-  Time: 28-АПР-2015 17:08:52
-  Tracing not turned on.
-  Tns error struct:
-    ns main err code: 12564
-    TNS-12564: Message 12564 not found; No message file for product=NETWORK, facility=TNS
-    ns secondary err code: 0
-    nt main err code: 0
-    nt secondary err code: 0
-    nt OS err code: 0
-
-
-***********************************************************************
-Fatal NI connect error 12516, connecting to:
- (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.1.88)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=XE)(CID=(PROGRAM=D:\Repo\Формы Сучкова\bin\Debug\Формы Сучкова.vshost.exe)(HOST=LENOVO-NOTEBOOK)(USER=Lenovo))))
-
-  VERSION INFORMATION:
-	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
-	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
-  Time: 28-АПР-2015 17:09:14
-  Tracing not turned on.
-  Tns error struct:
-    ns main err code: 12564
-    TNS-12564: Message 12564 not found; No message file for product=NETWORK, facility=TNS
-    ns secondary err code: 0
-    nt main err code: 0
-    nt secondary err code: 0
+    ns main err code: 12541
+    TNS-12541: TNS:no listener
+    ns secondary err code: 12560
+    nt main err code: 511
+    TNS-00511: No listener
+    nt secondary err code: 61
     nt OS err code: 0

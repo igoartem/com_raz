@@ -94,7 +94,11 @@ namespace Формы_Сучкова
             catch (Exception)
             {
                 MessageBox.Show("Неверный логин / пароль");
+<<<<<<< HEAD
             }
+=======
+           }
+>>>>>>> origin/artem_3
         }
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)

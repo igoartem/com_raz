@@ -406,11 +406,13 @@ namespace Формы_Сучкова
             DateTime dt = dateTimePicker1.Value;
             dt = dt.AddDays(kol_days);
             dateTimePicker2.Value = dt;
+            
             //dateTimePicker2.Enabled = true;
         }
 
         private void Akt_priem_Load(object sender, EventArgs e)
         {
+            textBox6.Text = static_class.worker_fio;
             if (pk >= 0)
             {
 
@@ -424,6 +426,8 @@ namespace Формы_Сучкова
 
                 dateTimePicker1.Value = Convert.ToDateTime(dr_akt_priem[3].ToString());
                 dateTimePicker2.Value = Convert.ToDateTime(dr_akt_priem[4].ToString());
+
+               
 
                 cmd_akt_priem.CommandText = "select product.FLAG_OWNER, product.NAME, product.PAY_STAY, product.MIN_INP_PRICE, product.EXPECT_PRICE, product.COMISSION from input_act, product where input_act.PK_ACT = " + pk + " and product.PK_ACT = input_act.PK_ACT";
                 dr_akt_priem = cmd_akt_priem.ExecuteReader();
