@@ -58,12 +58,8 @@ namespace Формы_Сучкова
 
         public void load_spis()
         {
-            str1 = DateTime.Now.ToString();
-            textBox3.Text = str1;
-            cmd_spis.CommandText = "select worker.fio from worker where pk_worker = " + static_class.worker.ToString();
-            dr_spis = cmd_spis.ExecuteReader();
-            dr_spis.Read();
-            textBox1.Text = dr_spis[0].ToString();
+            textBox3.Text = DateTime.Now.ToString();
+            textBox1.Text = static_class.worker_fio;
 
             cmd_spis.CommandText = "SELECT product.name, input_act.date_inp, status.name, product.MIN_INP_PRICE, product.PK_PROD FROM status, product, input_act where product.PK_act = input_act.PK_act and product.PK_stat = status.PK_stat";
 
