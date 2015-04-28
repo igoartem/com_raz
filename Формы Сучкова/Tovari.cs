@@ -156,6 +156,19 @@ namespace Формы_Сучкова
 
         }
 
+        private void prava()
+        {
+            if(static_class.worker_status==0)
+            {
+                    статистикаToolStripMenuItem.Enabled = false;
+                    button8.Enabled = false;
+                    работникиToolStripMenuItem.Enabled = false;
+                    
+                   
+            }
+
+        }
+
         private void Tovari_Load(object sender, EventArgs e)
         {
             load = true;
@@ -189,7 +202,7 @@ namespace Формы_Сучкова
 
             load = false; // и у же не загружаемся
 
-            
+            prava();
         }
 
         private void button1_Click(object sender, EventArgs e) //открываем окно продажи
