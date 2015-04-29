@@ -52,18 +52,22 @@ namespace Формы_Сучкова
         public void refresh()
         {
             dataGridView1.Rows.Clear();
-            cmd_w.CommandText = "SELECT pk_worker, fio, status from worker";
+            cmd_w.CommandText = "SELECT pk_worker, fio, status, flag from worker";
             dr_w = cmd_w.ExecuteReader();
 
             while (dr_w.Read())
             {
-                dataGridView1.Rows.Add();
-                dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[0].Value = dr_w[0].ToString(); // PK
-                dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[1].Value = dr_w[1].ToString(); // FIO
-                if( Convert.ToInt32(dr_w[2].ToString()) == 0)
-                    dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[2].Value = "Работник"; // STATUS
-                else
-                    dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[2].Value = "Руководитель";
+                if (Convert.ToInt32(dr_w[3].ToString()) > 0)
+                {
+                    dataGridView1.Rows.Add();
+                    dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[0].Value = dr_w[0].ToString(); // PK
+                    dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[1].Value = dr_w[1].ToString(); // FIO
+                    if( Convert.ToInt32(dr_w[2].ToString()) == 0)
+                        dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[2].Value = "Работник"; // STATUS
+                    else
+                        dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[2].Value = "Руководитель";
+                    dataGridView1.Rows[dataGridView1.RowCount - 1].Cells[3].Value = dr_w[3].ToString(); // Flag
+                }
             }
         }
 
@@ -92,46 +96,17 @@ namespace Формы_Сучкова
 
         private void button2_Click(object sender, EventArgs e)
         {
-            cmd_w.CommandText = "SELECT * from input_act where pk_worker =" + Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            dr_w = cmd_w.ExecuteReader();
-            dr_w.Read();
-            try
+            if (Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value) == static_class.worker)
             {
-                string ss = dr_w[0].ToString();
-                MessageBox.Show("Удаление невозможно, данный работник есть в актах приемки");
+                MessageBox.Show("Нельзя удалить текущего пользователя");
             }
-            catch (Exception)
+            else
             {
-                cmd_w.CommandText = "SELECT * from cheque where pk_worker =" + Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-                dr_w = cmd_w.ExecuteReader();
-                dr_w.Read();
-                try
-                {
-                    string ss = dr_w[0].ToString();
-                    MessageBox.Show("Удаление невозможно, данный работник есть в чеках");
-                }
-                catch (Exception)
-                {
-                    cmd_w.CommandText = "SELECT * from act_spis where pk_worker =" + Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-                    dr_w = cmd_w.ExecuteReader();
-                    dr_w.Read();
-                    try
-                    {
-                        string ss = dr_w[0].ToString();
-                        MessageBox.Show("Удаление невозможно, данный работник есть в актах списания");
-                    }
-                    catch (Exception)
-                    {
-                        cmd_w.CommandText = "delete from worker where pk_worker = " + Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-                        cmd_w.ExecuteNonQuery();
-                        refresh();
-                    }
-                }
+                string sss = "UPDATE worker SET flag = '" + 0 + "' where pk_worker = " + dataGridView1.CurrentRow.Cells[0].Value;
+                cmd_w.CommandText = sss;
+                cmd_w.ExecuteNonQuery();
+                refresh();
             }
-            //int w_pk = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            //string ss = "delete from table_conform where table_conform.pk_prod = " + dataGridView1.Rows[i].Cells[4].Value.ToString();
-            //cmd_w.CommandText = ss;// "delete from table_conform where table_conform.pk_prod = " + dataGridView1.Rows[i].Cells[9].Value.ToString();
-            //cmd_w.ExecuteNonQuery();
         }
     }
 }

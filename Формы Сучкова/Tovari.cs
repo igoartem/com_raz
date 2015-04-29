@@ -91,8 +91,8 @@ namespace Формы_Сучкова
             textBox4.Text = static_class.worker_fio;
             switch (static_class.worker_status)
             {
-                case 0: textBox4.Text += "Работник"; break;
-                case 1: textBox4.Text += "\n Руководитель"; break;
+                case 0: textBox4.Text += "\r\nРаботник"; break;
+                case 1: textBox4.Text += "\r\nРуководитель"; break;
             }
         }
 
