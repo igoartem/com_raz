@@ -558,7 +558,7 @@ namespace Формы_Сучкова
 
         private void R_tovar_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+            con_r_tovar.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)

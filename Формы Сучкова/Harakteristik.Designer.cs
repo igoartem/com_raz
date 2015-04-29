@@ -217,6 +217,7 @@
             this.Name = "Harakteristik";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Подкатегория";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Harakteristik_FormClosed);
             this.Load += new System.EventHandler(this.Harakteristik_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

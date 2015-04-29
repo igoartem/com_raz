@@ -138,6 +138,7 @@
             this.Name = "Zayavka";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Заявки";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Zayavka_FormClosed);
             this.Load += new System.EventHandler(this.Zayavka_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

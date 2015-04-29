@@ -136,6 +136,7 @@
             this.Name = "Workers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Workers";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Workers_FormClosed);
             this.Load += new System.EventHandler(this.Workers_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

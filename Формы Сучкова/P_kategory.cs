@@ -163,5 +163,10 @@ namespace Формы_Сучкова
             p_kat.ShowDialog();
             P_kategory_Load(sender, e);
         }
+
+        private void P_kategory_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            con_pkat.Close();
+        }
     }
 }

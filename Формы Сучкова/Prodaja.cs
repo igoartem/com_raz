@@ -316,5 +316,10 @@ namespace Формы_Сучкова
             workBook.SaveAs(Path.Combine(Environment.CurrentDirectory, savedFileName));
             //string 
         }
+
+        private void Prodaja_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            con_prod.Close();
+        }
     }
 }

@@ -178,5 +178,10 @@ namespace Формы_Сучкова
                 MessageBox.Show("Сначала нужно все соответствующие подкатегории"); 
             }
         }
+
+        private void Kategory_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            con_kat.Close();
+        }
     }
 }

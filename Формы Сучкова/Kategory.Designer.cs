@@ -106,6 +106,7 @@
             this.Name = "Kategory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kategory";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Kategory_FormClosed);
             this.Load += new System.EventHandler(this.Kategory_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

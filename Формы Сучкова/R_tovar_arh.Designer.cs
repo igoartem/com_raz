@@ -298,6 +298,7 @@
             this.Name = "R_tovar_arh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "R_tovar_arh";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.R_tovar_arh_FormClosed);
             this.Load += new System.EventHandler(this.R_tovar_arh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);

@@ -210,6 +210,7 @@
             this.Name = "R_zayavka";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Заявка";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.R_zayavka_FormClosed);
             this.Load += new System.EventHandler(this.R_zayavka_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

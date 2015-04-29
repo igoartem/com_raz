@@ -318,6 +318,7 @@
             this.Name = "Arhiv";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Arhiv";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Arhiv_FormClosed);
             this.Load += new System.EventHandler(this.Arhiv_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);

@@ -329,5 +329,10 @@ namespace Формы_Сучкова
         {
             this.Close();
         }
+
+        private void R_zayavka_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            con_r_tovar.Close();
+        }
     }
 }

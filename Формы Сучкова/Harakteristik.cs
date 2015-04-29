@@ -197,5 +197,10 @@ namespace Формы_Сучкова
             groupBox2.Enabled = true;
             buttonEdit.Enabled = false;
         }
+
+        private void Harakteristik_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            con_har.Close();
+        }
     }
 }

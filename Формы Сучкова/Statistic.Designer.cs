@@ -193,6 +193,7 @@
             this.Name = "Statistic";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Доходы";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Statistic_FormClosed);
             this.Load += new System.EventHandler(this.Statistic_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

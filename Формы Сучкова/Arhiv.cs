@@ -291,5 +291,11 @@ namespace Формы_Сучкова
             this.Close();
         }
 
+        private void Arhiv_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            con1.Close();
+    
+        }
+
     }
 }

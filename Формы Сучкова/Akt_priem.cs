@@ -137,6 +137,7 @@ namespace Формы_Сучкова
             if (pk < 0)
             {
                 string ss = "INSERT INTO SELLER (FIO, PASSPORT, PHONE) VALUES ('" + fio + "', '" + passport + "','" + number_phone + "')";
+                
                 cmd_akt_priem.CommandText = ss;
                 cmd_akt_priem.ExecuteNonQuery();
 

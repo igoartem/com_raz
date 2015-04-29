@@ -182,5 +182,10 @@ namespace Формы_Сучкова
 
             ReloadDataGrid();
         }
+
+        private void Zayavka_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            con_zay.Close();
+        }
     }
 }

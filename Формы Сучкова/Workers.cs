@@ -108,5 +108,10 @@ namespace Формы_Сучкова
                 refresh();
             }
         }
+
+        private void Workers_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            con_w.Close();
+        }
     }
 }

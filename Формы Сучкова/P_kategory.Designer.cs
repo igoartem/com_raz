@@ -129,6 +129,7 @@
             this.Name = "P_kategory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Подкатегории";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.P_kategory_FormClosed);
             this.Load += new System.EventHandler(this.P_kategory_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

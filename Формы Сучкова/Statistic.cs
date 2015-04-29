@@ -119,5 +119,10 @@ namespace Формы_Сучкова
             con_zay.Open();  
 
         }
+
+        private void Statistic_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            con_zay.Close();
+        }
     }
 }

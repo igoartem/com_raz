@@ -16,5 +16,10 @@ namespace Формы_Сучкова
         {
             InitializeComponent();
         }
+
+        private void Setting_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+        }
     }
 }

@@ -195,5 +195,10 @@ namespace Формы_Сучкова
             Akt_spis akt = new Akt_spis(old_product.pk_act_spis);
             akt.ShowDialog();
         }
+
+        private void R_tovar_arh_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            con_r_tovar.Close();
+        }
     }
 }

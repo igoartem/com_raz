@@ -234,6 +234,7 @@
             this.Name = "Prodaja";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Продажа товара";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Prodaja_FormClosed);
             this.Load += new System.EventHandler(this.Prodaja_Load);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
