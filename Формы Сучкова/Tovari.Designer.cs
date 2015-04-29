@@ -434,12 +434,14 @@
             // 
             // textBox4
             // 
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox4.Location = new System.Drawing.Point(6, 32);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(115, 127);
             this.textBox4.TabIndex = 3;
+            this.textBox4.Text = "1212\r\n12321\r\nwfew\r\n";
             // 
             // label8
             // 

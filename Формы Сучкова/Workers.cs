@@ -96,10 +96,17 @@ namespace Формы_Сучкова
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string sss = "UPDATE worker SET flag = '" + 0 + "' where pk_worker = " + dataGridView1.CurrentRow.Cells[0].Value;
-            cmd_w.CommandText = sss;
-            cmd_w.ExecuteNonQuery();
-            refresh();
+            if (Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value) == static_class.worker)
+            {
+                MessageBox.Show("Нельзя удалить текущего пользователя");
+            }
+            else
+            {
+                string sss = "UPDATE worker SET flag = '" + 0 + "' where pk_worker = " + dataGridView1.CurrentRow.Cells[0].Value;
+                cmd_w.CommandText = sss;
+                cmd_w.ExecuteNonQuery();
+                refresh();
+            }
         }
     }
 }

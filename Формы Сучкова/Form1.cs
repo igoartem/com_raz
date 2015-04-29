@@ -63,7 +63,7 @@ namespace Формы_Сучкова
 
         private void button1_Click(object sender, EventArgs e)
         {
-            cmd_log.CommandText = "SELECT pk_worker, status, FIO from worker where login ='" + textBox1.Text + "' and password = '" + textBox2.Text + "'";
+            cmd_log.CommandText = "SELECT pk_worker, status, FIO from worker where login ='" + textBox1.Text + "' and password = '" + textBox2.Text + "' and (flag = 1 or flag = -1)";
             dr_log = cmd_log.ExecuteReader();
             dr_log.Read();
             try
@@ -103,7 +103,7 @@ namespace Формы_Сучкова
 
             if (!Char.IsDigit(ch) && ch == 13)
             {
-                cmd_log.CommandText = "SELECT pk_worker, status, FIO from worker where login ='" + textBox1.Text + "' and password = '" + textBox2.Text + "'";
+                cmd_log.CommandText = "SELECT pk_worker, status, FIO from worker where login ='" + textBox1.Text + "' and password = '" + textBox2.Text + "' and (flag = 1 or flag = -1)";
                 dr_log = cmd_log.ExecuteReader();
                 dr_log.Read();
                 try
