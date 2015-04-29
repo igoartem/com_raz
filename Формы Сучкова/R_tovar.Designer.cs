@@ -397,6 +397,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Name = "R_tovar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Товар";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.R_tovar_FormClosed);
             this.Load += new System.EventHandler(this.R_tovar_Load);

@@ -145,7 +145,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Add_redact_worker";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Работник";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Add_redact_worker_FormClosed);
             this.Load += new System.EventHandler(this.Add_redact_worker_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

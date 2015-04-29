@@ -232,7 +232,8 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Name = "Prodaja";
-            this.Text = "Prodaja";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Продажа товара";
             this.Load += new System.EventHandler(this.Prodaja_Load);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

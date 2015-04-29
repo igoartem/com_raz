@@ -30,10 +30,10 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.buttonAdd = new System.Windows.Forms.Button();
-            this.buttonDel = new System.Windows.Forms.Button();
             this.kategor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonDel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -63,6 +63,18 @@
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             // 
+            // kategor
+            // 
+            this.kategor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.kategor.HeaderText = "Категория";
+            this.kategor.Name = "kategor";
+            // 
+            // PK
+            // 
+            this.PK.HeaderText = "Pk";
+            this.PK.Name = "PK";
+            this.PK.Visible = false;
+            // 
             // buttonAdd
             // 
             this.buttonAdd.Location = new System.Drawing.Point(335, 12);
@@ -83,18 +95,6 @@
             this.buttonDel.UseVisualStyleBackColor = true;
             this.buttonDel.Click += new System.EventHandler(this.buttonDel_Click);
             // 
-            // kategor
-            // 
-            this.kategor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.kategor.HeaderText = "Категория";
-            this.kategor.Name = "kategor";
-            // 
-            // PK
-            // 
-            this.PK.HeaderText = "Pk";
-            this.PK.Name = "PK";
-            this.PK.Visible = false;
-            // 
             // Kategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -104,6 +104,7 @@
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.groupBox1);
             this.Name = "Kategory";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kategory";
             this.Load += new System.EventHandler(this.Kategory_Load);
             this.groupBox1.ResumeLayout(false);

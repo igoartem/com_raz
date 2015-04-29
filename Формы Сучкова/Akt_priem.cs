@@ -578,5 +578,10 @@ namespace Формы_Сучкова
             workBook.SaveAs(Path.Combine(Environment.CurrentDirectory, savedFileName));
             //CloseExcel();
         }
+
+        private void Akt_priem_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            con_akt_priem.Close();
+        }
     }
 }

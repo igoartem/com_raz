@@ -510,7 +510,9 @@
             this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Tovari";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Товары";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Tovari_FormClosed);
             this.Load += new System.EventHandler(this.Tovari_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

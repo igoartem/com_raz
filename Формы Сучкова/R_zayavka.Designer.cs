@@ -208,6 +208,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Name = "R_zayavka";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Заявка";
             this.Load += new System.EventHandler(this.R_zayavka_Load);
             this.groupBox2.ResumeLayout(false);

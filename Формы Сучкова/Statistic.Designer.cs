@@ -191,6 +191,7 @@
             this.ClientSize = new System.Drawing.Size(689, 255);
             this.Controls.Add(this.groupBox1);
             this.Name = "Statistic";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Доходы";
             this.Load += new System.EventHandler(this.Statistic_Load);
             this.groupBox1.ResumeLayout(false);

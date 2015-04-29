@@ -30,13 +30,13 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.PK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flag = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -66,6 +66,33 @@
             this.dataGridView1.Size = new System.Drawing.Size(305, 363);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
+            // 
+            // PK
+            // 
+            this.PK.HeaderText = "PK";
+            this.PK.Name = "PK";
+            this.PK.ReadOnly = true;
+            this.PK.Width = 40;
+            // 
+            // FIO
+            // 
+            this.FIO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.FIO.HeaderText = "Фио";
+            this.FIO.Name = "FIO";
+            this.FIO.ReadOnly = true;
+            // 
+            // Status
+            // 
+            this.Status.HeaderText = "Статус";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            // 
+            // flag
+            // 
+            this.flag.HeaderText = "flag";
+            this.flag.Name = "flag";
+            this.flag.ReadOnly = true;
+            this.flag.Width = 30;
             // 
             // button3
             // 
@@ -97,33 +124,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // PK
-            // 
-            this.PK.HeaderText = "PK";
-            this.PK.Name = "PK";
-            this.PK.ReadOnly = true;
-            this.PK.Width = 40;
-            // 
-            // FIO
-            // 
-            this.FIO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.FIO.HeaderText = "Фио";
-            this.FIO.Name = "FIO";
-            this.FIO.ReadOnly = true;
-            // 
-            // Status
-            // 
-            this.Status.HeaderText = "Статус";
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
-            // 
-            // flag
-            // 
-            this.flag.HeaderText = "flag";
-            this.flag.Name = "flag";
-            this.flag.ReadOnly = true;
-            this.flag.Width = 30;
-            // 
             // Workers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -134,6 +134,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Workers";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Workers";
             this.Load += new System.EventHandler(this.Workers_Load);
             this.groupBox1.ResumeLayout(false);

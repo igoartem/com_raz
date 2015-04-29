@@ -127,6 +127,7 @@
             this.Controls.Add(this.buttonDel);
             this.Controls.Add(this.buttonAdd);
             this.Name = "P_kategory";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Подкатегории";
             this.Load += new System.EventHandler(this.P_kategory_Load);
             this.groupBox1.ResumeLayout(false);

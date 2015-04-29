@@ -136,6 +136,7 @@
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.groupBox1);
             this.Name = "Zayavka";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Заявки";
             this.Load += new System.EventHandler(this.Zayavka_Load);
             this.groupBox1.ResumeLayout(false);

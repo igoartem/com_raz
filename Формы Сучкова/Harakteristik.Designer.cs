@@ -215,6 +215,7 @@
             this.Controls.Add(this.buttonDel);
             this.Controls.Add(this.buttonAdd);
             this.Name = "Harakteristik";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Подкатегория";
             this.Load += new System.EventHandler(this.Harakteristik_Load);
             this.groupBox1.ResumeLayout(false);

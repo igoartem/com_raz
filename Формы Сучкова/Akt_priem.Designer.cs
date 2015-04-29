@@ -335,7 +335,9 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label5);
             this.Name = "Akt_priem";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Акт приемки";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Akt_priem_FormClosed);
             this.Load += new System.EventHandler(this.Akt_priem_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

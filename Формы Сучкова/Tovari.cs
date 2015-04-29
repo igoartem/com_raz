@@ -508,6 +508,14 @@ namespace Формы_Сучкова
             work.ShowDialog();
         }
 
+        private void Tovari_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            con1.Close();
+            con2.Close();
+         
+
+        }
+
 
     }
 }

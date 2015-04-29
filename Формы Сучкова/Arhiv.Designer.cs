@@ -316,6 +316,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Arhiv";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Arhiv";
             this.Load += new System.EventHandler(this.Arhiv_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

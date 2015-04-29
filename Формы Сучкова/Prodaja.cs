@@ -234,7 +234,7 @@ namespace Формы_Сучкова
 
             DialogResult result;
 
-           result= MessageBox.Show("Распечатать акт приемки?", "Акт приемки", MessageBoxButtons.YesNo);
+           result= MessageBox.Show("Распечатать чек?", "Продажа товара", MessageBoxButtons.YesNo);
            if (result == System.Windows.Forms.DialogResult.Yes)
            {
                pk = Convert.ToInt32( temp);

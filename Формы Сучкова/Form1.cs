@@ -137,5 +137,10 @@ namespace Формы_Сучкова
                 }
             }
         }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            con_log.Close();
+        }
     }
 }
